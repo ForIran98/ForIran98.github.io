@@ -6,40 +6,76 @@
   <title>اقامتگاه‌های رایگان یا ارزان</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Vazirmatn', sans-serif; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }
-    th { background-color: #f2f2f2; }
-    tr:nth-child(even) { background-color: #f9f9f9; }
-    tr:hover { background-color: #f5f5f5; }
-    a { color: #1e90ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: right;
+      font-size: 0.875rem;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* اسکرول افقی برای جدول در موبایل */
+    .table-wrapper {
+      overflow-x: auto;
+    }
   </style>
 </head>
-<body class="bg-gray-100 p-6">
-  <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md">
-    <div class="mb-6">
-      <h1 class="text-2xl font-bold text-center">اقامتگاه‌های رایگان یا ارزان</h1>
-      <p class="text-center mt-2">تعداد اقامتگاه‌ها: <span id="residenceCount">0</span></p>
-      <p class="text-center mt-2">کانال اصلی و منبع: <a href="https://t.me/accommodationforwarvictims" target="_blank">@accommodationforwarvictims</a></p>
-      <p class="text-center">مدیریت: <a href="https://t.me/parm7ida" target="_blank">@parm7ida</a></p>
-      <p class="text-center mt-2 text-red-600 font-semibold">برای کمک به تکمیل لیست اقامتگاه‌ها، لطفاً به <a href="https://t.me/m4tinbeigipv" target="_blank">@m4tinbeigipv</a> پیام دهید.</p>
+<body class="bg-gray-100 p-4 sm:p-6">
+  <div class="max-w-7xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md">
+    <div class="mb-6 text-center">
+      <h1 class="text-xl sm:text-2xl font-bold">اقامتگاه‌های رایگان یا ارزان</h1>
+      <p class="mt-2">تعداد اقامتگاه‌ها: <span id="residenceCount">0</span></p>
+      <p class="mt-2">کانال اصلی و منبع: <a href="https://t.me/accommodationforwarvictims" target="_blank">@accommodationforwarvictims</a></p>
+      <p>مدیریت: <a href="https://t.me/parm7ida" target="_blank">@parm7ida</a></p>
+      <p class="mt-2 text-red-600 font-semibold text-sm sm:text-base">
+        برای کمک به تکمیل لیست اقامتگاه‌ها، لطفاً به
+        <a href="https://t.me/m4tinbeigipv" target="_blank">@m4tinbeigipv</a> پیام دهید.
+      </p>
     </div>
-    <input id="searchInput" type="text" placeholder="جستجو بر اساس شهر، منطقه، یا عنوان..." class="w-full p-2 mb-4 border rounded-lg text-right">
-    <table id="residencesTable" class="min-w-full">
-      <thead>
-        <tr>
-          <th>شهر</th>
-          <th>منطقه</th>
-          <th>عنوان</th>
-          <th>شماره تماس</th>
-          <th>قیمت</th>
-          <th>لینک اینستاگرام</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
+
+    <input id="searchInput"
+           type="text"
+           placeholder="جستجو بر اساس شهر، منطقه، یا عنوان..."
+           class="w-full p-3 mb-4 border rounded-lg text-right text-sm sm:text-base">
+
+    <div class="table-wrapper">
+      <table id="residencesTable" class="min-w-full text-sm">
+        <thead>
+          <tr>
+            <th>شهر</th>
+            <th>منطقه</th>
+            <th>عنوان</th>
+            <th>شماره تماس</th>
+            <th>قیمت</th>
+            <th>لینک اینستاگرام</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
   </div>
+
   <script>
     async function loadResidences() {
       try {
@@ -49,10 +85,8 @@
         const tableBody = document.getElementById('tableBody');
         const residenceCount = document.getElementById('residenceCount');
 
-        // Display total number of residences
         residenceCount.textContent = residences.length;
 
-        // Populate table
         residences.forEach(residence => {
           const row = document.createElement('tr');
           row.innerHTML = `
@@ -66,7 +100,6 @@
           tableBody.appendChild(row);
         });
 
-        // Search functionality
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', function() {
           const searchTerm = this.value.toLowerCase();

@@ -2,90 +2,90 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>اقامتگاه‌ها - برای ایران</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اقامتگاه‌های رایگان یا ارزان</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Vazir', sans-serif;
-    }
-    input {
-      background-color: #111;
-      color: #fff;
-      border: 1px solid #555;
-    }
-    .card {
-      background-color: #111;
-      border: 1px solid #333;
-    }
-    .highlight {
-      color: #0d6efd;
-    }
+    body { font-family: 'Vazirmatn', sans-serif; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }
+    th { background-color: #f2f2f2; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    tr:hover { background-color: #f5f5f5; }
+    a { color: #1e90ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
-<body>
-  <div class="container py-5">
-    <h1 class="mb-4 text-center">اقامتگاه‌های رایگان یا ارزان</h1>
-    <input type="text" id="searchInput" class="form-control mb-4" placeholder="جستجو بر اساس شهر، مسئول یا عنوان...">
-
-    <div id="results" class="row g-4"></div>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-center">اقامتگاه‌های رایگان یا ارزان</h1>
+      <p class="text-center mt-2">تعداد اقامتگاه‌ها: <span id="residenceCount">0</span></p>
+      <p class="text-center mt-2">کانال اصلی و منبع: <a href="https://t.me/accommodationforwarvictims" target="_blank">@accommodationforwarvictims</a></p>
+      <p class="text-center">مدیریت: <a href="https://t.me/parm7ida" target="_blank">@parm7ida</a></p>
+      <p class="text-center mt-2 text-red-600 font-semibold">برای کمک به تکمیل لیست اقامتگاه‌ها، لطفاً به <a href="https://t.me/m4tinbeigipv" target="_blank">@m4tinbeigipv</a> پیام دهید.</p>
+    </div>
+    <input id="searchInput" type="text" placeholder="جستجو بر اساس شهر، منطقه، یا عنوان..." class="w-full p-2 mb-4 border rounded-lg text-right">
+    <table id="residencesTable" class="min-w-full">
+      <thead>
+        <tr>
+          <th>شهر</th>
+          <th>منطقه</th>
+          <th>عنوان</th>
+          <th>شماره تماس</th>
+          <th>قیمت</th>
+          <th>لینک اینستاگرام</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
   </div>
-
   <script>
-    const resultsContainer = document.getElementById('results');
-    const searchInput = document.getElementById('searchInput');
-    let residences = [];
+    async function loadResidences() {
+      try {
+        const response = await fetch('residences.json');
+        const data = await response.json();
+        const residences = data['اقامتگاه‌ها'];
+        const tableBody = document.getElementById('tableBody');
+        const residenceCount = document.getElementById('residenceCount');
 
-    function renderResidences(list) {
-      resultsContainer.innerHTML = '';
-      if (!list.length) {
-        resultsContainer.innerHTML = '<p class="text-center">نتیجه‌ای یافت نشد.</p>';
-        return;
-      }
-      list.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'col-md-4';
-        card.innerHTML = `
-          <div class="card p-3 h-100">
-            <h5 class="highlight">${item.عنوان}</h5>
-            <p>شهر: ${item.شهر}</p>
-            ${item.منطقه ? `<p>منطقه: ${item.منطقه}</p>` : ''}
-            ${item.مسئول ? `<p>مسئول: ${item.مسئول}</p>` : ''}
-            ${item.قیمت ? `<p>قیمت: ${item.قیمت} تومان</p>` : '<p>رایگان</p>'}
-            <p>شماره تماس: <a class="text-light" href="tel:${item.شماره}">${item.شماره}</a></p>
-          </div>
-        `;
-        resultsContainer.appendChild(card);
-      });
-    }
+        // Display total number of residences
+        residenceCount.textContent = residences.length;
 
-    function loadData() {
-      fetch('residences.json')
-        .then(response => response.json())
-        .then(data => {
-          residences = data["اقامتگاه‌ها"] || [];
-          renderResidences(residences);
-        })
-        .catch(error => {
-          resultsContainer.innerHTML = '<p class="text-danger">خطا در بارگذاری داده‌ها</p>';
-          console.error(error);
+        // Populate table
+        residences.forEach(residence => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${residence.شهر || ''}</td>
+            <td>${residence.منطقه || ''}</td>
+            <td>${residence.عنوان || ''}</td>
+            <td>${(residence.شماره || []).map(num => `<a href="tel:${num}">${num}</a>`).join(', ')}</td>
+            <td>${residence.قیمت || ''}</td>
+            <td>${residence.اینستاگرام ? `<a href="${residence.اینستاگرام}" target="_blank">اینستاگرام</a>` : ''}</td>
+          `;
+          tableBody.appendChild(row);
         });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+          const rows = tableBody.getElementsByTagName('tr');
+          for (let row of rows) {
+            const cells = row.getElementsByTagName('td');
+            const city = cells[0].textContent.toLowerCase();
+            const region = cells[1].textContent.toLowerCase();
+            const title = cells[2].textContent.toLowerCase();
+            row.style.display = city.includes(searchTerm) || region.includes(searchTerm) || title.includes(searchTerm) ? '' : 'none';
+          }
+        });
+      } catch (error) {
+        console.error('Error loading residences:', error);
+        document.getElementById('tableBody').innerHTML = '<tr><td colspan="6">خطا در بارگذاری داده‌ها</td></tr>';
+      }
     }
 
-    searchInput.addEventListener('input', () => {
-      const value = searchInput.value.trim();
-      const filtered = residences.filter(item =>
-        Object.values(item).some(val =>
-          typeof val === 'string' && val.toLowerCase().includes(value.toLowerCase())
-        )
-      );
-      renderResidences(filtered);
-    });
-
-    loadData();
+    window.onload = loadResidences;
   </script>
 </body>
 </html>

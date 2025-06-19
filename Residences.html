@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اقامتگاه‌ها - برای ایران</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Vazir', sans-serif;
+    }
+    input {
+      background-color: #111;
+      color: #fff;
+      border: 1px solid #555;
+    }
+    .card {
+      background-color: #111;
+      border: 1px solid #333;
+    }
+    .highlight {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">اقامتگاه‌های رایگان یا ارزان</h1>
+    <input type="text" id="searchInput" class="form-control mb-4" placeholder="جستجو بر اساس شهر، مسئول یا عنوان...">
+
+    <div id="results" class="row g-4"></div>
+  </div>
+
+  <script>
+    const resultsContainer = document.getElementById('results');
+    const searchInput = document.getElementById('searchInput');
+    let residences = [];
+
+    function renderResidences(list) {
+      resultsContainer.innerHTML = '';
+      if (!list.length) {
+        resultsContainer.innerHTML = '<p class="text-center">نتیجه‌ای یافت نشد.</p>';
+        return;
+      }
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'col-md-4';
+        card.innerHTML = `
+          <div class="card p-3 h-100">
+            <h5 class="highlight">${item.عنوان}</h5>
+            <p>شهر: ${item.شهر}</p>
+            ${item.منطقه ? `<p>منطقه: ${item.منطقه}</p>` : ''}
+            ${item.مسئول ? `<p>مسئول: ${item.مسئول}</p>` : ''}
+            ${item.قیمت ? `<p>قیمت: ${item.قیمت} تومان</p>` : '<p>رایگان</p>'}
+            <p>شماره تماس: <a class="text-light" href="tel:${item.شماره}">${item.شماره}</a></p>
+          </div>
+        `;
+        resultsContainer.appendChild(card);
+      });
+    }
+
+    function loadData() {
+      fetch('residences.json')
+        .then(response => response.json())
+        .then(data => {
+          residences = data["اقامتگاه‌ها"] || [];
+          renderResidences(residences);
+        })
+        .catch(error => {
+          resultsContainer.innerHTML = '<p class="text-danger">خطا در بارگذاری داده‌ها</p>';
+          console.error(error);
+        });
+    }
+
+    searchInput.addEventListener('input', () => {
+      const value = searchInput.value.trim();
+      const filtered = residences.filter(item =>
+        Object.values(item).some(val =>
+          typeof val === 'string' && val.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+      renderResidences(filtered);
+    });
+
+    loadData();
+  </script>
+</body>
+</html>

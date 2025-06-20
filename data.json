@@ -3,303 +3,961 @@
     {
       "name": "موتورهای جستجو",
       "sites": [
-        {"name": "ذره‌بین", "url": "http://www.zarebin.ir", "description": "موتور جستجوی ایرانی"},
-        {"name": "گردو", "url": "http://gerdoo.me", "description": "موتور جستجو و دایرکتوری پارسی"}
+        {
+          "name": "ذره‌بین",
+          "url": "http://www.zarebin.ir",
+          "description": "موتور جستجوی ایرانی"
+        },
+        {
+          "name": "گردو",
+          "url": "http://gerdoo.me",
+          "description": "موتور جستجو و دایرکتوری پارسی"
+        },
+        {
+          "name": "Rismoon",
+          "url": "https://rismoon.ir",
+          "description": "موتور جستجوی ایرانی"
+        },
+        {
+          "name": "Barnamenevis",
+          "url": "https://barnamenevis.ir/",
+          "description": "موتور جستجو برای برنامه نویسان"
+        }
       ]
     },
     {
       "name": "خدمات و پورتال‌های دولتی",
       "sites": [
-        {"name": "امور مالیاتی کشور", "url": "http://www.intamedia.ir", "description": "خدمات و اطلاعات مالیاتی"},
-        {"name": "سامانه ثنا", "url": "http://sana.adliran.ir", "description": "سامانه خدمات قضایی"},
-        {"name": "مرکز اطلاعات راه‌های کشور", "url": "http://www.141.ir", "description": "اطلاعات راه‌ها و وضعیت ترافیک"},
-        {"name": "خدمات الکترونیک پلیس", "url": "http://www.epolice.ir", "description": "خدمات پلیس آنلاین"},
-        {"name": "سازمان تأمین اجتماعی", "url": "http://tamin.ir", "description": "بیمه اجتماعی و خدمات"},
-        {"name": "سازمان ثبت احوال", "url": "http://www.sabteahval.ir", "description": "خدمات ثبت احوال"},
-        {"name": "سازمان هواشناسی کشور", "url": "http://www.irimo.ir/far/index.php", "description": "پیش‌بینی آب‌وهوا"},
-        {"name": "سازمان ثبت اسناد و املاک کشور", "url": "http://www.ssaa.ir", "description": "خدمات ثبت اسناد"},
-        {"name": "درگاه خدمات الکترونیک قضایی", "url": "http://www.adliran.ir", "description": "خدمات قضایی آنلاین"},
-        {"name": "سامانه رهگیری محصولات پستی", "url": "http://www.tracking.post.ir", "description": "رهگیری مرسولات پستی"},
-        {"name": "مرکز لرزه‌نگاری کشور", "url": "http://www.irsc.ut.ac.ir/index.php?lang=fa", "description": "اطلاعات زلزله و لرزه‌نگاری"},
-        {"name": "سازمان آموزش فنی و حرفه‌ای", "url": "http://www.irantvto.ir", "description": "آموزش‌های فنی و حرفه‌ای"}
+        {
+          "name": "امور مالیاتی کشور",
+          "url": "http://www.intamedia.ir",
+          "description": "خدمات و اطلاعات مالیاتی"
+        },
+        {
+          "name": "سامانه ثنا",
+          "url": "http://sana.adliran.ir",
+          "description": "سامانه خدمات قضایی"
+        },
+        {
+          "name": "مرکز اطلاعات راه‌های کشور",
+          "url": "http://www.141.ir",
+          "description": "اطلاعات راه‌ها و وضعیت ترافیک"
+        },
+        {
+          "name": "خدمات الکترونیک پلیس",
+          "url": "http://www.epolice.ir",
+          "description": "خدمات پلیس آنلاین"
+        },
+        {
+          "name": "سازمان تأمین اجتماعی",
+          "url": "http://tamin.ir",
+          "description": "بیمه اجتماعی و خدمات"
+        },
+        {
+          "name": "سازمان ثبت احوال",
+          "url": "http://www.sabteahval.ir",
+          "description": "خدمات ثبت احوال"
+        },
+        {
+          "name": "سازمان هواشناسی کشور",
+          "url": "http://www.irimo.ir/far/index.php",
+          "description": "پیش‌بینی آب‌وهوا"
+        },
+        {
+          "name": "سازمان ثبت اسناد و املاک کشور",
+          "url": "http://www.ssaa.ir",
+          "description": "خدمات ثبت اسناد"
+        },
+        {
+          "name": "درگاه خدمات الکترونیک قضایی",
+          "url": "http://www.adliran.ir",
+          "description": "خدمات قضایی آنلاین"
+        },
+        {
+          "name": "سامانه رهگیری محصولات پستی",
+          "url": "http://www.tracking.post.ir",
+          "description": "رهگیری مرسولات پستی"
+        },
+        {
+          "name": "مرکز لرزه‌نگاری کشور",
+          "url": "http://www.irsc.ut.ac.ir/index.php?lang=fa",
+          "description": "اطلاعات زلزله و لرزه‌نگاری"
+        },
+        {
+          "name": "سازمان آموزش فنی و حرفه‌ای",
+          "url": "http://www.irantvto.ir",
+          "description": "آموزش‌های فنی و حرفه‌ای"
+        }
       ]
     },
     {
       "name": "بانک‌ها",
       "sites": [
-        {"name": "بانک مرکزی ایران", "url": "http://cbi.ir", "description": "بانک مرکزی و سیاست‌های پولی"},
-        {"name": "بانک ملی ایران", "url": "http://bmi.ir", "description": "وب‌سایت رسمی بانک ملی ایران"},
-        {"name": "پست بانک", "url": "http://www.postbank.ir", "description": "خدمات بانکی پستی"},
-        {"name": "بانک تجارت", "url": "http://www.tejaratbank.ir", "description": "وب‌سایت بانک تجارت"},
-        {"name": "بانک رفاه", "url": "http://www.refah-bank.ir", "description": "وب‌سایت رسمی بانک رفاه"},
-        {"name": "بانک سپه", "url": "http://www.banksepah.ir", "description": "وب‌سایت بانک سپه"},
-        {"name": "بانک کشاورزی", "url": "http://www.bki.ir", "description": "بانک کشاورزی ایران"},
-        {"name": "بانک مسکن", "url": "http://www.bank-maskan.ir", "description": "بانک مسکن ایران"},
-        {"name": "بانک سامان", "url": "http://sb24.com/portal/Home", "description": "وب‌سایت بانک سامان"},
-        {"name": "بانک پاسارگاد", "url": "http://www.bpi.ir", "description": "وب‌سایت رسمی بانک پاسارگاد"},
-        {"name": "بانک ملت", "url": "http://www.bankmellat.ir", "description": "وب‌سایت بانک ملت"},
-        {"name": "بانک سرمایه", "url": "http://www.sbank.ir", "description": "خدمات بانکی سرمایه"},
-        {"name": "بانک صادرات", "url": "http://www.bsi.ir", "description": "پورتال رسمی بانک صادرات"},
-        {"name": "بانک شهر", "url": "http://www.shahr-bank.ir", "description": "خدمات بانکی شهر"}
+        {
+          "name": "بانک مرکزی ایران",
+          "url": "http://cbi.ir",
+          "description": "بانک مرکزی و سیاست‌های پولی"
+        },
+        {
+          "name": "بانک ملی ایران",
+          "url": "http://bmi.ir",
+          "description": "وب‌سایت رسمی بانک ملی ایران"
+        },
+        {
+          "name": "پست بانک",
+          "url": "http://www.postbank.ir",
+          "description": "خدمات بانکی پستی"
+        },
+        {
+          "name": "بانک تجارت",
+          "url": "http://www.tejaratbank.ir",
+          "description": "وب‌سایت بانک تجارت"
+        },
+        {
+          "name": "بانک رفاه",
+          "url": "http://www.refah-bank.ir",
+          "description": "وب‌سایت رسمی بانک رفاه"
+        },
+        {
+          "name": "بانک سپه",
+          "url": "http://www.banksepah.ir",
+          "description": "وب‌سایت بانک سپه"
+        },
+        {
+          "name": "بانک کشاورزی",
+          "url": "http://www.bki.ir",
+          "description": "بانک کشاورزی ایران"
+        },
+        {
+          "name": "بانک مسکن",
+          "url": "http://www.bank-maskan.ir",
+          "description": "بانک مسکن ایران"
+        },
+        {
+          "name": "بانک سامان",
+          "url": "http://sb24.com/portal/Home",
+          "description": "وب‌سایت بانک سامان"
+        },
+        {
+          "name": "بانک پاسارگاد",
+          "url": "http://www.bpi.ir",
+          "description": "وب‌سایت رسمی بانک پاسارگاد"
+        },
+        {
+          "name": "بانک ملت",
+          "url": "http://www.bankmellat.ir",
+          "description": "وب‌سایت بانک ملت"
+        },
+        {
+          "name": "بانک سرمایه",
+          "url": "http://www.sbank.ir",
+          "description": "خدمات بانکی سرمایه"
+        },
+        {
+          "name": "بانک صادرات",
+          "url": "http://www.bsi.ir",
+          "description": "پورتال رسمی بانک صادرات"
+        },
+        {
+          "name": "بانک شهر",
+          "url": "http://www.shahr-bank.ir",
+          "description": "خدمات بانکی شهر"
+        }
       ]
     },
     {
       "name": "بیمه",
       "sites": [
-        {"name": "استعلام بیمه‌نامه", "url": "http://www.centinsur.ir", "description": "استعلام وضعیت بیمه‌نامه"},
-        {"name": "بیمه ایران", "url": "http://www.iraninsurance.ir/home", "description": "خدمات بیمه ملی"},
-        {"name": "بیمه دانا", "url": "http://www.dana-insurance.com", "description": "خدمات بیمه دانا"},
-        {"name": "بیمه البرز", "url": "http://www.alborzinsurance.ir", "description": "خدمات بیمه البرز"},
-        {"name": "بیمه معلم", "url": "http://www.mic.co.ir/fa", "description": "خدمات بیمه معلم"},
-        {"name": "بیمه ما", "url": "http://www.bimehma.com", "description": "خدمات بیمه ما"},
-        {"name": "بیمه پارسیان", "url": "http://www.parsianinsurance.ir", "description": "خدمات بیمه پارسیان"},
-        {"name": "آتیه سازان", "url": "http://www.atiyehsazan.ir", "description": "خدمات بیمه آتیه سازان"},
-        {"name": "بیمه آسیا", "url": "http://www.bimehasia.com", "description": "خدمات بیمه آسیا"},
-        {"name": "بیمیتو", "url": "http://www.bimito.com", "description": "مقایسه و خرید بیمه"},
-        {"name": "ازکی", "url": "http://www.azki.com", "description": "پلتفرم خرید آنلاین بیمه"}
+        {
+          "name": "استعلام بیمه‌نامه",
+          "url": "http://www.centinsur.ir",
+          "description": "استعلام وضعیت بیمه‌نامه"
+        },
+        {
+          "name": "بیمه ایران",
+          "url": "http://www.iraninsurance.ir/home",
+          "description": "خدمات بیمه ملی"
+        },
+        {
+          "name": "بیمه دانا",
+          "url": "http://www.dana-insurance.com",
+          "description": "خدمات بیمه دانا"
+        },
+        {
+          "name": "بیمه البرز",
+          "url": "http://www.alborzinsurance.ir",
+          "description": "خدمات بیمه البرز"
+        },
+        {
+          "name": "بیمه معلم",
+          "url": "http://www.mic.co.ir/fa",
+          "description": "خدمات بیمه معلم"
+        },
+        {
+          "name": "بیمه ما",
+          "url": "http://www.bimehma.com",
+          "description": "خدمات بیمه ما"
+        },
+        {
+          "name": "بیمه پارسیان",
+          "url": "http://www.parsianinsurance.ir",
+          "description": "خدمات بیمه پارسیان"
+        },
+        {
+          "name": "آتیه سازان",
+          "url": "http://www.atiyehsazan.ir",
+          "description": "خدمات بیمه آتیه سازان"
+        },
+        {
+          "name": "بیمه آسیا",
+          "url": "http://www.bimehasia.com",
+          "description": "خدمات بیمه آسیا"
+        },
+        {
+          "name": "بیمیتو",
+          "url": "http://www.bimito.com",
+          "description": "مقایسه و خرید بیمه"
+        },
+        {
+          "name": "ازکی",
+          "url": "http://www.azki.com",
+          "description": "پلتفرم خرید آنلاین بیمه"
+        }
       ]
     },
     {
       "name": "بیمارستان‌ها",
       "sites": [
-        {"name": "بیمارستان میلاد", "url": "http://www.miladhospital.com", "description": "خدمات بیمارستان میلاد"},
-        {"name": "بیمارستان رسول اکرم", "url": "http://hrmc.iums.ac.ir", "description": "خدمات بیمارستان رسول اکرم"},
-        {"name": "بیمارستان فارابی", "url": "http://www.farabih.tums.ac.ir", "description": "خدمات بیمارستان فارابی"},
-        {"name": "بیمارستان امام خمینی", "url": "http://www.ikhc.tums.ac.ir", "description": "خدمات بیمارستان امام خمینی"},
-        {"name": "بیمارستان مصطفی خمینی", "url": "http://www.mkht.ir/index.php?lang=fa", "description": "خدمات بیمارستان مصطفی خمینی"},
-        {"name": "مرکز قلب تهران", "url": "http://www.thc.tums.ac.ir", "description": "خدمات مرکز قلب تهران"}
+        {
+          "name": "بیمارستان میلاد",
+          "url": "http://www.miladhospital.com",
+          "description": "خدمات بیمارستان میلاد"
+        },
+        {
+          "name": "بیمارستان رسول اکرم",
+          "url": "http://hrmc.iums.ac.ir",
+          "description": "خدمات بیمارستان رسول اکرم"
+        },
+        {
+          "name": "بیمارستان فارابی",
+          "url": "http://www.farabih.tums.ac.ir",
+          "description": "خدمات بیمارستان فارابی"
+        },
+        {
+          "name": "بیمارستان امام خمینی",
+          "url": "http://www.ikhc.tums.ac.ir",
+          "description": "خدمات بیمارستان امام خمینی"
+        },
+        {
+          "name": "بیمارستان مصطفی خمینی",
+          "url": "http://www.mkht.ir/index.php?lang=fa",
+          "description": "خدمات بیمارستان مصطفی خمینی"
+        },
+        {
+          "name": "مرکز قلب تهران",
+          "url": "http://www.thc.tums.ac.ir",
+          "description": "خدمات مرکز قلب تهران"
+        }
       ]
     },
     {
       "name": "خبرگزاری‌ها",
       "sites": [
-        {"name": "خبرگزاری فارس", "url": "http://www.farsnews.com", "description": "نزدیک به سپاه پاسداران انقلاب اسلامی"},
-        {"name": "خبرگزاری مهر", "url": "http://www.mehrnews.com", "description": "اخبار عمومی و تحلیل"},
-        {"name": "ایرنا", "url": "http://www.irna.ir", "description": "خبرگزاری جمهوری اسلامی"},
-        {"name": "ایسنا", "url": "http://www.isna.ir", "description": "خبرگزاری دانشجویان ایران"},
-        {"name": "ایلنا", "url": "http://www.ilna.ir", "description": "تمرکز بر مسائل کارگری و اجتماعی"},
-        {"name": "تابناک", "url": "http://www.tabnak.ir", "description": "اخبار تحلیلی و سیاسی"},
-        {"name": "تسنیم", "url": "http://www.tasnimnews.com", "description": "اخبار و تحلیل‌های اصولگرا"},
-        {"name": "شانا", "url": "http://www.shana.ir", "description": "خبرگزاری صنعت نفت"},
-        {"name": "خبرآنلاین", "url": "http://www.khabaronline.ir", "description": "اخبار عمومی و مستقل"},
-        {"name": "باشگاه خبرنگاران جوان", "url": "http://www.yjc.ir", "description": "متعلق به صداوسیما"},
-        {"name": "عصر ایران", "url": "http://www.asriran.com", "description": "تحلیلی، گرایش‌های میانه‌رو"},
-        {"name": "زومجی", "url": "http://zoomg.ir", "description": "اخبار بازی و سرگرمی"}
+        {
+          "name": "خبرگزاری فارس",
+          "url": "http://www.farsnews.com",
+          "description": "نزدیک به سپاه پاسداران انقلاب اسلامی"
+        },
+        {
+          "name": "خبرگزاری مهر",
+          "url": "http://www.mehrnews.com",
+          "description": "اخبار عمومی و تحلیل"
+        },
+        {
+          "name": "ایرنا",
+          "url": "http://www.irna.ir",
+          "description": "خبرگزاری جمهوری اسلامی"
+        },
+        {
+          "name": "ایسنا",
+          "url": "http://www.isna.ir",
+          "description": "خبرگزاری دانشجویان ایران"
+        },
+        {
+          "name": "ایلنا",
+          "url": "http://www.ilna.ir",
+          "description": "تمرکز بر مسائل کارگری و اجتماعی"
+        },
+        {
+          "name": "تابناک",
+          "url": "http://www.tabnak.ir",
+          "description": "اخبار تحلیلی و سیاسی"
+        },
+        {
+          "name": "تسنیم",
+          "url": "http://www.tasnimnews.com",
+          "description": "اخبار و تحلیل‌های اصولگرا"
+        },
+        {
+          "name": "شانا",
+          "url": "http://www.shana.ir",
+          "description": "خبرگزاری صنعت نفت"
+        },
+        {
+          "name": "خبرآنلاین",
+          "url": "http://www.khabaronline.ir",
+          "description": "اخبار عمومی و مستقل"
+        },
+        {
+          "name": "باشگاه خبرنگاران جوان",
+          "url": "http://www.yjc.ir",
+          "description": "متعلق به صداوسیما"
+        },
+        {
+          "name": "عصر ایران",
+          "url": "http://www.asriran.com",
+          "description": "تحلیلی، گرایش‌های میانه‌رو"
+        },
+        {
+          "name": "زومجی",
+          "url": "http://zoomg.ir",
+          "description": "اخبار بازی و سرگرمی"
+        }
       ]
     },
     {
       "name": "مسیریاب و نقشه",
       "sites": [
-        {"name": "مسیریاب بلد", "url": "http://balad.ir", "description": "مسیریابی و نقشه آنلاین"},
-        {"name": "مسیریاب نشان", "url": "http://neshan.org", "description": "نقشه و مسیریابی آفلاین"}
+        {
+          "name": "مسیریاب بلد",
+          "url": "http://balad.ir",
+          "description": "مسیریابی و نقشه آنلاین"
+        },
+        {
+          "name": "مسیریاب نشان",
+          "url": "http://neshan.org",
+          "description": "نقشه و مسیریابی آفلاین"
+        }
       ]
     },
     {
       "name": "دانلود و به‌روزرسانی نرم‌افزار و اپلیکیشن",
       "sites": [
-        {"name": "کافه بازار", "url": "http://cafebazaar.ir", "description": "فروشگاه اپلیکیشن ایرانی"},
-        {"name": "سیبچه", "url": "http://sibche.com", "description": "دانلود اپلیکیشن‌های iOS"},
-        {"name": "مایکت", "url": "http://myket.ir", "description": "فروشگاه اپلیکیشن اندروید"},
-        {"name": "سافت ۹۸", "url": "http://soft98.ir", "description": "دانلود نرم‌افزار و بازی"},
-        {"name": "یاس دانلود", "url": "http://yasdl.com", "description": "دانلود نرم‌افزار و اپلیکیشن"},
-        {"name": "سرزمین دانلود", "url": "http://sarzamindownload.com", "description": "منابع دانلود نرم‌افزار"},
-        {"name": "دانلود ها", "url": "http://downloadha.com", "description": "دانلود نرم‌افزار و بازی"},
-        {"name": "دانلود فارسی", "url": "http://www.download.ir", "description": "منابع دانلود پارسی"},
-        {"name": "پاتوق یو", "url": "http://patoghu.com", "description": "دانلود نرم‌افزار و اپلیکیشن"},
-        {"name": "سیب اپ", "url": "http://www.sibapp.com", "description": "فروشگاه اپلیکیشن iOS"},
-        {"name": "آی اپس", "url": "http://www.iapps.ir", "description": "دانلود اپلیکیشن‌های iOS"}
+        {
+          "name": "کافه بازار",
+          "url": "http://cafebazaar.ir",
+          "description": "فروشگاه اپلیکیشن ایرانی"
+        },
+        {
+          "name": "سیبچه",
+          "url": "http://sibche.com",
+          "description": "دانلود اپلیکیشن‌های iOS"
+        },
+        {
+          "name": "مایکت",
+          "url": "http://myket.ir",
+          "description": "فروشگاه اپلیکیشن اندروید"
+        },
+        {
+          "name": "سافت ۹۸",
+          "url": "http://soft98.ir",
+          "description": "دانلود نرم‌افزار و بازی"
+        },
+        {
+          "name": "یاس دانلود",
+          "url": "http://yasdl.com",
+          "description": "دانلود نرم‌افزار و اپلیکیشن"
+        },
+        {
+          "name": "سرزمین دانلود",
+          "url": "http://sarzamindownload.com",
+          "description": "منابع دانلود نرم‌افزار"
+        },
+        {
+          "name": "دانلود ها",
+          "url": "http://downloadha.com",
+          "description": "دانلود نرم‌افزار و بازی"
+        },
+        {
+          "name": "دانلود فارسی",
+          "url": "http://www.download.ir",
+          "description": "منابع دانلود پارسی"
+        },
+        {
+          "name": "پاتوق یو",
+          "url": "http://patoghu.com",
+          "description": "دانلود نرم‌افزار و اپلیکیشن"
+        },
+        {
+          "name": "سیب اپ",
+          "url": "http://www.sibapp.com",
+          "description": "فروشگاه اپلیکیشن iOS"
+        },
+        {
+          "name": "آی اپس",
+          "url": "http://www.iapps.ir",
+          "description": "دانلود اپلیکیشن‌های iOS"
+        }
       ]
     },
     {
       "name": "تاکسی اینترنتی",
       "sites": [
-        {"name": "اسنپ", "url": "http://snapp.ir", "description": "تاکسی اینترنتی"},
-        {"name": "تپ سی", "url": "http://tapsi.ir", "description": "تاکسی آنلاین"},
-        {"name": "الوپیک", "url": "http://alopeyk.com", "description": "خدمات پیک و تاکسی"},
-        {"name": "ماکسیم", "url": "http://www.taximaxim.ir", "description": "تاکسی اینترنتی"}
+        {
+          "name": "اسنپ",
+          "url": "http://snapp.ir",
+          "description": "تاکسی اینترنتی"
+        },
+        {
+          "name": "تپ سی",
+          "url": "http://tapsi.ir",
+          "description": "تاکسی آنلاین"
+        },
+        {
+          "name": "الوپیک",
+          "url": "http://alopeyk.com",
+          "description": "خدمات پیک و تاکسی"
+        },
+        {
+          "name": "ماکسیم",
+          "url": "http://www.taximaxim.ir",
+          "description": "تاکسی اینترنتی"
+        }
       ]
     },
     {
       "name": "تماشای آنلاین و دانلود فیلم",
       "sites": [
-        {"name": "نماوا", "url": "http://www.namava.ir", "description": "سرویس استریم ویدئو"},
-        {"name": "فیلم نت", "url": "http://filmnet.ir", "description": "پلتفرم استریم فیلم و سریال"},
-        {"name": "فیلیمو", "url": "http://www.filimo.com", "description": "سرویس استریم ویدئو خانگی"},
-        {"name": "آپارات", "url": "http://www.aparat.com", "description": "پلتفرم اشتراک ویدئو"},
-        {"name": "گپ فیلم", "url": "http://www.gapfilm.ir", "description": "دانلود و تماشای فیلم"},
-        {"name": "پرشین دانلود", "url": "http://www.dlpersian.ir", "description": "دانلود فیلم و سریال"},
-        {"name": "نماشا", "url": "http://www.namasha.com", "description": "پلتفرم اشتراک ویدئو"}
+        {
+          "name": "نماوا",
+          "url": "http://www.namava.ir",
+          "description": "سرویس استریم ویدئو"
+        },
+        {
+          "name": "فیلم نت",
+          "url": "http://filmnet.ir",
+          "description": "پلتفرم استریم فیلم و سریال"
+        },
+        {
+          "name": "فیلیمو",
+          "url": "http://www.filimo.com",
+          "description": "سرویس استریم ویدئو خانگی"
+        },
+        {
+          "name": "آپارات",
+          "url": "http://www.aparat.com",
+          "description": "پلتفرم اشتراک ویدئو"
+        },
+        {
+          "name": "گپ فیلم",
+          "url": "http://www.gapfilm.ir",
+          "description": "دانلود و تماشای فیلم"
+        },
+        {
+          "name": "پرشین دانلود",
+          "url": "http://www.dlpersian.ir",
+          "description": "دانلود فیلم و سریال"
+        },
+        {
+          "name": "نماشا",
+          "url": "http://www.namasha.com",
+          "description": "پلتفرم اشتراک ویدئو"
+        }
       ]
     },
     {
       "name": "موسیقی آنلاین و پادکست",
       "sites": [
-        {"name": "بیپ تونز", "url": "http://beeptunes.com", "description": "دانلود و استریم موسیقی"},
-        {"name": "والا موزیک", "url": "http://www.vmusic.ir", "description": "دانلود موسیقی پارسی"},
-        {"name": "آپ موزیک", "url": "http://upmusic.com", "description": "استریم و دانلود موسیقی"},
-        {"name": "راوکده", "url": "http://ravkadeh.ir", "description": "موسیقی و پادکست"},
-        {"name": "پادکست رخ", "url": "http://rokhpodcast.ir", "description": "پادکست‌های آموزشی و داستان‌گویی"},
-        {"name": "آوا پدیا", "url": "http://avapedia.com", "description": "پلتفرم پادکست پارسی"}
+        {
+          "name": "بیپ تونز",
+          "url": "http://beeptunes.com",
+          "description": "دانلود و استریم موسیقی"
+        },
+        {
+          "name": "والا موزیک",
+          "url": "http://www.vmusic.ir",
+          "description": "دانلود موسیقی پارسی"
+        },
+        {
+          "name": "آپ موزیک",
+          "url": "http://upmusic.com",
+          "description": "استریم و دانلود موسیقی"
+        },
+        {
+          "name": "راوکده",
+          "url": "http://ravkadeh.ir",
+          "description": "موسیقی و پادکست"
+        },
+        {
+          "name": "پادکست رخ",
+          "url": "http://rokhpodcast.ir",
+          "description": "پادکست‌های آموزشی و داستان‌گویی"
+        },
+        {
+          "name": "آوا پدیا",
+          "url": "http://avapedia.com",
+          "description": "پلتفرم پادکست پارسی"
+        }
       ]
     },
     {
       "name": "خرید اینترنتی",
       "sites": [
-        {"name": "دیجی کالا", "url": "http://www.digikala.com", "description": "بزرگ‌ترین پلتفرم تجارت الکترونیک"},
-        {"name": "اُکالا", "url": "http://okala.com", "description": "خرید آنلاین مواد غذایی"},
-        {"name": "باسلام", "url": "http://basalam.com", "description": "بازار محصولات محلی"},
-        {"name": "ترب", "url": "http://torob.com", "description": "دستیار مقایسه قیمت"}
+        {
+          "name": "دیجی کالا",
+          "url": "http://www.digikala.com",
+          "description": "بزرگ‌ترین پلتفرم تجارت الکترونیک"
+        },
+        {
+          "name": "اُکالا",
+          "url": "http://okala.com",
+          "description": "خرید آنلاین مواد غذایی"
+        },
+        {
+          "name": "باسلام",
+          "url": "http://basalam.com",
+          "description": "بازار محصولات محلی"
+        },
+        {
+          "name": "ترب",
+          "url": "http://torob.com",
+          "description": "دستیار مقایسه قیمت"
+        }
       ]
     },
     {
       "name": "سفارش غذا",
       "sites": [
-        {"name": "اسنپ‌فود", "url": "http://snappfood.ir", "description": "سفارش آنلاین غذا"},
-        {"name": "دلینو", "url": "http://www.delino.com", "description": "پلتفرم سفارش غذا"},
-        {"name": "تپسی فود", "url": "http://tapsi.ir", "description": "خدمات سفارش غذای تپسی"}
+        {
+          "name": "اسنپ‌فود",
+          "url": "http://snappfood.ir",
+          "description": "سفارش آنلاین غذا"
+        },
+        {
+          "name": "دلینو",
+          "url": "http://www.delino.com",
+          "description": "پلتفرم سفارش غذا"
+        },
+        {
+          "name": "تپسی فود",
+          "url": "http://tapsi.ir",
+          "description": "خدمات سفارش غذای تپسی"
+        }
       ]
     },
     {
       "name": "پیام‌رسان",
       "sites": [
-        {"name": "آی گپ", "url": "http://www.igap.net", "description": "پیام‌رسان ایرانی"},
-        {"name": "بله", "url": "http://Bale.ai", "description": "پیام‌رسان با خدمات بانکی"},
-        {"name": "گپ", "url": "http://gap.im", "description": "پیام‌رسان داخلی"},
-        {"name": "ایتا", "url": "http://www.eitaa.com", "description": "پیام‌رسان ایرانی"},
-        {"name": "سروش پلاس", "url": "http://www.Splus.ir", "description": "پیام‌رسان با قابلیت پادکست"},
-        {"name": "ویراستی", "url": "http://Virasty.com", "description": "شبکه اجتماعی ایرانی"},
-        {"name": "روبیکا", "url": "http://Rubika.ir", "description": "اپلیکیشن چندمنظوره"}
+        {
+          "name": "آی گپ",
+          "url": "http://www.igap.net",
+          "description": "پیام‌رسان ایرانی"
+        },
+        {
+          "name": "بله",
+          "url": "http://Bale.ai",
+          "description": "پیام‌رسان با خدمات بانکی"
+        },
+        {
+          "name": "گپ",
+          "url": "http://gap.im",
+          "description": "پیام‌رسان داخلی"
+        },
+        {
+          "name": "ایتا",
+          "url": "http://www.eitaa.com",
+          "description": "پیام‌رسان ایرانی"
+        },
+        {
+          "name": "سروش پلاس",
+          "url": "http://www.Splus.ir",
+          "description": "پیام‌رسان با قابلیت پادکست"
+        },
+        {
+          "name": "ویراستی",
+          "url": "http://Virasty.com",
+          "description": "شبکه اجتماعی ایرانی"
+        },
+        {
+          "name": "روبیکا",
+          "url": "http://Rubika.ir",
+          "description": "اپلیکیشن چندمنظوره"
+        }
       ]
     },
     {
       "name": "کتابخوان",
       "sites": [
-        {"name": "فیدیبو", "url": "http://fidibo.com", "description": "کتاب‌های صوتی و الکترونیکی"},
-        {"name": "نوار", "url": "http://navaar.ir", "description": "پلتفرم کتاب صوتی و پادکست"},
-        {"name": "طاقچه", "url": "http://taaghche.com", "description": "فروشگاه کتاب الکترونیک"},
-        {"name": "کتابراه", "url": "http://ketabrah.ir", "description": "دانلود کتاب‌های دیجیتال"}
+        {
+          "name": "فیدیبو",
+          "url": "http://fidibo.com",
+          "description": "کتاب‌های صوتی و الکترونیکی"
+        },
+        {
+          "name": "نوار",
+          "url": "http://navaar.ir",
+          "description": "پلتفرم کتاب صوتی و پادکست"
+        },
+        {
+          "name": "طاقچه",
+          "url": "http://taaghche.com",
+          "description": "فروشگاه کتاب الکترونیک"
+        },
+        {
+          "name": "کتابراه",
+          "url": "http://ketabrah.ir",
+          "description": "دانلود کتاب‌های دیجیتال"
+        }
       ]
     },
     {
       "name": "تخفیف",
       "sites": [
-        {"name": "تخفیفان", "url": "http://takhfifan.com", "description": "پلتفرم تخفیف و کوپن"},
-        {"name": "نت‌برگ", "url": "http://netbarg.com", "description": "خدمات تخفیف آنلاین"},
-        {"name": "موپن", "url": "http://mopon.ir", "description": "کوپن و تخفیف‌های آنلاین"}
+        {
+          "name": "تخفیفان",
+          "url": "http://takhfifan.com",
+          "description": "پلتفرم تخفیف و کوپن"
+        },
+        {
+          "name": "نت‌برگ",
+          "url": "http://netbarg.com",
+          "description": "خدمات تخفیف آنلاین"
+        },
+        {
+          "name": "موپن",
+          "url": "http://mopon.ir",
+          "description": "کوپن و تخفیف‌های آنلاین"
+        }
       ]
     },
     {
       "name": "خرید بلیط و گردشگری",
       "sites": [
-        {"name": "کجارو", "url": "http://www.kojaro.com", "description": "راهنمای سفر و گردشگری"},
-        {"name": "علی‌بابا", "url": "http://www.alibaba.ir", "description": "رزرو بلیط و تور"},
-        {"name": "فلایتیو", "url": "http://flightio.com", "description": "خرید بلیط هواپیما"},
-        {"name": "مستربلیط", "url": "http://mrbilit.com", "description": "رزرو بلیط آنلاین"},
-        {"name": "قاصدک ۲۴", "url": "http://ghasedak24.com", "description": "خرید بلیط و تور"},
-        {"name": "خرید بلیط", "url": "http://www.payaneha.ir", "description": "رزرو بلیط اتوبوس"},
-        {"name": "خرید بلیط اتوبوس", "url": "http://www.safar724.com", "description": "خدمات بلیط اتوبوس"},
-        {"name": "حمل‌و‌نقل ریلی رجا", "url": "http://www.raja.ir", "description": "رزرو بلیط قطار"},
-        {"name": "چارتر", "url": "http://www.charter.ir", "description": "بلیط‌های چارتر هواپیما"},
-        {"name": "تیوال", "url": "http://www.tiwall.com", "description": "رویدادهای فرهنگی و بلیط"},
-        {"name": "ایران تیک", "url": "http://www.irantic.com", "description": "رزرو بلیط و رویداد"},
-        {"name": "سینما تیکت", "url": "http://www.cinematicket.org", "description": "رزرو بلیط سینما"}
+        {
+          "name": "کجارو",
+          "url": "http://www.kojaro.com",
+          "description": "راهنمای سفر و گردشگری"
+        },
+        {
+          "name": "علی‌بابا",
+          "url": "http://www.alibaba.ir",
+          "description": "رزرو بلیط و تور"
+        },
+        {
+          "name": "فلایتیو",
+          "url": "http://flightio.com",
+          "description": "خرید بلیط هواپیما"
+        },
+        {
+          "name": "مستربلیط",
+          "url": "http://mrbilit.com",
+          "description": "رزرو بلیط آنلاین"
+        },
+        {
+          "name": "قاصدک ۲۴",
+          "url": "http://ghasedak24.com",
+          "description": "خرید بلیط و تور"
+        },
+        {
+          "name": "خرید بلیط",
+          "url": "http://www.payaneha.ir",
+          "description": "رزرو بلیط اتوبوس"
+        },
+        {
+          "name": "خرید بلیط اتوبوس",
+          "url": "http://www.safar724.com",
+          "description": "خدمات بلیط اتوبوس"
+        },
+        {
+          "name": "حمل‌و‌نقل ریلی رجا",
+          "url": "http://www.raja.ir",
+          "description": "رزرو بلیط قطار"
+        },
+        {
+          "name": "چارتر",
+          "url": "http://www.charter.ir",
+          "description": "بلیط‌های چارتر هواپیما"
+        },
+        {
+          "name": "تیوال",
+          "url": "http://www.tiwall.com",
+          "description": "رویدادهای فرهنگی و بلیط"
+        },
+        {
+          "name": "ایران تیک",
+          "url": "http://www.irantic.com",
+          "description": "رزرو بلیط و رویداد"
+        },
+        {
+          "name": "سینما تیکت",
+          "url": "http://www.cinematicket.org",
+          "description": "رزرو بلیط سینما"
+        }
       ]
     },
     {
       "name": "پزشکی و سلامت",
       "sites": [
-        {"name": "دکترتو", "url": "http://doctoreto.com", "description": "رزرو آنلاین وقت پزشک"},
-        {"name": "دکتر ساینا", "url": "http://drsaina.com", "description": "مشاوره پزشکی آنلاین"},
-        {"name": "نوبت آی آر", "url": "http://nobat.ir", "description": "رزرو نوبت پزشکی"},
-        {"name": "سلامتی ۲۴", "url": "http://salamati24.com/fa", "description": "خدمات پزشکی و مشاوره"},
-        {"name": "دکتردکتر", "url": "http://drdr.ir", "description": "پلتفرم مشاوره پزشکی"},
-        {"name": "دکتریاب", "url": "http://doctor-yab.ir", "description": "جستجوی پزشکان و رزرو نوبت"}
+        {
+          "name": "دکترتو",
+          "url": "http://doctoreto.com",
+          "description": "رزرو آنلاین وقت پزشک"
+        },
+        {
+          "name": "دکتر ساینا",
+          "url": "http://drsaina.com",
+          "description": "مشاوره پزشکی آنلاین"
+        },
+        {
+          "name": "نوبت آی آر",
+          "url": "http://nobat.ir",
+          "description": "رزرو نوبت پزشکی"
+        },
+        {
+          "name": "سلامتی ۲۴",
+          "url": "http://salamati24.com/fa",
+          "description": "خدمات پزشکی و مشاوره"
+        },
+        {
+          "name": "دکتردکتر",
+          "url": "http://drdr.ir",
+          "description": "پلتفرم مشاوره پزشکی"
+        },
+        {
+          "name": "دکتریاب",
+          "url": "http://doctor-yab.ir",
+          "description": "جستجوی پزشکان و رزرو نوبت"
+        }
       ]
     },
     {
       "name": "خدمات بانکی و پولی",
       "sites": [
-        {"name": "آپ", "url": "http://asanpardakht.ir", "description": "پرداخت آسان آنلاین"},
-        {"name": "780", "url": "http://www.app.780.ir", "description": "خدمات پرداخت الکترونیک"},
-        {"name": "724", "url": "http://www.724.ir", "description": "پرداخت و خدمات بانکی"},
-        {"name": "همراه کارت", "url": "http://hamrahcard.ir", "description": "اپلیکیشن پرداخت موبایلی"},
-        {"name": "سکه", "url": "http://sekeh.behpardakht.com", "description": "خدمات پرداخت به‌پرداز"}
+        {
+          "name": "آپ",
+          "url": "http://asanpardakht.ir",
+          "description": "پرداخت آسان آنلاین"
+        },
+        {
+          "name": "780",
+          "url": "http://www.app.780.ir",
+          "description": "خدمات پرداخت الکترونیک"
+        },
+        {
+          "name": "724",
+          "url": "http://www.724.ir",
+          "description": "پرداخت و خدمات بانکی"
+        },
+        {
+          "name": "همراه کارت",
+          "url": "http://hamrahcard.ir",
+          "description": "اپلیکیشن پرداخت موبایلی"
+        },
+        {
+          "name": "سکه",
+          "url": "http://sekeh.behpardakht.com",
+          "description": "خدمات پرداخت به‌پرداز"
+        }
       ]
     },
     {
       "name": "سایت‌های کاریابی",
       "sites": [
-        {"name": "جابینجا", "url": "http://jobinja.ir", "description": "پلتفرم کاریابی آنلاین"},
-        {"name": "ای استخدام", "url": "http://e-estekhdam.com", "description": "آگهی‌های استخدام"},
-        {"name": "ایران استخدام", "url": "http://iranestekhdam.ir", "description": "فرصت‌های شغلی"},
-        {"name": "جاب ویژن", "url": "http://jobvision.ir", "description": "کاریابی و استخدام"}
+        {
+          "name": "جابینجا",
+          "url": "http://jobinja.ir",
+          "description": "پلتفرم کاریابی آنلاین"
+        },
+        {
+          "name": "ای استخدام",
+          "url": "http://e-estekhdam.com",
+          "description": "آگهی‌های استخدام"
+        },
+        {
+          "name": "ایران استخدام",
+          "url": "http://iranestekhdam.ir",
+          "description": "فرصت‌های شغلی"
+        },
+        {
+          "name": "جاب ویژن",
+          "url": "http://jobvision.ir",
+          "description": "کاریابی و استخدام"
+        }
       ]
     },
     {
       "name": "ایمیل",
       "sites": [
-        {"name": "ایران", "url": "http://mail.iran.ir", "description": "سرویس ایمیل داخلی"},
-        {"name": "چاپار", "url": "http://chmail.ir", "description": "سرویس ایمیل ایرانی"},
-        {"name": "میل‌فا", "url": "http://mailfa.com", "description": "پلتفرم ایمیل پارسی"}
+        {
+          "name": "ایران",
+          "url": "http://mail.iran.ir",
+          "description": "سرویس ایمیل داخلی"
+        },
+        {
+          "name": "چاپار",
+          "url": "http://chmail.ir",
+          "description": "سرویس ایمیل ایرانی"
+        },
+        {
+          "name": "میل‌فا",
+          "url": "http://mailfa.com",
+          "description": "پلتفرم ایمیل پارسی"
+        }
       ]
     },
     {
       "name": "دیکشنری",
       "sites": [
-        {"name": "دیکشنری آبادیس", "url": "http://www.dictionary.abadis.ir", "description": "دیکشنری آنلاین پارسی"},
-        {"name": "ترگمان", "url": "http://www.targoman.ir", "description": "مترجم آنلاین"},
-        {"name": "فرازین", "url": "http://www.faraazin.ir", "description": "دیکشنری و مترجم پارسی"}
+        {
+          "name": "دیکشنری آبادیس",
+          "url": "http://www.dictionary.abadis.ir",
+          "description": "دیکشنری آنلاین پارسی"
+        },
+        {
+          "name": "ترگمان",
+          "url": "http://www.targoman.ir",
+          "description": "مترجم آنلاین"
+        },
+        {
+          "name": "فرازین",
+          "url": "http://www.faraazin.ir",
+          "description": "دیکشنری و مترجم پارسی"
+        }
       ]
     },
     {
       "name": "ورزشی",
       "sites": [
-        {"name": "ورزش ۳", "url": "http://www.varzesh3.com", "description": "اخبار ورزشی پیشرو"},
-        {"name": "طرفداری", "url": "http://www.tarafdari.com", "description": "اخبار و جامعه هواداران"}
+        {
+          "name": "ورزش ۳",
+          "url": "http://www.varzesh3.com",
+          "description": "اخبار ورزشی پیشرو"
+        },
+        {
+          "name": "طرفداری",
+          "url": "http://www.tarafdari.com",
+          "description": "اخبار و جامعه هواداران"
+        }
       ]
     },
     {
       "name": "آپلود فایل",
       "sites": [
-        {"name": "پیکوفایل", "url": "http://www.picofile.com", "description": "سرویس آپلود فایل"}
+        {
+          "name": "پیکوفایل",
+          "url": "http://www.picofile.com",
+          "description": "سرویس آپلود فایل"
+        }
       ]
     },
     {
       "name": "نیازمندی‌ها",
       "sites": [
-        {"name": "دیوار", "url": "http://www.divar.ir", "description": "آگهی‌های طبقه‌بندی‌شده"},
-        {"name": "شیپور", "url": "http://www.sheypoor.com", "description": "نیازمندی‌های آنلاین"}
+        {
+          "name": "دیوار",
+          "url": "http://www.divar.ir",
+          "description": "آگهی‌های طبقه‌بندی‌شده"
+        },
+        {
+          "name": "شیپور",
+          "url": "http://www.sheypoor.com",
+          "description": "نیازمندی‌های آنلاین"
+        }
       ]
     },
     {
       "name": "دانشگاه‌ها",
       "sites": [
-        {"name": "دانشگاه آزاد اسلامی", "url": "http://www.iau.ac.ir", "description": "وب‌سایت دانشگاه آزاد"},
-        {"name": "دانشگاه تهران", "url": "http://www.ut.ac.ir/fa", "description": "دانشگاه تهران"},
-        {"name": "دانشگاه شریف", "url": "http://www.sharif.ir", "description": "دانشگاه صنعتی شریف"},
-        {"name": "دانشگاه خواجه نصیر", "url": "http://www.kntu.ac.ir", "description": "دانشگاه خواجه نصیرالدین طوسی"},
-        {"name": "دانشگاه پیام نور", "url": "http://www.pnu.ac.ir", "description": "دانشگاه پیام نور"},
-        {"name": "دانشگاه شهید بهشتی", "url": "http://www.sbu.ac.ir", "description": "دانشگاه شهید بهشتی"},
-        {"name": "دانشگاه علوم پزشکی تهران", "url": "http://www.tums.ac.ir", "description": "دانشگاه علوم پزشکی تهران"},
-        {"name": "دانشگاه امیر کبیر", "url": "http://www.aut.ac.ir", "description": "دانشگاه صنعتی امیرکبیر"}
+        {
+          "name": "دانشگاه آزاد اسلامی",
+          "url": "http://www.iau.ac.ir",
+          "description": "وب‌سایت دانشگاه آزاد"
+        },
+        {
+          "name": "دانشگاه تهران",
+          "url": "http://www.ut.ac.ir/fa",
+          "description": "دانشگاه تهران"
+        },
+        {
+          "name": "دانشگاه شریف",
+          "url": "http://www.sharif.ir",
+          "description": "دانشگاه صنعتی شریف"
+        },
+        {
+          "name": "دانشگاه خواجه نصیر",
+          "url": "http://www.kntu.ac.ir",
+          "description": "دانشگاه خواجه نصیرالدین طوسی"
+        },
+        {
+          "name": "دانشگاه پیام نور",
+          "url": "http://www.pnu.ac.ir",
+          "description": "دانشگاه پیام نور"
+        },
+        {
+          "name": "دانشگاه شهید بهشتی",
+          "url": "http://www.sbu.ac.ir",
+          "description": "دانشگاه شهید بهشتی"
+        },
+        {
+          "name": "دانشگاه علوم پزشکی تهران",
+          "url": "http://www.tums.ac.ir",
+          "description": "دانشگاه علوم پزشکی تهران"
+        },
+        {
+          "name": "دانشگاه امیر کبیر",
+          "url": "http://www.aut.ac.ir",
+          "description": "دانشگاه صنعتی امیرکبیر"
+        }
       ]
     },
     {
       "name": "کاربردی",
       "sites": [
-        {"name": "زمان، تاریخ و اوقات شرعی", "url": "http://www.time.ir", "description": "اطلاعات زمان و اوقات شرعی"},
-        {"name": "سازمان هواشناسی کشور", "url": "http://irimo.ir", "description": "پیش‌بینی آب‌وهوا"},
-        {"name": "آچاره", "url": "http://achareh.ir", "description": "خدمات و تعمیرات منزل"},
-        {"name": "خدمت از ما", "url": "http://www.khedmatazma.com/tehran", "description": "خدمات خانگی و تعمیرات"},
-        {"name": "با حساب", "url": "http://www.bahesab.ir", "description": "ابزارهای محاسباتی آنلاین"}
+        {
+          "name": "زمان، تاریخ و اوقات شرعی",
+          "url": "http://www.time.ir",
+          "description": "اطلاعات زمان و اوقات شرعی"
+        },
+        {
+          "name": "سازمان هواشناسی کشور",
+          "url": "http://irimo.ir",
+          "description": "پیش‌بینی آب‌وهوا"
+        },
+        {
+          "name": "آچاره",
+          "url": "http://achareh.ir",
+          "description": "خدمات و تعمیرات منزل"
+        },
+        {
+          "name": "خدمت از ما",
+          "url": "http://www.khedmatazma.com/tehran",
+          "description": "خدمات خانگی و تعمیرات"
+        },
+        {
+          "name": "با حساب",
+          "url": "http://www.bahesab.ir",
+          "description": "ابزارهای محاسباتی آنلاین"
+        }
       ]
     },
     {
       "name": "بانک مقاله و مجلات تخصصی",
       "sites": [
-        {"name": "رشد", "url": "http://www.roshd.ir", "description": "مجلات آموزشی رشد"},
-        {"name": "ایرانداک", "url": "http://www.irandoc.ac.ir", "description": "پایگاه داده مقالات علمی"},
-        {"name": "نورمگز", "url": "http://www.noormags.ir", "description": "آرشیو ژورنال‌های آکادمیک"}
+        {
+          "name": "رشد",
+          "url": "http://www.roshd.ir",
+          "description": "مجلات آموزشی رشد"
+        },
+        {
+          "name": "ایرانداک",
+          "url": "http://www.irandoc.ac.ir",
+          "description": "پایگاه داده مقالات علمی"
+        },
+        {
+          "name": "نورمگز",
+          "url": "http://www.noormags.ir",
+          "description": "آرشیو ژورنال‌های آکادمیک"
+        }
       ]
     }
   ]

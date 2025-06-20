@@ -1,0 +1,21 @@
+{
+  "name": "ایران اکسس",
+  "short_name": "ایران اکسس",
+  "description": "دسترسی به اطلاعات ضروری هنگام قطعی اینترنت بین‌المللی",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eff6ff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

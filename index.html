@@ -2,41 +2,158 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ایران اکسس: دسترسی به اطلاعات ضروری در زمان قطعی اینترنت">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#1e3a8a">
   <title>برای ایران</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Vazir -->
+  <link href="https://cdn.jsdelivr.net/npm/vazir-font@33.0.0/dist/font-face.css" rel="stylesheet">
+  <!-- Manifest for Add to Home Screen -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Favicon for iOS -->
+  <link rel="apple-touch-icon" href="/icon.png">
   <style>
     body {
-      background-color: #000;
-      color: #fff;
       font-family: 'Vazir', sans-serif;
+      background: linear-gradient(to bottom, #eff6ff, #dbeafe);
     }
-    .btn-enter {
-      border: 2px solid white;
-      color: white;
-      background: transparent;
+    .container {
+      @media (max-width: 640px) {
+        padding: 1rem;
+      }
     }
-    .btn-enter:hover {
-      background: white;
-      color: black;
+    .btn {
+      transition: all 0.3s ease;
     }
-    .centered {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
+    .btn:hover {
+      transform: translateY(-2px);
     }
   </style>
 </head>
-<body>
-  <div class="container centered">
-    <h1 class="mb-4">این آدرس را برای کسی ارسال نکنید</h1>
-    <p class="mb-4">لطفاً لینک <strong>f2n.ir</strong> را در پیامک یا شبکه‌های اجتماعی به اشتراک نگذارید.</p>
-    <a href="main.html" class="btn btn-enter">ورود</a>
+<body class="min-h-screen text-gray-800">
+  <div class="container mx-auto p-6 max-w-3xl">
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-extrabold text-blue-900 mb-4" id="title"></h1>
+      <p class="text-lg text-gray-700" id="description"></p>
+    </header>
+
+    <section class="bg-white p-8 rounded-xl shadow-lg mb-8">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4" id="features-title"></h2>
+      <ul class="list-disc list-inside space-y-3 text-gray-700" id="features-list"></ul>
+    </section>
+
+    <section class="bg-white p-8 rounded-xl shadow-lg mb-8">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4" id="add-to-home-title"></h2>
+      <p class="mb-4 text-gray-700" id="add-to-home-desc"></p>
+      <ol class="list-decimal list-inside space-y-3 text-gray-700" id="add-to-home-steps"></ol>
+      <button id="installPrompt" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg btn hover:bg-blue-700">
+        افزودن به صفحه اصلی
+      </button>
+    </section>
+
+    <section class="bg-white p-8 rounded-xl shadow-lg mb-8">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4" id="share-title"></h2>
+      <p class="mb-4 text-gray-700" id="share-desc"></p>
+      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+        <button id="shareSMS" class="bg-green-600 text-white px-6 py-3 rounded-lg btn hover:bg-green-700">
+          اشتراک‌گذاری از طریق پیامک
+        </button>
+        <button id="shareX" class="bg-blue-400 text-white px-6 py-3 rounded-lg btn hover:bg-blue-500">
+          اشتراک‌گذاری در شبکه‌های اجتماعی
+        </button>
+      </div>
+    </section>
+
+    <section class="text-center">
+      <a href="/login" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg btn hover:bg-blue-700" id="login-button"></a>
+    </section>
   </div>
+
+  <script>
+    // Load content from JSON
+    fetch('/content.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('title').textContent = data.title;
+        document.getElementById('description').textContent = data.description;
+        document.getElementById('features-title').textContent = data.features.title;
+        document.getElementById('add-to-home-title').textContent = data.addToHome.title;
+        document.getElementById('add-to-home-desc').textContent = data.addToHome.description;
+        document.getElementById('share-title').textContent = data.share.title;
+        document.getElementById('share-desc').textContent = data.share.description;
+        document.getElementById('login-button').textContent = data.loginButton;
+
+        // Populate features list
+        const featuresList = document.getElementById('features-list');
+        data.features.items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          featuresList.appendChild(li);
+        });
+
+        // Populate add-to-home steps
+        const stepsList = document.getElementById('add-to-home-steps');
+        data.addToHome.steps.forEach(step => {
+          const li = document.createElement('li');
+          li.textContent = step;
+          stepsList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading content:', error));
+
+    // Handle Add to Home Screen Prompt
+    let deferredPrompt;
+    const installButton = document.getElementById('installPrompt');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installButton.classList.remove('hidden');
+    });
+
+    installButton.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      }
+    });
+
+    // Share functionality
+    const shareSMS = document.getElementById('shareSMS');
+    const shareX = document.getElementById('shareX');
+    const shareData = {
+      title: 'برای ایران',
+      text: 'این سایت اطلاعات ضروری برای مواقع قطعی اینترنت بین‌المللی ارائه می‌دهد. شامل شماره‌های اضطراری، سایت‌های مهم و اقامتگاه‌ها.',
+      url: window.location.href
+    };
+
+    shareSMS.addEventListener('click', () => {
+      const smsText = `${shareData.text} لینک: ${shareData.url}`;
+      window.location.href = `sms:?body=${encodeURIComponent(smsText)}`;
+    });
+
+    shareX.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          console.log('Content shared successfully');
+        } catch (err) {
+          console.error('Error sharing:', err);
+        }
+      } else {
+        alert('اشتراک‌گذاری در این مرورگر پشتیبانی نمی‌شود. لینک را کپی کنید: ' + shareData.url);
+      }
+    });
+  </script>
 </body>
 </html>

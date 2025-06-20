@@ -1,0 +1,22 @@
+{
+  "collaborators": [
+    {
+      "id": 1,
+      "name": "عضو اول",
+      "image": "avatar1.jpg",
+      "link": "https://t.me/member1"
+    },
+    {
+      "id": 2,
+      "name": "عضو دوم",
+      "image": "",
+      "link": "https://t.me/member2"
+    },
+    {
+      "id": 3,
+      "name": "عضو سوم",
+      "image": "avatar3.jpg",
+      "link": "https://t.me/member3"
+    }
+  ]
+}

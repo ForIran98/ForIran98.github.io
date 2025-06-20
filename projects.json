@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "سایت‌های کاربردی و داخلی",
+      "description": "سایت‌های بانکی، آموزشی، خدمات عمومی داخل ایران",
+      "status": "completed",
+      "collaborators": [1, 2],
+      "pageLink": "/projects/sites"
+    },
+    {
+      "id": 2,
+      "title": "جابجایی بین‌شهری",
+      "description": "لیست راننده‌ها، مسیرهای امن، سیستم هماهنگی حمل‌ونقل",
+      "status": "in_progress",
+      "collaborators": [2, 3],
+      "pageLink": "/projects/transport"
+    },
+    {
+      "id": 3,
+      "title": "اقامتگاه‌های رایگان",
+      "description": "خانه‌های امن، میزبانان داوطلب، مکان‌های امن برای ماندن",
+      "status": "not_started",
+      "collaborators": [1, 3],
+      "pageLink": "/projects/accommodation"
+    },
+    {
+      "id": 4,
+      "title": "شرکت‌های حامی مردم",
+      "description": "برندها یا مجموعه‌هایی که با مردم در بحران‌ها همراهی کردند",
+      "status": "completed",
+      "collaborators": [1, 2, 3],
+      "pageLink": "/projects/supporters"
+    },
+    {
+      "id": 5,
+      "title": "خدمات رایگان",
+      "description": "اینترنت رایگان، بسته‌های رایگان، مشاوره رایگان",
+      "status": "in_progress",
+      "collaborators": [2, 3],
+      "pageLink": "/projects/free_services"
+    }
+  ]
+}

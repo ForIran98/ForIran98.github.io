@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>برای ایران - صفحه اصلی</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <title>برای ایران - لیست پروژه‌ها</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
   <style>
     body {
@@ -12,86 +15,127 @@
       color: #fff;
       font-family: 'Vazir', sans-serif;
     }
-    h2 {
-      border-bottom: 1px solid #555;
-      padding-bottom: .5rem;
-      margin-top: 2rem;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
     .member-img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
     }
-    .telegram-link a {
-      color: #0d6efd;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
-  <div class="container py-5">
-    <h1 class="text-center mb-5">برای ایران</h1>
+  <div id="root"></div>
+  <script type="text/babel">
+    const ProjectCard = ({ project, collaborators }) => {
+      const statusText = {
+        completed: "انجام‌شده",
+        in_progress: "در دست اقدام",
+        not_started: "انجام‌نشده"
+      };
+      const statusColor = {
+        completed: "bg-green-500",
+        in_progress: "bg-yellow-500",
+        not_started: "bg-red-500"
+      };
+      const projectCollaborators = collaborators.filter(collab =>
+        project.collaborators.includes(collab.id)
+      );
 
-    <div class="section">
-      <h2>سایت‌های کاربردی و داخلی</h2>
-      <ul>
-        <li>مثال: سایت‌های بانکی، آموزشی، خدمات عمومی داخل ایران</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>جابجایی بین‌شهری</h2>
-      <ul>
-        <li>مثال: لیست راننده‌ها، مسیرهای امن، سیستم هماهنگی حمل‌ونقل</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>اقامتگاه‌های رایگان</h2>
-      <ul>
-        <li>مثال: خانه‌های امن، میزبانان داوطلب، مکان‌های امن برای ماندن</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>شرکت‌های حامی مردم</h2>
-      <ul>
-        <li>مثال: برندها یا مجموعه‌هایی که با مردم در بحران‌ها همراهی کردند</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>خدمات رایگان</h2>
-      <ul>
-        <li>مثال: اینترنت رایگان، بسته‌های رایگان، مشاوره رایگان</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>اعضای گروه برای ایران</h2>
-      <div class="row">
-        <div class="col-md-3 col-6 text-center mb-4">
-          <img src="avatar1.jpg" alt="عضو اول" class="member-img mb-2">
-          <div>عضو اول</div>
+      return (
+        <div className="bg-gray-800 p-6 rounded-lg mb-6">
+          <a href={project.pageLink} className="text-xl font-bold text-blue-400 hover:underline">
+            {project.title}
+          </a>
+          <p className="mt-2">{project.description}</p>
+          <span className={`inline-block mt-2 px-3 py-1 text-sm rounded-full ${statusColor[project.status]}`}>
+            {statusText[project.status]}
+          </span>
+          <div className="mt-4">
+            <h3 className="text-lg font-semibold">همکاران پروژه:</h3>
+            <div className="flex flex-wrap gap-4 mt-2">
+              {projectCollaborators.map(collab => (
+                <div key={collab.id} className="text-center">
+                  <a href={collab.link} target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={collab.image || "https://via.placeholder.com/100"} 
+                      alt={collab.name} 
+                      className="member-img mb-2" 
+                    />
+                    <div>{collab.name}</div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div class="col-md-3 col-6 text-center mb-4">
-          <img src="avatar2.jpg" alt="عضو دوم" class="member-img mb-2">
-          <div>عضو دوم</div>
-        </div>
-        <!-- ادامه اعضا... -->
-      </div>
-    </div>
+      );
+    };
 
-    <div class="section">
-      <h2>ارتباط با ما</h2>
-      <p>آیدی تلگرام مسئول: <span class="telegram-link"><a href="https://t.me/m4tinbeigipv">@m4tinbeigipv</a></span></p>
-      <p>گروه تلگرام: <span class="telegram-link"><a href="#">لینک گروه برای ایران</a></span></p>
-      <p>کانال تلگرام: <span class="telegram-link"><a href="#">کانال برای ایران</a></span></p>
-    </div>
-  </div>
+    const App = () => {
+      const [projects, setProjects] = React.useState([]);
+      const [collaborators, setCollaborators] = React.useState([]);
+      const [loading, setLoading] = React.useState(true);
+
+      React.useEffect(() => {
+        Promise.all([
+          fetch('projects.json').then(res => res.json()),
+          fetch('collaborators.json').then(res => res.json())
+        ])
+          .then(([projectsRes, collaboratorsRes]) => {
+            const sortedProjects = projectsRes.projects.sort((a, b) => {
+              const statusOrder = { completed: 1, in_progress: 2, not_started: 3 };
+              return statusOrder[a.status] - statusOrder[b.status];
+            });
+            setProjects(sortedProjects);
+            setCollaborators(collaboratorsRes.collaborators);
+            setLoading(false);
+          })
+          .catch(error => {
+            console.error('Error loading JSON files:', error);
+            setLoading(false);
+          });
+      }, []);
+
+      if (loading) {
+        return <div className="text-center py-10">در حال بارگذاری...</div>;
+      }
+
+      return (
+        <div className="container mx-auto py-10 px-4">
+          <h1 className="text-4xl font-bold text-center mb-10">برای ایران - لیست پروژه‌ها</h1>
+          <div className="section">
+            {projects.map(project => (
+              <ProjectCard key={project.id} project={project} collaborators={collaborators} />
+            ))}
+          </div>
+          <div className="section mt-10">
+            <h2 className="text-2xl font-semibold border-b border-gray-500 pb-2 mb-6">همه همکاران</h2>
+            <div className="flex flex-wrap gap-6 justify-center">
+              {collaborators.map(collab => (
+                <div key={collab.id} className="text-center">
+                  <a href={collab.link} target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={collab.image || "https://via.placeholder.com/100"} 
+                      alt={collab.name} 
+                      className="member-img mb-2" 
+                    />
+                    <div>{collab.name}</div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="section mt-10 text-center">
+            <h2 className="text-2xl font-semibold border-b border-gray-500 pb-2 mb-6">ارتباط با ما</h2>
+            <p>آیدی تلگرام مسئول: <a href="https://t.me/m4tinbeigipv" className="text-blue-400 hover:underline">@m4tinbeigipv</a></p>
+            <p>گروه تلگرام: <a href="#" className="text-blue-400 hover:underline">لینک گروه برای ایران</a></p>
+            <p>کانال تلگرام: <a href="#" className="text-blue-400 hover:underline">کانال برای ایران</a></p>
+          </div>
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
 </body>
 </html>

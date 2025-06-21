@@ -5,7 +5,7 @@
       "title": "سایت‌های کاربردی و داخلی",
       "description": "سایت‌های بانکی، آموزشی، خدمات عمومی داخل ایران",
       "status": "completed",
-      "collaborators": [1, 2],
+      "collaborators": [1, 4],
       "pageLink": "ir.html"
     },
     {
@@ -13,7 +13,7 @@
       "title": "جابجایی بین‌شهری",
       "description": "لیست راننده‌ها، مسیرهای امن، سیستم هماهنگی حمل‌ونقل",
       "status": "in_progress",
-      "collaborators": [2, 3],
+      "collaborators": [1, 2,5],
       "pageLink": "/projects/transport"
     },
     {
@@ -21,7 +21,7 @@
       "title": "اقامتگاه‌های رایگان یا ارزان",
       "description": "خانه‌های امن، میزبانان داوطلب، مکان‌های امن برای ماندن",
       "status": "completed",
-      "collaborators": [1, 3],
+      "collaborators": [1,2,3,5],
       "pageLink": "Residences.html"
     },
     {
@@ -29,7 +29,7 @@
       "title": "شرکت‌های حامی مردم",
       "description": "برندها یا مجموعه‌هایی که با مردم در بحران‌ها همراهی کردند",
       "status": "completed",
-      "collaborators": [1, 2, 3],
+      "collaborators": [1],
       "pageLink": "/projects/supporters"
     },
     {
@@ -37,7 +37,7 @@
       "title": "خدمات رایگان",
       "description": "اینترنت رایگان، بسته‌های رایگان، مشاوره رایگان",
       "status": "not_started",
-      "collaborators": [2, 3],
+      "collaborators": [1],
       "pageLink": "/projects/free_services"
     },
 	{
@@ -45,7 +45,7 @@
       "title": "شماره های اضظراری",
       "description": "حتما ذخیره کنید",
       "status": "completed",
-      "collaborators": [1, 2],
+      "collaborators": [1, 4],
       "pageLink": "SOS.html"
     }
   ]

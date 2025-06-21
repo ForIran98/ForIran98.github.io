@@ -3,25 +3,25 @@
     {
       "id": 1,
       "name": "ریک سانچز",
-      "image": "m4tinbeigi.jpg",
+      "image": "file/profile/m4tinbeigi.jpg",
       "link": "https://x.xom/m4tinbeigi"
     },
     {
       "id": 2,
       "name": "رها حکیمی",
-      "image": "raha_hakimi78.jpg",
+      "image": "file/profile/raha_hakimi78.jpg",
       "link": "https://instagram.com/raha_hakimi78"
     },
     {
       "id": 3,
       "name": "پارمیدا",
-      "image": "parm7ida.png",
+      "image": "file/profile/parm7ida.png",
       "link": "https://t.me/parm7ida"
     },
     {
       "id": 4,
       "name": "شادان غمگسار",
-      "image": "old_boye.jpg",
+      "image": "file/profile/old_boye.jpg",
       "link": "https://x.com/old_boye"
     }
   ]

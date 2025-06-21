@@ -40,7 +40,7 @@ main {
 header, footer {
   position: fixed;
   left: 0; right: 0;
-  z-index: 10;
+  z-index: 50;
   background: rgba(30,58,138,0.9);
   color: #fff;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -242,4 +242,49 @@ section, .section {
   .vasl-link {
     font-size: 0.93rem;
   }
+}
+@media (max-width: 640px) {
+  #main-header .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  #main-header nav {
+    position: fixed !important;
+    top: 56px !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 12rem !important;
+    background: rgba(30,58,138,0.97) !important;
+    border-radius: 0.75rem 0 0 0.75rem;
+    box-shadow: 0 8px 32px 0 rgba(30,41,59,0.18);
+    padding: 1rem 0.5rem !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    text-align: right;
+    z-index: 100;
+  }
+  #main-header nav a {
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: block;
+  }
+  #main-header nav a:hover {
+    background: #2563eb;
+  }
+  #main-header #menu-toggle {
+    display: block !important;
+  }
+  #main-header a.text-2xl {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+  }
+}
+#main-header #menu-toggle {
+  display: none;
 }

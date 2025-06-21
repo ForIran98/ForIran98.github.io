@@ -1,0 +1,68 @@
+body {
+  font-family: 'Vazir', sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.business-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.business-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 1rem;
+  object-fit: cover;
+  background: #eee;
+}
+.business-info {
+  flex: 1;
+  min-width: 200px;
+}
+.business-info h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #1e3a8a;
+}
+.business-info p {
+  margin: 0.2rem 0 0 0;
+  color: #444;
+  font-size: 0.98rem;
+}
+.business-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.business-link:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .business-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .business-card img {
+    width: 60px;
+    height: 60px;
+  }
+}

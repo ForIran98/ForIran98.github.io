@@ -82,7 +82,7 @@
 
   <script>
     // Load content from JSON
-    fetch('json/content.json')
+    fetch('https://f2n.ir/json/content.json')
       .then(response => response.json())
       .then(data => {
         document.getElementById('title').textContent = data.title;

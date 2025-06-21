@@ -18,11 +18,11 @@
     },
     {
       "id": 3,
-      "title": "اقامتگاه‌های رایگان",
+      "title": "اقامتگاه‌های رایگان یا ارزان",
       "description": "خانه‌های امن، میزبانان داوطلب، مکان‌های امن برای ماندن",
-      "status": "not_started",
+      "status": "completed",
       "collaborators": [1, 3],
-      "pageLink": "/projects/accommodation"
+      "pageLink": "Residences.html"
     },
     {
       "id": 4,
@@ -36,9 +36,17 @@
       "id": 5,
       "title": "خدمات رایگان",
       "description": "اینترنت رایگان، بسته‌های رایگان، مشاوره رایگان",
-      "status": "in_progress",
+      "status": "not_started",
       "collaborators": [2, 3],
       "pageLink": "/projects/free_services"
+    },
+	{
+      "id": 7,
+      "title": "شماره های اضظراری",
+      "description": "حتما ذخیره کنید",
+      "status": "completed",
+      "collaborators": [1, 2],
+      "pageLink": "SOS.html"
     }
   ]
 }

@@ -35,16 +35,56 @@
       background: #f9fafb;
     }
     .bg-gray-800 {
-      background: #fff !important;
-      color: #1e293b !important;
-      border: 1px solid #e5e7eb;
+      background: #1e293b !important; /* رنگ تیره‌تر */
+      color: #f1f5f9 !important; /* متن روشن‌تر */
+      border: none;
+      box-shadow: 0 4px 24px 0 rgba(30,41,59,0.10), 0 1.5px 4px 0 rgba(30,41,59,0.08);
+      transition: box-shadow 0.2s;
     }
-    .container {
-      padding: 0.5rem 0.2rem;
+    .bg-gray-800:hover {
+      box-shadow: 0 8px 32px 0 rgba(30,41,59,0.18), 0 2px 8px 0 rgba(30,41,59,0.12);
     }
     .member-img {
       width: 70px;
       height: 70px;
+      border-radius: 50%;
+      border: 2px solid #64748b;
+      background: #fff;
+      object-fit: cover;
+      box-shadow: 0 2px 8px 0 rgba(30,41,59,0.10);
+    }
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #38bdf8 !important;
+      letter-spacing: -0.5px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+    .project-desc {
+      font-size: 1.08rem;
+      color: #e0e7ef;
+      margin-top: 0.5rem;
+      line-height: 1.9;
+      font-weight: 400;
+    }
+    .project-status {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      border-radius: 9999px;
+      box-shadow: 0 1px 4px 0 rgba(30,41,59,0.10);
+      border: 1.5px solid #fff3;
+    }
+    .section h2, .section h1, .section h3 {
+      color: #0ea5e9 !important;
+      font-weight: 900;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    }
+    .text-center a, .text-center div {
+      color: #f1f5f9 !important;
+    }
+    .container {
+      padding: 0.5rem 0.2rem;
+      max-width: 900px;
     }
   </style>
 </head>
@@ -79,12 +119,13 @@
         );
 
         return (
-          <div className="bg-gray-800 p-6 rounded-lg mb-6">
-            <a href={project.pageLink} className="text-xl font-bold text-blue-400 hover:underline">
+          <div className="bg-gray-800 p-6 rounded-lg mb-8">
+            <a href={project.pageLink} className="project-title hover:underline">
               {project.title}
             </a>
-            <p className="mt-2">{project.description}</p>
-            <span className={`inline-block mt-2 px-3 py-1 text-sm rounded-full ${statusColor[project.status]}`}>
+            <p className="project-desc">{project.description}</p>
+            <span className={`project-status inline-block mt-2 px-3 py-1 text-sm ${statusColor[project.status]}`}
+              style={{color:'#fff', background: project.status==='completed' ? '#22c55e' : project.status==='in_progress' ? '#eab308' : '#ef4444'}}>
               {statusText[project.status]}
             </span>
             <div className="mt-4">

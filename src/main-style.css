@@ -1,0 +1,232 @@
+/* Minimal, modern, responsive styles for ForIran98 */
+@font-face {
+  font-family: 'Vazir';
+  src: url('../src/Vazir-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: 'Vazir', sans-serif;
+  background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+header, footer {
+  position: fixed;
+  left: 0; right: 0;
+  z-index: 10;
+  background: rgba(30,58,138,0.9);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+header { top: 0; }
+footer { bottom: 0; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+section, .section {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+#supporters-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+#supporters-list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  width: 5.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#supporters-list a:hover {
+  background: #e0e7ff;
+}
+#supporters-list img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+#supporters-list span {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+.news-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.news-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1e3a8a;
+}
+.news-time {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+  direction: ltr;
+  text-align: left;
+}
+.news-item.important .blinker {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  animation: blink 1s infinite;
+  display: inline-block;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* ابزارهای اتصال (vasl) */
+.vasl-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.vasl-item {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  min-width: 270px;
+  max-width: 340px;
+  width: 100%;
+  gap: 1.2rem;
+  transition: box-shadow 0.2s;
+}
+.vasl-item:hover {
+  box-shadow: 0 4px 16px rgba(30,58,138,0.13);
+}
+.vasl-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 0.7rem;
+  object-fit: contain;
+  background: #e0e7ff;
+  border: 1px solid #e5e7eb;
+}
+.vasl-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.vasl-info h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.2rem 0;
+  color: #1e3a8a;
+}
+.vasl-meta {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.vasl-link {
+  color: #2563eb;
+  background: #e0e7ff;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.97rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+.vasl-link:hover {
+  background: #c7d2fe;
+}
+@media (max-width: 600px) {
+  main {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+    padding: 0.2rem 0;
+  }
+  section, .section {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .news-title {
+    font-size: 1rem;
+  }
+  .news-time {
+    font-size: 0.85rem;
+  }
+  .vasl-list {
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+  .vasl-item {
+    padding: 0.7rem 0.7rem;
+    min-width: 0;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+  .vasl-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .vasl-info h2 {
+    font-size: 1rem;
+  }
+  .vasl-meta {
+    font-size: 0.9rem;
+  }
+  .vasl-link {
+    font-size: 0.93rem;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "Psiphon",
+      "icon": "file/psiphon.png",
+      "os": ["Android", "iOS", "Windows"],
+      "operator": ["همه اپراتورها"],
+      "link": "https://play.google.com/store/apps/details?id=com.psiphon3.subscription"
+    },
+    {
+      "name": "1.1.1.1 (Warp)",
+      "icon": "file/warp.png",
+      "os": ["Android", "iOS", "Windows", "Mac"],
+      "operator": ["همه اپراتورها"],
+      "link": "https://play.google.com/store/apps/details?id=com.cloudflare.onedotonedotone.oneandone"
+    },
+    {
+      "name": "OpenVPN Connect",
+      "icon": "file/openvpn.png",
+      "os": ["Android", "iOS", "Windows", "Mac"],
+      "operator": ["همه اپراتورها"],
+      "link": "https://play.google.com/store/apps/details?id=net.openvpn.openvpn"
+    },
+    {
+      "name": "Hotspot Shield",
+      "icon": "file/hotspot.png",
+      "os": ["Android", "iOS", "Windows", "Mac"],
+      "operator": ["همه اپراتورها"],
+      "link": "https://play.google.com/store/apps/details?id=hotspotshield.android.vpn"
+    }
+  ]
+}

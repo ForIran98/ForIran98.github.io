@@ -12,22 +12,8 @@
   <script src="src/tailwindcss.js"></script>
   <!-- استفاده فقط از فونت Vazir و حذف استایل‌های اضافه -->
   <link href="src/font-face.css" rel="stylesheet">
+  <link href="src/main-style.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Vazir', sans-serif;
-      background: linear-gradient(to bottom, #eff6ff, #dbeafe);
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
-    .btn {
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-    }
     /* حذف استایل‌های اضافه و تکراری */
   </style>
   <!-- Manifest for Add to Home Screen -->
@@ -47,42 +33,41 @@
       </nav>
     </div>
   </header>
-  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
-    <!-- Main Content -->
-    <section class="bg-white p-8 rounded-xl shadow-lg mb-8" id="features">
-      <h2 class="text-2xl font-bold text-blue-900 mb-4" id="features-title"></h2>
-      <ul class="list-disc list-inside space-y-3 text-gray-700" id="features-list"></ul>
+  <main class="container mx-auto px-6 py-10 flex-1 flex flex-col justify-center items-center overflow-hidden" style="margin-top:80px; margin-bottom:80px; min-height:calc(100vh - 160px);">
+    <section class="bg-white p-6 rounded-xl shadow-lg mb-6 w-full max-w-xl text-center">
+      <h2 class="text-xl font-bold text-blue-900 mb-3" id="features-title"></h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700 text-right text-sm" id="features-list"></ul>
     </section>
-
-    <section class="bg-white p-8 rounded-xl shadow-lg mb-8" id="add-to-home">
-      <h2 class="text-2xl font-bold text-blue-900 mb-4" id="add-to-home-title"></h2>
-      <p class="mb-4 text-gray-700" id="add-to-home-desc"></p>
-      <ol class="list-decimal list-inside space-y-3 text-gray-700" id="add-to-home-steps"></ol>
-      <button id="installPrompt" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg btn hover:bg-blue-700">
+    <section class="bg-white p-6 rounded-xl shadow-lg mb-6 w-full max-w-xl text-center">
+      <h2 class="text-xl font-bold text-blue-900 mb-3" id="add-to-home-title"></h2>
+      <p class="mb-3 text-gray-700 text-sm" id="add-to-home-desc"></p>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700 text-right text-sm" id="add-to-home-steps"></ol>
+      <button id="installPrompt" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700 text-sm">
         افزودن به صفحه اصلی
       </button>
     </section>
-
-    <section class="bg-white p-8 rounded-xl shadow-lg mb-8" id="share">
-      <h2 class="text-2xl font-bold text-blue-900 mb-4" id="share-title"></h2>
-      <p class="mb-4 text-gray-700" id="share-desc"></p>
-      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-        <button id="shareX" class="bg-blue-400 text-white px-6 py-3 rounded-lg btn hover:bg-blue-500">
+    <section class="bg-white p-6 rounded-xl shadow-lg mb-6 w-full max-w-xl text-center">
+      <h2 class="text-xl font-bold text-blue-900 mb-3" id="share-title"></h2>
+      <p class="mb-3 text-gray-700 text-sm" id="share-desc"></p>
+      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 justify-center">
+        <button id="shareX" class="bg-blue-400 text-white px-6 py-2 rounded-lg btn hover:bg-blue-500 text-sm">
           اشتراک‌گذاری در شبکه‌های اجتماعی
         </button>
       </div>
     </section>
-
-    <section class="bg-white p-8 rounded-xl shadow-lg mb-8" id="news-preview">
-      <h2 class="text-2xl font-bold text-blue-900 mb-4">آخرین اخبار</h2>
-      <div id="main-news-list"></div>
-      <div class="text-center mt-4">
-        <a href="news.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700">مشاهده اخبار بیشتر</a>
-      </div>
+    <section class="w-full max-w-xl text-center mb-6">
+      <a href="main.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg btn hover:bg-blue-700 text-sm" id="login-button"></a>
     </section>
-
-    <section class="text-center">
-      <a href="main.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg btn hover:bg-blue-700" id="login-button"></a>
+    <section class="w-full max-w-xl text-center mb-6">
+      <h2 class="text-lg font-bold text-blue-900 mb-3">حامیان پروژه</h2>
+      <div id="supporters-list" class="flex flex-wrap justify-center gap-4"></div>
+    </section>
+    <section class="w-full max-w-xl text-center mb-6" id="news-preview">
+      <h2 class="text-lg font-bold text-blue-900 mb-3">آخرین اخبار</h2>
+      <div id="main-news-list"></div>
+      <div class="text-center mt-2">
+        <a href="news.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700 text-sm">مشاهده اخبار بیشتر</a>
+      </div>
     </section>
   </main>
 
@@ -95,58 +80,73 @@
 
   <script>
     // Load content from JSON
-    fetch('https://f2n.ir/json/content.json')
+    fetch('json/content.json')
       .then(response => response.json())
       .then(data => {
-        document.getElementById('title').textContent = data.title;
-        document.getElementById('description').textContent = data.description;
-        document.getElementById('features-title').textContent = data.features.title;
-        document.getElementById('add-to-home-title').textContent = data.addToHome.title;
-        document.getElementById('add-to-home-desc').textContent = data.addToHome.description;
-        document.getElementById('share-title').textContent = data.share.title;
-        document.getElementById('share-desc').textContent = data.share.description;
-        document.getElementById('login-button').textContent = data.loginButton;
+        if(document.getElementById('title'))
+          document.getElementById('title').textContent = data.title;
+        if(document.getElementById('description'))
+          document.getElementById('description').textContent = data.description;
+        if(document.getElementById('features-title'))
+          document.getElementById('features-title').textContent = data.features.title;
+        if(document.getElementById('add-to-home-title'))
+          document.getElementById('add-to-home-title').textContent = data.addToHome.title;
+        if(document.getElementById('add-to-home-desc'))
+          document.getElementById('add-to-home-desc').textContent = data.addToHome.description;
+        if(document.getElementById('share-title'))
+          document.getElementById('share-title').textContent = data.share.title;
+        if(document.getElementById('share-desc'))
+          document.getElementById('share-desc').textContent = data.share.description;
+        if(document.getElementById('login-button'))
+          document.getElementById('login-button').textContent = data.loginButton;
 
         // Populate features list
         const featuresList = document.getElementById('features-list');
-        data.features.items.forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item;
-          featuresList.appendChild(li);
-        });
+        if(featuresList && data.features.items) {
+          featuresList.innerHTML = '';
+          data.features.items.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            featuresList.appendChild(li);
+          });
+        }
 
         // Populate add-to-home steps
         const stepsList = document.getElementById('add-to-home-steps');
-        data.addToHome.steps.forEach(step => {
-          const li = document.createElement('li');
-          li.textContent = step;
-          stepsList.appendChild(li);
-        });
+        if(stepsList && data.addToHome.steps) {
+          stepsList.innerHTML = '';
+          data.addToHome.steps.forEach(step => {
+            const li = document.createElement('li');
+            li.textContent = step;
+            stepsList.appendChild(li);
+          });
+        }
       })
       .catch(error => console.error('Error loading content:', error));
 
     // Handle Add to Home Screen Prompt
     let deferredPrompt;
     const installButton = document.getElementById('installPrompt');
+    if(installButton) {
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installButton.classList.remove('hidden');
+      });
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installButton.classList.remove('hidden');
-    });
-
-    installButton.addEventListener('click', async () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
+      installButton.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
         }
-        deferredPrompt = null;
-      }
-    });
+      });
+    }
 
     // Share functionality
     const shareSMS = document.getElementById('shareSMS');
@@ -184,13 +184,30 @@
         const newsListDiv = document.getElementById('main-news-list');
         mainNews.forEach(news => {
           const div = document.createElement('div');
-          div.className = 'mb-4 p-4 bg-gray-50 rounded shadow';
+          div.className = 'mb-3 p-3 bg-gray-50 rounded shadow text-right text-sm';
           div.innerHTML = `
             <div class='font-bold text-blue-900 mb-1'>${news.title}</div>
             <div class='text-xs text-gray-500 mb-1'>${new Intl.DateTimeFormat('fa-IR-u-ca-persian', {dateStyle: 'medium', timeStyle: 'short'}).format(new Date(news.datetime))}</div>
             <div class='text-gray-700'>${news.text || ''}</div>
           `;
           newsListDiv.appendChild(div);
+        });
+      });
+    // نمایش حامیان پروژه با لوگو و لینک
+    fetch('json/businesses.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('supporters-list');
+        data.businesses.forEach(biz => {
+          const card = document.createElement('a');
+          card.href = biz.link;
+          card.target = '_blank';
+          card.className = 'flex flex-col items-center justify-center p-2 bg-white rounded-lg shadow hover:bg-blue-50 transition w-28';
+          card.innerHTML = `
+            <img src="${biz.image}" alt="${biz.name}" class="w-12 h-12 rounded-full mb-2 object-cover bg-gray-200"/>
+            <span class="text-xs font-bold text-blue-900">${biz.name}</span>
+          `;
+          list.appendChild(card);
         });
       });
   </script>

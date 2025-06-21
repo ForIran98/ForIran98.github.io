@@ -13,9 +13,7 @@
   <!-- استفاده فقط از فونت Vazir و حذف استایل‌های اضافه -->
   <link href="src/font-face.css" rel="stylesheet">
   <link href="src/main-style.css" rel="stylesheet">
-  <style>
-    /* حذف استایل‌های اضافه و تکراری */
-  </style>
+ 
   <!-- Manifest for Add to Home Screen -->
   <link rel="manifest" href="json/manifest.json">
   <!-- Favicon for iOS -->
@@ -53,13 +51,7 @@
       <h2 class="text-lg font-bold text-blue-900 mb-3">حامیان پروژه</h2>
       <div id="supporters-list" class="flex flex-wrap justify-center gap-4"></div>
     </section>
-    <section class="w-full max-w-xl text-center mb-6" id="news-preview">
-      <h2 class="text-lg font-bold text-blue-900 mb-3">آخرین اخبار</h2>
-      <div id="main-news-list"></div>
-      <div class="text-center mt-2">
-        <a href="news.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700 text-sm">مشاهده اخبار بیشتر</a>
-      </div>
-    </section>
+    
     </main>
     <footer id="main-footer"></footer>
     <script src="src/common-header-footer.js"></script>
@@ -152,25 +144,6 @@
       });
     }
 
-    // اخبار (با کش)
-    fetchWithCache('json/news.json', 'news_json')
-      .then(newsList => {
-        newsList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
-        const mainNews = newsList.slice(0, 3);
-        const newsListDiv = document.getElementById('main-news-list');
-        if(newsListDiv) {
-          mainNews.forEach(news => {
-            const div = document.createElement('div');
-            div.className = 'mb-3 p-3 bg-gray-50 rounded shadow text-right text-sm';
-            div.innerHTML = `
-              <div class='font-bold text-blue-900 mb-1'>${news.title}</div>
-              <div class='text-xs text-gray-500 mb-1'>${new Intl.DateTimeFormat('fa-IR-u-ca-persian', {dateStyle: 'medium', timeStyle: 'short'}).format(new Date(news.datetime))}</div>
-              <div class='text-gray-700'>${news.text || ''}</div>
-            `;
-            newsListDiv.appendChild(div);
-          });
-        }
-      });
     // حامیان پروژه (با کش)
     fetchWithCache('json/businesses.json', 'businesses_json')
       .then(data => {

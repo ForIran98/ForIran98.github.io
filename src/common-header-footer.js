@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <nav class="flex gap-4 text-sm">
         <a href="index.html">صفحه اصلی</a>
         <a href="main.html">پروژه‌ها</a>
-        <a href="businesses.html">کسب‌وکارها</a>
-        <a href="news.html">اخبار</a>
-        <a href="vasl.html">وصل</a>
         <a href="ir.html">منابع ایرانی</a>
         <a href="Residences.html">اقامتگاه‌ها</a>
         <a href="SOS.html">شماره اضطراری</a>

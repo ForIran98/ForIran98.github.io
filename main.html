@@ -136,6 +136,12 @@
                         className="member-img mb-2" 
                       />
                       <div>{collab.name}</div>
+                      {collab.position && (
+                        <div className="text-xs text-blue-200 mt-1">{collab.position}</div>
+                      )}
+                      {collab.description && !collab.position && (
+                        <div className="text-xs text-blue-200 mt-1">{collab.description}</div>
+                      )}
                     </a>
                   </div>
                 ))}
@@ -194,6 +200,12 @@
                         className="member-img mb-2" 
                       />
                       <div>{collab.name}</div>
+                      {collab.position && (
+                        <div className="text-xs text-blue-200 mt-1">{collab.position}</div>
+                      )}
+                      {collab.description && !collab.position && (
+                        <div className="text-xs text-blue-200 mt-1">{collab.description}</div>
+                      )}
                     </a>
                   </div>
                 ))}

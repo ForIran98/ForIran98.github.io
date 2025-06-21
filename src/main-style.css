@@ -12,6 +12,7 @@ body, html, * {
   font-family: 'Vazir', sans-serif !important;
 }
 body {
+  font-family: 'Vazir', sans-serif;
   background: linear-gradient(to bottom, #eff6ff, #dbeafe);
   min-height: 100vh;
   margin: 0;
@@ -24,11 +25,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 1.08rem;
   color: #222;
   line-height: 2.1;
-  background: none;
+  background: #f9fafb;
 }
 .btn {
   transition: all 0.3s ease;
@@ -194,6 +195,11 @@ section, .section {
 }
 .vasl-link:hover {
   background: #c7d2fe;
+}
+.bg-gray-800 {
+  background: #fff !important;
+  color: #1e293b !important;
+  border: 1px solid #e5e7eb;
 }
 @media (max-width: 600px) {
   main {

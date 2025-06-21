@@ -12,13 +12,8 @@
     <!-- حذف استایل‌های داخلی و انتقال کامل به main-style.css -->
 </head>
 <body class="min-h-screen text-gray-800 flex flex-col bg-gray-100">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
-    </div>
-  </header>
-  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
     <div class="container">
         <div class="header">
             <h1>لیست شماره‌های اضطراری</h1>
@@ -75,14 +70,8 @@
             <p>ایده: <a href="https://x.com/old_boye/" target="_blank">شادان غمگسار</a></p>
         </div>
     </div>
-  </main>
-  <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 1404 برای ایران<</p>
-    </div>
-  </footer>
-
+    </main>
+    <footer id="main-footer"></footer>
     <!-- Bootstrap JS and Popper.js -->
     <script src="src/bootstrap.bundle.min.js"></script>
     <script src="src/common-header-footer.js"></script>

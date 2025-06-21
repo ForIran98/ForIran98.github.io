@@ -40,14 +40,9 @@
     }
   </style>
 </head>
-<body class="min-h-screen text-gray-800 flex flex-col bg-gray-100" style="overflow-x:hidden;">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
-    </div>
-  </header>
-  <main class="container mx-auto px-6 py-20 flex-1" style="margin-top:80px; margin-bottom:80px; overflow-y:auto;">
+<body class="min-h-screen text-gray-800 flex flex-col bg-gray-100">
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
     <div class="max-w-7xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md">
       <div class="mb-6 text-center">
         <h1 class="text-xl sm:text-2xl font-bold">اقامتگاه‌های رایگان یا ارزان</h1>
@@ -86,15 +81,10 @@
     <div class="text-center mt-6 text-sm text-gray-600">
     <a href="https://zenbranding.agency/hamomid">ایده و حامی: پروژه هم امید_آژانس برندسازی ذن</a>
     </div>
-  </main>
-  <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 1404 برای ایران</p>
-    </div>
-  </footer>
-
-  <script>
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="src/common-header-footer.js"></script>
+    <script>
     async function loadResidences() {
       try {
         const response = await fetch('json/residences.json');

@@ -101,7 +101,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
         }
         header, footer {
             position: fixed;
@@ -134,36 +133,25 @@
         }
     </style>
 </head>
-<body class="min-h-screen text-gray-800 flex flex-col bg-gray-100" style="overflow-x:hidden;">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
-
-    </div>
-  </header>
-  <main class="container mx-auto px-6 py-20 flex-1" style="margin-top:80px; margin-bottom:80px; overflow-y:auto;">
-    <div class="container">
-        <div class="header">
-            <h1>منابع ایرانی</h1>
-        </div>
-        <div class="alert alert-info" role="alert">
-            ایده این پروژه از <a href="https://x.com/old_boye" target="_blank">شادان غمگسار</a> و <a href="https://github.com/mohamadi7613" target="_blank">محمد محمدی</a> بوده است.<br>
-            برای تکمیل این لیست، به محمد در تلگرام پیام دهید: <a href="https://t.me/mohamadi_arch" target="_blank">@mohamadi_arch</a><br>
-            اگر پیشنهادی دارید، به ریک سانچز پیام دهید: <a href="https://t.me/m4tinbeigipv" target="_blank">@m4tinbeigipv</a><br>
-            منابع: <a href="https://www.zoomit.ir/websites/342552-websites-directory-internet-shutdown/" target="_blank">زومیت</a> | 
-            <a href="https://github.com/mohamadi7613/awsome_persian_websites/tree/main" target="_blank">گیت‌هاب محمد</a>
-        </div>
-        <div id="categories-container"></div>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 2025 برای ایران</p>
-    </div>
-  </footer>
-
+<body class="min-h-screen text-gray-800 flex flex-col bg-gray-100">
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
+      <div class="container">
+          <div class="header">
+              <h1>منابع ایرانی</h1>
+          </div>
+          <div class="alert alert-info" role="alert">
+              ایده این پروژه از <a href="https://x.com/old_boye" target="_blank">شادان غمگسار</a> و <a href="https://github.com/mohamadi7613" target="_blank">محمد محمدی</a> بوده است.<br>
+              برای تکمیل این لیست، به محمد در تلگرام پیام دهید: <a href="https://t.me/mohamadi_arch" target="_blank">@mohamadi_arch</a><br>
+              اگر پیشنهادی دارید، به ریک سانچز پیام دهید: <a href="https://t.me/m4tinbeigipv" target="_blank">@m4tinbeigipv</a><br>
+              منابع: <a href="https://www.zoomit.ir/websites/342552-websites-directory-internet-shutdown/" target="_blank">زومیت</a> | 
+              <a href="https://github.com/mohamadi7613/awsome_persian_websites/tree/main" target="_blank">گیت‌هاب محمد</a>
+          </div>
+          <div id="categories-container"></div>
+      </div>
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="src/common-header-footer.js"></script>
     <script>
         // فرض می‌کنیم فایل JSON در مسیر زیر باشد
         const jsonUrl = 'json/data.json';

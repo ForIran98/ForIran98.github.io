@@ -174,60 +174,45 @@
   </style>
 </head>
 <body class="min-h-screen text-gray-800 flex flex-col bg-gray-100">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
-      <nav class="hidden sm:flex space-x-4 space-x-reverse">
-        <a href="index.html#features" class="hover:text-blue-200 transition">ویژگی‌ها</a>
-        <a href="index.html#add-to-home" class="hover:text-blue-200 transition">نصب اپ</a>
-        <a href="index.html#share" class="hover:text-blue-200 transition">اشتراک‌گذاری</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
-    <h1 class="text-center my-4">📢 آخرین اخبار</h1>
-    <div id="news-container"></div>
-    <div class="text-center mt-8">
-      <a href="index.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700">بازگشت به صفحه اصلی</a>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 1404 برای ایران</p>
-    </div>
-  </footer>
-
-  <script>
-    fetch('json/news.json')
-      .then(response => response.json())
-      .then(newsList => {
-        newsList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
-        const container = document.getElementById('news-container');
-        newsList.forEach(news => {
-          const div = document.createElement('div');
-          div.className = 'news-item' + (news.important ? ' important' : '');
-          const dateObj = new Date(news.datetime);
-          const faTime = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
-            dateStyle: 'medium',
-            timeStyle: 'short'
-          }).format(dateObj);
-          div.innerHTML = `
-            <div class="news-title">
-              ${news.important ? '<span class="blinker"></span>' : ''}
-              ${news.title}
-            </div>
-            <div class="news-time">${faTime}</div>
-            ${news.text ? `<div class='mt-2 text-gray-700'>${news.text}</div>` : ''}
-            ${news.source ? `<div class='mt-2 text-xs text-gray-500'>منبع: ${news.source}</div>` : ''}
-          `;
-          container.appendChild(div);
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
+      <h1 class="text-center my-4">📢 آخرین اخبار</h1>
+      <div id="news-container"></div>
+      <div class="text-center mt-8">
+        <a href="index.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700">بازگشت به صفحه اصلی</a>
+      </div>
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="src/common-header-footer.js"></script>
+    <script>
+      fetch('json/news.json')
+        .then(response => response.json())
+        .then(newsList => {
+          newsList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+          const container = document.getElementById('news-container');
+          newsList.forEach(news => {
+            const div = document.createElement('div');
+            div.className = 'news-item' + (news.important ? ' important' : '');
+            const dateObj = new Date(news.datetime);
+            const faTime = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+              dateStyle: 'medium',
+              timeStyle: 'short'
+            }).format(dateObj);
+            div.innerHTML = `
+              <div class="news-title">
+                ${news.important ? '<span class="blinker"></span>' : ''}
+                ${news.title}
+              </div>
+              <div class="news-time">${faTime}</div>
+              ${news.text ? `<div class='mt-2 text-gray-700'>${news.text}</div>` : ''}
+              ${news.source ? `<div class='mt-2 text-xs text-gray-500'>منبع: ${news.source}</div>` : ''}
+            `;
+            container.appendChild(div);
+          });
+        })
+        .catch(error => {
+          document.getElementById('news-container').innerHTML = '<p>خطا در بارگذاری خبرها</p>';
         });
-      })
-      .catch(error => {
-        document.getElementById('news-container').innerHTML = '<p>خطا در بارگذاری خبرها</p>';
-      });
-  </script>
+    </script>
 </body>
 </html>

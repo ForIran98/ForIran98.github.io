@@ -22,18 +22,8 @@
   <link rel="apple-touch-icon" href="file/icon.png">
 </head>
 <body class="min-h-screen text-gray-800 flex flex-col">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
-      <nav class="hidden sm:flex space-x-4 space-x-reverse">
-        <a href="#features" class="hover:text-blue-200 transition">ویژگی‌ها</a>
-        <a href="#add-to-home" class="hover:text-blue-200 transition">نصب اپ</a>
-        <a href="#share" class="hover:text-blue-200 transition">اشتراک‌گذاری</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container mx-auto px-6 py-10 flex-1 flex flex-col justify-center items-center" style="margin-top:80px; margin-bottom:80px; min-height:calc(100vh - 160px);">
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-10 flex-1 flex flex-col justify-center items-center" style="margin-top:80px; margin-bottom:80px; min-height:calc(100vh - 160px);">
     <section class="bg-white p-6 rounded-xl shadow-lg mb-6 w-full max-w-xl text-center">
       <h2 class="text-xl font-bold text-blue-900 mb-3" id="features-title"></h2>
       <ul class="list-disc list-inside space-y-2 text-gray-700 text-right text-sm" id="features-list"></ul>
@@ -70,15 +60,9 @@
         <a href="news.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700 text-sm">مشاهده اخبار بیشتر</a>
       </div>
     </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 1404 برای ایران</p>
-    </div>
-  </footer>
-
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="src/common-header-footer.js"></script>
   <script>
     // Utility: fetch with localStorage cache fallback
     async function fetchWithCache(url, key) {

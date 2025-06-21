@@ -8,22 +8,13 @@
   <link href="src/businesses.css" rel="stylesheet">
 </head>
 <body class="min-h-screen text-gray-800 flex flex-col bg-gray-100">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
-    </div>
-  </header>
-  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
-    <h1 class="text-2xl font-bold text-blue-900 mb-8 text-center">کسب‌وکارهای حامی مردم</h1>
-    <div id="businesses-list"></div>
-  </main>
-  <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
-    <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 1404 برای ایران</p>
-    </div>
-  </footer>
-  <script src="src/businesses.js" defer></script>
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
+      <h1 class="text-2xl font-bold text-blue-900 mb-8 text-center">کسب‌وکارهای حامی مردم</h1>
+      <div id="businesses-list"></div>
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="src/common-header-footer.js"></script>
+    <script src="src/businesses.js" defer></script>
 </body>
 </html>

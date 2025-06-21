@@ -1,0 +1,16 @@
+{
+  "businesses": [
+    {
+      "name": "کافه امید",
+      "image": "file/img.jpg",
+      "link": "https://cafeomid.ir",
+      "description": "ارائه نوشیدنی رایگان به مردم در روزهای قطعی اینترنت."
+    },
+    {
+      "name": "سوپرمارکت مردم",
+      "image": "file/img.jpg",
+      "link": "https://supermardom.ir",
+      "description": "توزیع بسته حمایتی رایگان در بحران‌ها."
+    }
+  ]
+}

@@ -10,61 +10,73 @@
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.0/Vazirmatn-font-face.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Vazirmatn', sans-serif;
+            font-family: 'Vazir', sans-serif;
             background-color: #f8f9fa;
             color: #333;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
         }
         .container {
             max-width: 800px;
-            margin-top: 30px;
+            margin: 0 auto;
+            padding: 1rem;
         }
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
         }
         .highlight-card {
             background-color: #dc3545;
             color: white;
-            padding: 20px;
+            padding: 1rem;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
         .highlight-card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
         }
         .emergency-section {
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
         }
         .emergency-section h4 {
             color: #007bff;
             border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
+            padding-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         .emergency-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .emergency-list li {
-            padding: 10px 0;
-            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            font-size: 0.98rem;
+            line-height: 1.7;
         }
         .emergency-list a {
             color: #007bff;
             text-decoration: none;
+            word-break: break-all;
         }
         .emergency-list a:hover {
             text-decoration: underline;
         }
         .source {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #6c757d;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 1rem;
         }
         .download-btn {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
         }
         /* Header and Footer Styles */
         .min-h-screen {
@@ -90,8 +102,9 @@
             z-index: 10;
         }
         main {
-            margin-top: 80px;
-            margin-bottom: 80px;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            padding: 0.5rem 0;
         }
         footer {
             position: fixed;
@@ -99,6 +112,30 @@
             left: 0;
             right: 0;
             z-index: 10;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0.5rem 0.2rem;
+            }
+            .header h1 {
+                font-size: 1.1rem;
+            }
+            .highlight-card, .emergency-section, .download-btn {
+                padding: 0.5rem;
+                font-size: 0.95rem;
+            }
+            .emergency-section h4 {
+                font-size: 1rem;
+            }
+            .emergency-list li {
+                font-size: 0.92rem;
+                padding: 0.3rem 0;
+            }
+            main {
+                margin-top: 60px;
+                margin-bottom: 60px;
+                padding: 0.2rem 0;
+            }
         }
     </style>
 </head>

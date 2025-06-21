@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کسب‌وکارهای حامی مردم - برای ایران</title>
+  <link href="src/font-face.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .business-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+    .business-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 1rem;
+      object-fit: cover;
+      background: #eee;
+    }
+    .business-info {
+      flex: 1;
+      min-width: 200px;
+    }
+    .business-info h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      color: #1e3a8a;
+    }
+    .business-info p {
+      margin: 0.2rem 0 0 0;
+      color: #444;
+      font-size: 0.98rem;
+    }
+    .business-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .business-link:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .business-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .business-card img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen text-gray-800 flex flex-col overflow-hidden bg-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
+      <nav class="hidden sm:flex space-x-4 space-x-reverse">
+        <a href="index.html#features" class="hover:text-blue-200 transition">ویژگی‌ها</a>
+        <a href="index.html#add-to-home" class="hover:text-blue-200 transition">نصب اپ</a>
+        <a href="index.html#share" class="hover:text-blue-200 transition">اشتراک‌گذاری</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
+    <h1 class="text-2xl font-bold text-blue-900 mb-8 text-center">کسب‌وکارهای حامی مردم</h1>
+    <div id="businesses-list"></div>
+  </main>
+  <!-- Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 text-center">
+      <p class="text-sm">© 2025 برای ایران | پشتیبانی: t.me/m4tinbeigipv</p>
+    </div>
+  </footer>
+  <script>
+    fetch('json/businesses.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('businesses-list');
+        data.businesses.forEach(biz => {
+          const card = document.createElement('div');
+          card.className = 'business-card';
+          card.innerHTML = `
+            <img src="${biz.image}" alt="${biz.name}">
+            <div class="business-info">
+              <h2>${biz.name}</h2>
+              <p>${biz.description}</p>
+              <a href="${biz.link}" class="business-link" target="_blank">مشاهده سایت</a>
+            </div>
+          `;
+          list.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>

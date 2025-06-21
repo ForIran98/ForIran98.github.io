@@ -96,9 +96,57 @@
                 padding: 15px;
             }
         }
+        /* استایل‌های جدید برای هدر و فوتر ثابت */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        header, footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            background: rgba(0, 123, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: white;
+            z-index: 10;
+        }
+        header {
+            top: 0;
+            padding: 10px 0;
+        }
+        footer {
+            bottom: 0;
+            padding: 10px 0;
+        }
+        .container {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav {
+                display: none;
+            }
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen text-gray-800 flex flex-col overflow-hidden bg-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
+      <nav class="hidden sm:flex space-x-4 space-x-reverse">
+        <a href="index.html#features" class="hover:text-blue-200 transition">ویژگی‌ها</a>
+        <a href="index.html#add-to-home" class="hover:text-blue-200 transition">نصب اپ</a>
+        <a href="index.html#share" class="hover:text-blue-200 transition">اشتراک‌گذاری</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
     <div class="container">
         <div class="header">
             <h1>منابع ایرانی</h1>
@@ -112,6 +160,13 @@
         </div>
         <div id="categories-container"></div>
     </div>
+  </main>
+  <!-- Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 text-center">
+      <p class="text-sm">© 2025 برای ایران | پشتیبانی: t.me/m4tinbeigipv</p>
+    </div>
+  </footer>
 
     <script>
         // فرض می‌کنیم فایل JSON در مسیر زیر باشد

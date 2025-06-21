@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
   const footer = `
     <div class="container mx-auto px-6 py-4 text-center">
-      <p class="text-sm">© 2025 برای ایران | پشتیبانی: <a href="https://t.me/m4tinbeigipv" target="_blank" style="color:#fff;text-decoration:underline">t.me/m4tinbeigipv</a></p>
+      <p class="text-sm">برای ایران</p>
     </div>
   `;
   const h = document.getElementById('main-header');

@@ -1,27 +1,34 @@
 /* Minimal, modern, responsive styles for ForIran98 */
 @font-face {
   font-family: 'Vazir';
-  src: url('../src/Vazir-Regular.woff2') format('woff2');
+  src: url('Vazir-Regular.woff2') format('woff2'),
+       url('Vazir-Regular.woff') format('woff'),
+       url('Vazir-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+body, html, * {
+  font-family: 'Vazir', sans-serif !important;
+}
 body {
-  font-family: 'Vazir', sans-serif;
   background: linear-gradient(to bottom, #eff6ff, #dbeafe);
   min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 main {
   flex: 1;
-  overflow: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 1.08rem;
+  color: #222;
+  line-height: 2.1;
+  background: none;
 }
 .btn {
   transition: all 0.3s ease;

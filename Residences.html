@@ -40,7 +40,7 @@
     }
   </style>
 </head>
-<body class="min-h-screen text-gray-800 flex flex-col bg-gray-100">
+<body class="min-h-screen text-gray-800 flex flex-col">
     <header id="main-header"></header>
     <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
     <div class="max-w-7xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md">
@@ -69,7 +69,7 @@
               <th>عنوان</th>
               <th>شماره تماس</th>
               <th>قیمت</th>
-              <th>لینک اینستاگرام</th>
+              <th>اینستاگرام</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
@@ -101,7 +101,7 @@
             <td>${residence.شهر || ''}</td>
             <td>${residence.منطقه || ''}</td>
             <td>${residence.عنوان || ''}</td>
-            <td>${(residence.شماره || []).map(num => `<a href="tel:${num}">${num}</a>`).join(', ')}</td>
+            <td>${residence.شماره ? `<a href="tel:${residence.شماره}">${residence.شماره}</a>` : ''}</td>
             <td>${residence.قیمت || ''}</td>
             <td>${residence.اینستاگرام ? `<a href="${residence.اینستاگرام}" target="_blank">اینستاگرام</a>` : ''}</td>
           `;
@@ -117,7 +117,9 @@
             const city = cells[0].textContent.toLowerCase();
             const region = cells[1].textContent.toLowerCase();
             const title = cells[2].textContent.toLowerCase();
-            row.style.display = city.includes(searchTerm) || region.includes(searchTerm) || title.includes(searchTerm) ? '' : 'none';
+            const phone = cells[3].textContent.toLowerCase();
+            const price = cells[4].textContent.toLowerCase();
+            row.style.display = city.includes(searchTerm) || region.includes(searchTerm) || title.includes(searchTerm) || phone.includes(searchTerm) || price.includes(searchTerm) ? '' : 'none';
           }
         });
       } catch (error) {

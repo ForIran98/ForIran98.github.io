@@ -103,23 +103,13 @@
         // Populate features list
         const featuresList = document.getElementById('features-list');
         if(featuresList && data.features.items) {
-          featuresList.innerHTML = '';
-          data.features.items.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            featuresList.appendChild(li);
-          });
+          featuresList.innerHTML = data.features.items.map(item => `<li>${item}</li>`).join('');
         }
 
         // Populate add-to-home steps
         const stepsList = document.getElementById('add-to-home-steps');
         if(stepsList && data.addToHome.steps) {
-          stepsList.innerHTML = '';
-          data.addToHome.steps.forEach(step => {
-            const li = document.createElement('li');
-            li.textContent = step;
-            stepsList.appendChild(li);
-          });
+          stepsList.innerHTML = data.addToHome.steps.map(step => `<li>${step}</li>`).join('');
         }
       })
       .catch(error => console.error('Error loading content:', error));
@@ -133,47 +123,33 @@
         deferredPrompt = e;
         installButton.classList.remove('hidden');
       });
-
       installButton.addEventListener('click', async () => {
         if (deferredPrompt) {
           deferredPrompt.prompt();
           const { outcome } = await deferredPrompt.userChoice;
-          if (outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          } else {
-            console.log('User dismissed the A2HS prompt');
-          }
           deferredPrompt = null;
         }
       });
     }
 
     // Share functionality
-    const shareSMS = document.getElementById('shareSMS');
     const shareX = document.getElementById('shareX');
     const shareData = {
       title: 'برای ایران',
       text: 'این سایت اطلاعات ضروری برای مواقع قطعی اینترنت بین‌المللی ارائه می‌دهد. شامل شماره‌های اضطراری، سایت‌های مهم و اقامتگاه‌ها.',
       url: window.location.href
     };
-
-    shareSMS.addEventListener('click', () => {
-      const smsText = `${shareData.text} لینک: ${shareData.url}`;
-      window.location.href = `sms:?body=${encodeURIComponent(smsText)}`;
-    });
-
-    shareX.addEventListener('click', async () => {
-      if (navigator.share) {
-        try {
-          await navigator.share(shareData);
-          console.log('Content shared successfully');
-        } catch (err) {
-          console.error('Error sharing:', err);
+    if(shareX) {
+      shareX.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {}
+        } else {
+          alert('اشتراک‌گذاری در این مرورگر پشتیبانی نمی‌شود. لینک را کپی کنید: ' + shareData.url);
         }
-      } else {
-        alert('اشتراک‌گذاری در این مرورگر پشتیبانی نمی‌شود. لینک را کپی کنید: ' + shareData.url);
-      }
-    });
+      });
+    }
 
     // نمایش ۳ خبر آخر در صفحه اصلی
     fetch('json/news.json')
@@ -182,33 +158,37 @@
         newsList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
         const mainNews = newsList.slice(0, 3);
         const newsListDiv = document.getElementById('main-news-list');
-        mainNews.forEach(news => {
-          const div = document.createElement('div');
-          div.className = 'mb-3 p-3 bg-gray-50 rounded shadow text-right text-sm';
-          div.innerHTML = `
-            <div class='font-bold text-blue-900 mb-1'>${news.title}</div>
-            <div class='text-xs text-gray-500 mb-1'>${new Intl.DateTimeFormat('fa-IR-u-ca-persian', {dateStyle: 'medium', timeStyle: 'short'}).format(new Date(news.datetime))}</div>
-            <div class='text-gray-700'>${news.text || ''}</div>
-          `;
-          newsListDiv.appendChild(div);
-        });
+        if(newsListDiv) {
+          mainNews.forEach(news => {
+            const div = document.createElement('div');
+            div.className = 'mb-3 p-3 bg-gray-50 rounded shadow text-right text-sm';
+            div.innerHTML = `
+              <div class='font-bold text-blue-900 mb-1'>${news.title}</div>
+              <div class='text-xs text-gray-500 mb-1'>${new Intl.DateTimeFormat('fa-IR-u-ca-persian', {dateStyle: 'medium', timeStyle: 'short'}).format(new Date(news.datetime))}</div>
+              <div class='text-gray-700'>${news.text || ''}</div>
+            `;
+            newsListDiv.appendChild(div);
+          });
+        }
       });
     // نمایش حامیان پروژه با لوگو و لینک
     fetch('json/businesses.json')
       .then(res => res.json())
       .then(data => {
         const list = document.getElementById('supporters-list');
-        data.businesses.forEach(biz => {
-          const card = document.createElement('a');
-          card.href = biz.link;
-          card.target = '_blank';
-          card.className = 'flex flex-col items-center justify-center p-2 bg-white rounded-lg shadow hover:bg-blue-50 transition w-28';
-          card.innerHTML = `
-            <img src="${biz.image}" alt="${biz.name}" class="w-12 h-12 rounded-full mb-2 object-cover bg-gray-200"/>
-            <span class="text-xs font-bold text-blue-900">${biz.name}</span>
-          `;
-          list.appendChild(card);
-        });
+        if(list) {
+          data.businesses.forEach(biz => {
+            const card = document.createElement('a');
+            card.href = biz.link;
+            card.target = '_blank';
+            card.className = 'flex flex-col items-center justify-center p-2 bg-white rounded-lg shadow hover:bg-blue-50 transition w-28';
+            card.innerHTML = `
+              <img src="${biz.image}" alt="${biz.name}" class="w-12 h-12 rounded-full mb-2 object-cover bg-gray-200"/>
+              <span class="text-xs font-bold text-blue-900">${biz.name}</span>
+            `;
+            list.appendChild(card);
+          });
+        }
       });
   </script>
 </body>

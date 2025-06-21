@@ -245,23 +245,35 @@ section, .section {
 }
 @media (max-width: 640px) {
   #main-header .container {
+    flex-direction: column !important;
+    align-items: center !important;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+  #main-header a.text-2xl {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+  }
+  #main-header #menu-toggle {
+    display: block !important;
+    margin-top: 0.5rem;
+  }
   #main-header nav {
-    position: fixed !important;
-    top: 56px !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 12rem !important;
+    width: 100% !important;
+    position: static !important;
     background: rgba(30,58,138,0.97) !important;
-    border-radius: 0.75rem 0 0 0.75rem;
+    border-radius: 0.75rem;
     box-shadow: 0 8px 32px 0 rgba(30,41,59,0.18);
     padding: 1rem 0.5rem !important;
     flex-direction: column !important;
     gap: 0.5rem !important;
-    text-align: right;
+    text-align: center;
     z-index: 100;
+    margin-top: 0.5rem;
   }
   #main-header nav a {
     color: #fff !important;
@@ -272,19 +284,36 @@ section, .section {
   #main-header nav a:hover {
     background: #2563eb;
   }
-  #main-header #menu-toggle {
-    display: block !important;
-  }
-  #main-header a.text-2xl {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-    width: 100%;
-    position: relative;
-    z-index: 20;
-  }
 }
-#main-header #menu-toggle {
-  display: none;
+@media (min-width: 640px) {
+  #main-header .container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  #main-header nav {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    margin-top: 1rem !important;
+    position: static !important;
+    padding: 0 !important;
+  }
+  #main-header nav a {
+    color: #fff !important;
+    font-size: 1.08rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+  }
+  #main-header nav a:hover {
+    background: #2563eb;
+  }
+  #main-header #menu-toggle {
+    display: none !important;
+  }
 }

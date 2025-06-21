@@ -2,21 +2,27 @@
   "collaborators": [
     {
       "id": 1,
-      "name": "عضو اول",
-      "image": "avatar1.jpg",
-      "link": "https://t.me/member1"
+      "name": "ریک سانچز",
+      "image": "m4tinbeigi.jpg",
+      "link": "https://x.xom/m4tinbeigi"
     },
     {
       "id": 2,
-      "name": "عضو دوم",
-      "image": "",
-      "link": "https://t.me/member2"
+      "name": "رها حکیمی",
+      "image": "raha_hakimi78.jpg",
+      "link": "https://instagram.com/raha_hakimi78"
     },
     {
       "id": 3,
-      "name": "عضو سوم",
-      "image": "avatar3.jpg",
-      "link": "https://t.me/member3"
+      "name": "پارمیدا",
+      "image": "parm7ida.png",
+      "link": "https://t.me/parm7ida"
+    },
+    {
+      "id": 4,
+      "name": "شادان غمگسار",
+      "image": "old_boye.jpg",
+      "link": "https://x.com/old_boye"
     }
   ]
 }

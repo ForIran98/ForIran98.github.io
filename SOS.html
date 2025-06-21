@@ -66,9 +66,55 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        /* Header and Footer Styles */
+        .min-h-screen {
+            min-height: 100vh;
+        }
+        .bg-blue-900 {
+            background-color: #1e3a8a !important;
+        }
+        .backdrop-blur-sm {
+            backdrop-filter: blur(10px);
+        }
+        .text-white {
+            color: #fff;
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+        main {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen text-gray-800 flex flex-col overflow-hidden bg-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
+      <nav class="hidden sm:flex space-x-4 space-x-reverse">
+        <a href="index.html#features" class="hover:text-blue-200 transition">ویژگی‌ها</a>
+        <a href="index.html#add-to-home" class="hover:text-blue-200 transition">نصب اپ</a>
+        <a href="index.html#share" class="hover:text-blue-200 transition">اشتراک‌گذاری</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
     <div class="container">
         <div class="header">
             <h1>لیست شماره‌های اضطراری</h1>
@@ -125,6 +171,13 @@
             <p>ایده: <a href="https://x.com/old_boye/" target="_blank">شادان غمگسار</a></p>
         </div>
     </div>
+  </main>
+  <!-- Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 text-center">
+      <p class="text-sm">© 2025 برای ایران | پشتیبانی: t.me/m4tinbeigipv</p>
+    </div>
+  </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -10,16 +10,17 @@
   <title>برای ایران</title>
   <!-- Tailwind CSS CDN -->
   <script src="src/tailwindcss.js"></script>
-  <!-- Font Vazir -->
+  <!-- استفاده فقط از فونت Vazir و حذف استایل‌های اضافه -->
   <link href="src/font-face.css" rel="stylesheet">
-  <!-- Manifest for Add to Home Screen -->
-  <link rel="manifest" href="json/manifest.json">
-  <!-- Favicon for iOS -->
-  <link rel="apple-touch-icon" href="file/icon.png">
   <style>
     body {
       font-family: 'Vazir', sans-serif;
       background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
     }
     .btn {
       transition: all 0.3s ease;
@@ -27,7 +28,12 @@
     .btn:hover {
       transform: translateY(-2px);
     }
+    /* حذف استایل‌های اضافه و تکراری */
   </style>
+  <!-- Manifest for Add to Home Screen -->
+  <link rel="manifest" href="json/manifest.json">
+  <!-- Favicon for iOS -->
+  <link rel="apple-touch-icon" href="file/icon.png">
 </head>
 <body class="min-h-screen text-gray-800 flex flex-col overflow-hidden">
   <!-- Header -->
@@ -41,9 +47,8 @@
       </nav>
     </div>
   </header>
-
-  <!-- Main Content -->
-  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto">
+  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
+    <!-- Main Content -->
     <section class="bg-white p-8 rounded-xl shadow-lg mb-8" id="features">
       <h2 class="text-2xl font-bold text-blue-900 mb-4" id="features-title"></h2>
       <ul class="list-disc list-inside space-y-3 text-gray-700" id="features-list"></ul>

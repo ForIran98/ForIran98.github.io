@@ -23,6 +23,19 @@
       "name": "شادان غمگسار",
       "image": "file/profile/old_boye.jpg",
       "link": "https://x.com/old_boye"
-    }
+    },
+    {
+      "id": 5,
+      "name": "آژانس ذن",
+      "image": "file/profile/ZEN-Branding-Agency.png",
+      "link": "https://zenbranding.agency/"
+    },
+    {
+      "id": 6,
+      "name": "هم امید",
+      "image": "file/profile/hamomid.jpg",
+      "link": "https://zenbranding.agency/hamomid/"
+    },
+
   ]
 }

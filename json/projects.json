@@ -13,15 +13,15 @@
       "title": "جابجایی بین‌شهری",
       "description": "لیست راننده‌ها، مسیرهای امن، سیستم هماهنگی حمل‌ونقل",
       "status": "in_progress",
-      "collaborators": [1, 2,5],
-      "pageLink": "/projects/transport"
+      "collaborators": [1,2,5],
+      "pageLink": "transport.html"
     },
     {
       "id": 3,
       "title": "اقامتگاه‌های رایگان یا ارزان",
       "description": "خانه‌های امن، میزبانان داوطلب، مکان‌های امن برای ماندن",
       "status": "completed",
-      "collaborators": [1,2,3,5],
+      "collaborators": [1,2,3,6],
       "pageLink": "Residences.html"
     },
     {
@@ -30,7 +30,7 @@
       "description": "برندها یا مجموعه‌هایی که با مردم در بحران‌ها همراهی کردند",
       "status": "completed",
       "collaborators": [1],
-      "pageLink": "/projects/supporters"
+      "pageLink": "businesses.html"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "description": "اینترنت رایگان، بسته‌های رایگان، مشاوره رایگان",
       "status": "not_started",
       "collaborators": [1],
-      "pageLink": "/projects/free_services"
+      "pageLink": "free_services.html"
     },
 	{
       "id": 6,

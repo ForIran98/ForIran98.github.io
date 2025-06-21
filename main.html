@@ -90,8 +90,8 @@
 
         React.useEffect(() => {
           Promise.all([
-            fetch('https://f2n.ir/json/projects.json').then(res => res.json()),
-            fetch('https://f2n.ir/json/collaborators.json').then(res => res.json())
+            fetch('json/projects.json').then(res => res.json()),
+            fetch('json/collaborators.json').then(res => res.json())
           ])
             .then(([projectsRes, collaboratorsRes]) => {
               const sortedProjects = projectsRes.projects.sort((a, b) => {

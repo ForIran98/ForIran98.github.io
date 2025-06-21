@@ -79,9 +79,27 @@
   </footer>
 
   <script>
-    // Load content from JSON
-    fetch('json/content.json')
-      .then(response => response.json())
+    // Utility: fetch with localStorage cache fallback
+    async function fetchWithCache(url, key) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network error');
+        const data = await response.json();
+        localStorage.setItem(key, JSON.stringify({ data, ts: Date.now() }));
+        return data;
+      } catch (e) {
+        const cached = localStorage.getItem(key);
+        if (cached) {
+          try {
+            return JSON.parse(cached).data;
+          } catch {}
+        }
+        throw e;
+      }
+    }
+
+    // Load content from JSON (with cache)
+    fetchWithCache('json/content.json', 'content_json')
       .then(data => {
         if(document.getElementById('title'))
           document.getElementById('title').textContent = data.title;
@@ -99,13 +117,11 @@
           document.getElementById('share-desc').textContent = data.share.description;
         if(document.getElementById('login-button'))
           document.getElementById('login-button').textContent = data.loginButton;
-
         // Populate features list
         const featuresList = document.getElementById('features-list');
         if(featuresList && data.features.items) {
           featuresList.innerHTML = data.features.items.map(item => `<li>${item}</li>`).join('');
         }
-
         // Populate add-to-home steps
         const stepsList = document.getElementById('add-to-home-steps');
         if(stepsList && data.addToHome.steps) {
@@ -151,9 +167,8 @@
       });
     }
 
-    // نمایش ۳ خبر آخر در صفحه اصلی
-    fetch('json/news.json')
-      .then(response => response.json())
+    // اخبار (با کش)
+    fetchWithCache('json/news.json', 'news_json')
       .then(newsList => {
         newsList.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
         const mainNews = newsList.slice(0, 3);
@@ -171,9 +186,8 @@
           });
         }
       });
-    // نمایش حامیان پروژه با لوگو و لینک
-    fetch('json/businesses.json')
-      .then(res => res.json())
+    // حامیان پروژه (با کش)
+    fetchWithCache('json/businesses.json', 'businesses_json')
       .then(data => {
         const list = document.getElementById('supporters-list');
         if(list) {
@@ -190,6 +204,13 @@
           });
         }
       });
+
+    // Register service worker for offline support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('src/sw.js').catch(() => {});
+      });
+    }
   </script>
 </body>
 </html>

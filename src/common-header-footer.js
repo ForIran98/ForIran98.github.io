@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <nav id="main-nav" class="flex-col gap-2 text-base w-full sm:w-auto sm:flex-row sm:gap-6 sm:static sm:bg-transparent sm:rounded-none sm:shadow-none sm:flex hidden items-center justify-center mt-2 sm:mt-0 bg-blue-900/95 rounded-lg shadow-lg p-4 transition-all duration-200 ease-in-out z-20 sm:justify-center">
         <a href="main.html">پروژه‌ها</a>
         <a href="ir.html">منابع ایرانی</a>
-        <a href="about.html">درباره</a>
-        <a href="free_services.html">خدمات رایگان</a>
-        <a href="businesses.html">کسب‌وکارهای حامی</a>
         <a href="Residences.html">اقامتگاه‌ها</a>
         <a href="SOS.html">شماره اضطراری</a>
       </nav>

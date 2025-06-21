@@ -86,6 +86,48 @@
       padding: 0.5rem 0.2rem;
       max-width: 900px;
     }
+    .project-collaborators {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .project-collaborators .collab-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid #38bdf8;
+      object-fit: cover;
+      box-shadow: 0 1px 4px 0 rgba(30,41,59,0.10);
+      transition: transform 0.15s;
+      margin: 0;
+      padding: 0;
+    }
+    .project-collaborators .collab-img:hover {
+      transform: scale(1.12) rotate(-3deg);
+      box-shadow: 0 2px 8px 0 rgba(30,41,59,0.18);
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0.5rem 0.1rem;
+        max-width: 100vw;
+      }
+      .bg-gray-800 {
+        padding: 1rem !important;
+      }
+      .project-title {
+        font-size: 1.1rem;
+      }
+      .project-desc {
+        font-size: 0.98rem;
+      }
+      .project-collaborators .collab-img {
+        width: 26px;
+        height: 26px;
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen text-gray-800 flex flex-col">
@@ -118,29 +160,20 @@
               style={{color:'#fff', background: project.status==='completed' ? '#22c55e' : project.status==='in_progress' ? '#eab308' : '#ef4444'}}>
               {statusText[project.status]}
             </span>
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold">همکاران پروژه:</h3>
-              <div className="flex flex-wrap gap-4 mt-2">
+            {projectCollaborators.length > 0 && (
+              <div className="project-collaborators">
                 {projectCollaborators.map(collab => (
-                  <div key={collab.id} className="text-center">
-                    <a href={collab.link} target="_blank" rel="noopener noreferrer">
-                      <img 
-                        src={collab.image || "https://via.placeholder.com/100"} 
-                        alt={collab.name} 
-                        className="member-img mb-2" 
-                      />
-                      <div>{collab.name}</div>
-                      {collab.position && (
-                        <div className="text-xs text-blue-200 mt-1">{collab.position}</div>
-                      )}
-                      {collab.description && !collab.position && (
-                        <div className="text-xs text-blue-200 mt-1">{collab.description}</div>
-                      )}
-                    </a>
-                  </div>
+                  <a key={collab.id} href={collab.link} target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={collab.image || "https://via.placeholder.com/100"} 
+                      alt={collab.name} 
+                      className="collab-img" 
+                      title={collab.name}
+                    />
+                  </a>
                 ))}
               </div>
-            </div>
+            )}
           </div>
         );
       };

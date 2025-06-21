@@ -80,7 +80,7 @@
       text-shadow: 0 1px 2px rgba(0,0,0,0.07);
     }
     .text-center a, .text-center div {
-      color: #f1f5f9 !important;
+      color: #000000 !important;
     }
     .container {
       padding: 0.5rem 0.2rem;
@@ -130,22 +130,57 @@
       .flex.flex-wrap.gap-6.justify-center {
         flex-direction: row !important;
         flex-wrap: wrap !important;
-        gap: 0.3rem !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
+        gap: 0.2rem !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
       }
       .flex.flex-wrap.gap-6.justify-center > div {
         width: auto !important;
-        min-width: unset !important;
-        margin-bottom: 0.2rem !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        min-width: 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
       }
       .member-img {
-        width: 32px !important;
-        height: 32px !important;
-        margin-bottom: 0.1rem !important;
+        width: 36px !important;
+        height: 36px !important;
+        margin-bottom: 0.15rem !important;
+      }
+      .flex.flex-wrap.gap-6.justify-center div > a > div {
+        font-size: 0.85rem !important;
+        margin-top: 0.1rem !important;
+        word-break: break-word;
+        text-align: center;
+        max-width: 60px;
+      }
+    }
+    @media (min-width: 601px) {
+      .flex.flex-wrap.gap-6.justify-center {
+        gap: 1.2rem !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+      }
+      .flex.flex-wrap.gap-6.justify-center > div {
+        width: auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .member-img {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 0.2rem !important;
+      }
+      .flex.flex-wrap.gap-6.justify-center div > a > div {
+        font-size: 1rem !important;
+        margin-top: 0.2rem !important;
+        max-width: 80px;
+        text-align: center;
       }
     }
   </style>

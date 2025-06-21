@@ -50,13 +50,125 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
+
+    /* Header and Footer Styles */
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .bg-blue-900 {
+      background-color: #1e3a8a;
+    }
+
+    .bg-blue-900/90 {
+      background-color: rgba(30, 58, 138, 0.9);
+    }
+
+    .backdrop-blur-sm {
+      backdrop-filter: blur(10px);
+    }
+
+    .text-white {
+      color: #ffffff;
+    }
+
+    .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .z-10 {
+      z-index: 10;
+    }
+
+    /* Container for header, main, and footer */
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Flex utilities */
+    .flex {
+      display: flex;
+    }
+
+    .flex-1 {
+      flex: 1;
+    }
+
+    /* Overflow utilities */
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .overflow-y-auto {
+      overflow-y: auto;
+    }
+
+    /* Margin utilities */
+    .mt-20 {
+      margin-top: 5rem;
+    }
+
+    .mb-20 {
+      margin-bottom: 5rem;
+    }
+
+    /* Padding utilities */
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Text utilities */
+    .text-center {
+      text-align: center;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    /* Link utilities */
+    .hover\:text-blue-200:hover {
+      color: #bfdbfe;
+    }
+
+    /* Transition utilities */
+    .transition {
+      transition: all 0.3s ease;
+    }
   </style>
 </head>
-<body>
-  <div class="container">
+<body class="min-h-screen text-gray-800 flex flex-col overflow-hidden bg-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold">برای ایران</h1>
+      <nav class="hidden sm:flex space-x-4 space-x-reverse">
+        <a href="index.html#features" class="hover:text-blue-200 transition">ویژگی‌ها</a>
+        <a href="index.html#add-to-home" class="hover:text-blue-200 transition">نصب اپ</a>
+        <a href="index.html#share" class="hover:text-blue-200 transition">اشتراک‌گذاری</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto" style="margin-top:80px; margin-bottom:80px;">
     <h1 class="text-center my-4">📢 آخرین اخبار</h1>
     <div id="news-container"></div>
-  </div>
+  </main>
+  <!-- Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white shadow-md z-10">
+    <div class="container mx-auto px-6 py-4 text-center">
+      <p class="text-sm">© 2025 برای ایران | پشتیبانی: t.me/m4tinbeigipv</p>
+    </div>
+  </footer>
 
   <script>
     fetch('json/news.json')

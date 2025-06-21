@@ -9,13 +9,13 @@
   <meta name="theme-color" content="#1e3a8a">
   <title>برای ایران</title>
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="src/tailwindcss.js"></script>
   <!-- Font Vazir -->
-  <link href="https://cdn.jsdelivr.net/npm/vazir-font@33.0.0/dist/font-face.css" rel="stylesheet">
+  <link href="src/font-face.css" rel="stylesheet">
   <!-- Manifest for Add to Home Screen -->
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="json/manifest.json">
   <!-- Favicon for iOS -->
-  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="apple-touch-icon" href="file/icon.png">
   <style>
     body {
       font-family: 'Vazir', sans-serif;
@@ -75,7 +75,7 @@
 
   <script>
     // Load content from JSON
-    fetch('/content.json')
+    fetch('json/content.json')
       .then(response => response.json())
       .then(data => {
         document.getElementById('title').textContent = data.title;

@@ -1,16 +1,16 @@
 {
   "businesses": [
     {
-      "name": "کافه امید",
-      "image": "file/img.jpg",
-      "link": "https://cafeomid.ir",
-      "description": "ارائه نوشیدنی رایگان به مردم در روزهای قطعی اینترنت."
+      "name": "آژانس ذن",
+      "image": "file/profile/ZEN-Branding-Agency.png",
+      "link": "https://zenbranding.agency/",
+      "description": ""
     },
     {
-      "name": "سوپرمارکت مردم",
-      "image": "file/img.jpg",
-      "link": "https://supermardom.ir",
-      "description": "توزیع بسته حمایتی رایگان در بحران‌ها."
+      "name": "هم امید",
+      "image": "file/profile/hamomid.jpg",
+      "link": "https://zenbranding.agency/hamomid/",
+      "description": ""
     }
   ]
 }

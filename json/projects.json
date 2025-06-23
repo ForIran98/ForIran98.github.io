@@ -47,6 +47,54 @@
       "status": "completed",
       "collaborators": [1, 4],
       "pageLink": "SOS.html"
+    },
+    {
+      "id": 7,
+      "title": "دایرکتوری شماره مشاغل",
+      "description": "لیست شماره تماس و آدرس مشاغل ضروری و مفید برای عموم مردم",
+      "status": "in_progress",
+      "collaborators": [1],
+      "pageLink": "jobs.html"
+    },
+    {
+      "id": 8,
+      "title": "کودکان و نوجوانان",
+      "description": "پشتیبانی، آموزش و منابع برای کودکان و نوجوانان در بحران‌ها",
+      "status": "not_started",
+      "collaborators": [1],
+      "pageLink": "children.html"
+    },
+    {
+      "id": 9,
+      "title": "نیروهای تعدیل شده",
+      "description": "حمایت و فرصت‌های شغلی برای نیروهای تعدیل شده و بیکار شده",
+      "status": "not_started",
+      "collaborators": [1],
+      "pageLink": "fired.html"
+    },
+    {
+      "id": 10,
+      "title": "کتاب‌ها و پادکست‌ها",
+      "description": "معرفی کتاب‌ها و پادکست‌های مفید برای رشد فردی و عبور از بحران",
+      "status": "not_started",
+      "collaborators": [1],
+      "pageLink": "books_podcasts.html"
+    },
+    {
+      "id": 11,
+      "title": "تراپی و مشاوره",
+      "description": "دسترسی به خدمات تراپی و مشاوره برای عموم مردم",
+      "status": "not_started",
+      "collaborators": [1],
+      "pageLink": "therapy.html"
+    },
+    {
+      "id": 12,
+      "title": "محتوای راه حل بحران",
+      "description": "مطالب و راهکارهای عملی برای مدیریت بحران‌های فردی و اجتماعی",
+      "status": "not_started",
+      "collaborators": [1],
+      "pageLink": "crisis_solutions.html"
     }
   ]
 }

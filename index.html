@@ -26,13 +26,18 @@
       <h2 class="text-xl font-bold text-blue-900 mb-3" id="features-title"></h2>
       <ul class="list-disc list-inside space-y-2 text-gray-700 text-right text-sm" id="features-list"></ul>
     </section>
-    <section class="bg-white p-6 rounded-xl shadow-lg mb-6 w-full max-w-xl text-center">
-      <h2 class="text-xl font-bold text-blue-900 mb-3" id="add-to-home-title"></h2>
-      <p class="mb-3 text-gray-700 text-sm" id="add-to-home-desc"></p>
-      <ol class="list-decimal list-inside space-y-2 text-gray-700 text-right text-sm" id="add-to-home-steps"></ol>
-      <button id="installPrompt" class="hidden mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg btn hover:bg-blue-700 text-sm">
+    <section class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-2xl mb-8 w-full max-w-xl text-center border border-blue-200 relative">
+      <div class="flex flex-col items-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+        <h2 class="text-2xl font-extrabold text-blue-900 mb-2" id="add-to-home-title"></h2>
+      </div>
+      <p class="mb-4 text-gray-700 text-base leading-relaxed" id="add-to-home-desc"></p>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700 text-right text-base mb-4" id="add-to-home-steps"></ol>
+      <button id="installPrompt" class="mt-4 bg-blue-600 text-white px-8 py-3 rounded-xl btn shadow-lg hover:bg-blue-700 text-base font-bold flex items-center justify-center gap-2 transition-all duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v12m0 0l-4-4m4 4l4-4" /></svg>
         افزودن به صفحه اصلی
       </button>
+      <div id="installPromptMsg" class="mt-3 text-sm text-gray-500"></div>
     </section>
     <section class="bg-white p-6 rounded-xl shadow-lg mb-6 w-full max-w-xl text-center">
       <h2 class="text-xl font-bold text-blue-900 mb-3" id="share-title"></h2>
@@ -110,19 +115,33 @@
     // Handle Add to Home Screen Prompt
     let deferredPrompt;
     const installButton = document.getElementById('installPrompt');
+    const installMsg = document.getElementById('installPromptMsg');
+    let canInstall = false;
     if(installButton) {
       window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        installButton.classList.remove('hidden');
+        canInstall = true;
+        installButton.disabled = false;
+        if(installMsg) installMsg.textContent = '';
       });
       installButton.addEventListener('click', async () => {
         if (deferredPrompt) {
           deferredPrompt.prompt();
           const { outcome } = await deferredPrompt.userChoice;
           deferredPrompt = null;
+        } else {
+          // اگر beforeinstallprompt نبود، راهنمای عمومی بده
+          if(installMsg) installMsg.textContent = 'در صورتی که گزینه افزودن به صفحه اصلی را نمی‌بینید، از منوی مرورگر (سه نقطه یا اشتراک‌گذاری) گزینه "Add to Home Screen" یا "افزودن به صفحه اصلی" را انتخاب کنید.';
         }
       });
+      // اگر beforeinstallprompt هرگز اجرا نشد (مثلاً در iOS یا برخی مرورگرها)
+      setTimeout(() => {
+        if (!canInstall && installMsg) {
+          installButton.disabled = false;
+          installMsg.textContent = 'در برخی مرورگرها (مانند سافاری یا کروم iOS)، برای افزودن به صفحه اصلی، از منوی اشتراک‌گذاری یا سه نقطه استفاده کنید.';
+        }
+      }, 2000);
     }
 
     // Share functionality

@@ -201,6 +201,17 @@ section, .section {
   color: #1e293b !important;
   border: 1px solid #e5e7eb;
 }
+/* فاصله مناسب بین محتوا و هدر/فوتر برای همه صفحات */
+.main-spacing {
+  margin-top: 100px;
+  margin-bottom: 90px;
+}
+@media (max-width: 600px) {
+  .main-spacing {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
 @media (max-width: 600px) {
   main {
     margin-top: 60px !important;

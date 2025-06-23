@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const header = `
     <div class="container mx-auto px-4 py-3 flex flex-row items-center justify-between relative" style="min-height:56px;">
-      <a href="index.html" class="text-2xl sm:text-3xl font-extrabold text-white block text-center flex-1 order-2 sm:order-1" style="z-index:20;">برای ایران</a>
+      <a href="main.html" class="text-2xl sm:text-3xl font-extrabold text-white block text-center flex-1 order-2 sm:order-1" style="z-index:20;">برای ایران</a>
       <button id="menu-toggle" class="sm:hidden text-white focus:outline-none z-30 ml-2 order-1 sm:order-2" aria-label="باز کردن منو">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>

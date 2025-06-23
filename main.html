@@ -221,6 +221,11 @@
               style={{color:'#fff', background: project.status==='completed' ? '#22c55e' : project.status==='in_progress' ? '#eab308' : '#ef4444'}}>
               {statusText[project.status]}
             </span>
+            <div className="mt-4">
+              <a href={project.pageLink} target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-lg transition-all duration-150 text-sm shadow">
+                ورود به پروژه
+              </a>
+            </div>
             {projectCollaborators.length > 0 && (
               <div className="project-collaborators">
                 {projectCollaborators.map(collab => (

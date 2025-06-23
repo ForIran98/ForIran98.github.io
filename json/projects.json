@@ -52,7 +52,7 @@
       "id": 7,
       "title": "دایرکتوری شماره مشاغل",
       "description": "لیست شماره تماس و آدرس مشاغل ضروری و مفید برای عموم مردم",
-      "status": "in_progress",
+      "status": "not_started",
       "collaborators": [1],
       "pageLink": "jobs.html"
     },

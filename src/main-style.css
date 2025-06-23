@@ -286,6 +286,9 @@ section, .section {
     z-index: 100;
     margin-top: 0.5rem;
   }
+  #main-header nav {
+    background: rgba(30,58,138,0.97) !important;
+  }
   #main-header nav a {
     color: #fff !important;
     padding: 0.5rem 1rem;

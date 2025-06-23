@@ -164,6 +164,77 @@
                     card.appendChild(listGroup);
                     container.appendChild(card);
                 });
+
+                // اضافه کردن قابلیت جستجو
+                const searchBox = document.createElement('input');
+                searchBox.type = 'text';
+                searchBox.placeholder = 'جستجو بین سایت‌ها یا توضیحات...';
+                searchBox.className = 'w-full p-3 mb-6 border rounded-lg text-right text-base';
+                container.parentNode.insertBefore(searchBox, container);
+
+                let allSites = [];
+                data.categories.forEach(category => {
+                    category.sites.forEach(site => {
+                        // اگر توضیح ندارد، توضیح پیش‌فرض اضافه کن
+                        if (!site.description || site.description.trim() === '') {
+                            site.description = 'بدون توضیح';
+                        }
+                        allSites.push({
+                            ...site,
+                            category: category.name
+                        });
+                    });
+                });
+
+                function renderSites(sitesByCategory) {
+                    container.innerHTML = '';
+                    sitesByCategory.forEach(category => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        const cardHeader = document.createElement('div');
+                        cardHeader.className = 'card-header';
+                        cardHeader.textContent = category.name;
+                        card.appendChild(cardHeader);
+                        const listGroup = document.createElement('ul');
+                        listGroup.className = 'list-group list-group-flush';
+                        category.sites.forEach(site => {
+                            const listItem = document.createElement('li');
+                            listItem.className = 'list-group-item';
+                            listItem.innerHTML = `<a href="${site.url}" target="_blank">${site.name}</a> - ${site.description}`;
+                            listGroup.appendChild(listItem);
+                        });
+                        card.appendChild(listGroup);
+                        container.appendChild(card);
+                    });
+                }
+
+                function filterAndRender(searchValue) {
+                    if (!searchValue) {
+                        renderSites(data.categories);
+                        return;
+                    }
+                    const filtered = {};
+                    allSites.forEach(site => {
+                        if (
+                            site.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+                            site.description.toLowerCase().includes(searchValue.toLowerCase())
+                        ) {
+                            if (!filtered[site.category]) filtered[site.category] = [];
+                            filtered[site.category].push(site);
+                        }
+                    });
+                    const filteredCategories = Object.keys(filtered).map(cat => ({
+                        name: cat,
+                        sites: filtered[cat]
+                    }));
+                    renderSites(filteredCategories);
+                }
+
+                searchBox.addEventListener('input', function() {
+                    filterAndRender(this.value);
+                });
+
+                renderSites(data.categories);
             })
             .catch(error => console.error('Error loading JSON:', error));
     </script>

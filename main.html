@@ -19,12 +19,15 @@
         .then(res => res.json())
         .then(data => {
           const list = document.getElementById('simple-projects-list');
-          list.innerHTML = data.projects.map(p => `
-            <div class="bg-white rounded-xl shadow-lg p-6 mb-6 border border-blue-100 hover:shadow-2xl transition">
-              <h2 class="text-xl font-bold text-blue-800 mb-2">${p.title}</h2>
-              <p class="text-gray-700 text-base">${p.description}</p>
-            </div>
-          `).join('');
+          // فقط پروژه‌های انجام‌شده را نمایش بده و لینک کن
+          list.innerHTML = data.projects
+            .filter(p => p.status === 'completed')
+            .map(p => `
+              <a href="${p.pageLink}" class="block bg-white rounded-xl shadow-lg p-6 mb-6 border border-blue-100 hover:shadow-2xl transition no-underline">
+                <h2 class="text-xl font-bold text-blue-800 mb-2">${p.title}</h2>
+                <p class="text-gray-700 text-base">${p.description}</p>
+              </a>
+            `).join('');
         });
       </script>
     </main>

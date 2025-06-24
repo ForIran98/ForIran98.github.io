@@ -45,6 +45,9 @@
           localStorage.setItem('userFirstName', firstName);
           localStorage.setItem('userLastName', lastName);
           document.getElementById('profileMsg').textContent = 'اطلاعات با موفقیت ذخیره شد!';
+          setTimeout(function() {
+            window.location.href = 'main.html';
+          }, 3000);
         }
       });
     </script>

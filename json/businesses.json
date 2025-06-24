@@ -7,7 +7,8 @@
       "description": "آژانس تبلیغاتی و برندینگ.",
       "isFree": false,
       "isDiscounted": true,
-      "reason": "در بحران‌ها خدمات مشاوره رایگان یا تخفیف‌دار به کسب‌وکارهای کوچک ارائه داده است."
+      "reason": "در بحران‌ها خدمات مشاوره رایگان یا تخفیف‌دار به کسب‌وکارهای کوچک ارائه داده است.",
+      "sourceLink": "https://example.com/zen-support"
     },
     {
       "name": "هم امید",
@@ -16,7 +17,8 @@
       "description": "پلتفرم حمایت اجتماعی.",
       "isFree": false,
       "isDiscounted": true,
-      "reason": "در کمپین‌های مردمی و حمایت از آسیب‌دیدگان فعال بوده است."
+      "reason": "در کمپین‌های مردمی و حمایت از آسیب‌دیدگان فعال بوده است.",
+      "sourceLink": "https://example.com/hamomid-support"
     }
   ]
 }

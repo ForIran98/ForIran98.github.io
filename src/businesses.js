@@ -26,9 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="${biz.link}" class="text-xs px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-800 transition ml-2" target="_blank">مشاهده سایت</a>
               </div>
               <p class="text-gray-700 text-sm mt-1">${biz.description || ''}</p>
-              <div class="bg-blue-50 border-r-4 border-blue
-          section.appendChild(card);
+              <div class="bg-blue-50 border-r-4 border-blue-400 text-blue-900 p-2 mt-2 rounded text-xs font-semibold" style="direction: rtl;">
+                <span class="font-bold">دلیل حمایت:</span> ${biz.reason || ''}
+                ${biz.sourceLink ? `<a href='${biz.sourceLink}' class='text-blue-700 underline ml-2' target='_blank'>منبع</a>` : ''}
+              </div>
+            </div>
+          `;
+          ul.appendChild(li);
         });
+        section.appendChild(ul);
         list.appendChild(section);
       }
 

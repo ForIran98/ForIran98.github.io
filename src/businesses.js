@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
         items.forEach(biz => {
           const li = document.createElement('li');
           li.className = 'flex flex-col md:flex-row items-center gap-4 p-4 hover:bg-blue-50 transition';
+          // اگر عکس نبود، از favicon سایت استفاده کن
+          const imgSrc = biz.image && biz.image.trim() !== '' ? biz.image : `https://www.google.com/s2/favicons?domain=${new URL(biz.link).hostname}`;
           li.innerHTML = `
-            <img src="${biz.image}" alt="${biz.name}" class="w-14 h-14 rounded-full object-cover border border-blue-200 shadow-sm"/>
+            <img src="${imgSrc}" alt="${biz.name}" class="w-14 h-14 rounded-full object-cover border border-blue-200 shadow-sm"/>
             <div class="flex-1 w-full">
               <div class="flex flex-col md:flex-row md:items-center md:gap-4">
                 <h3 class="text-base font-bold text-blue-800 mb-1 md:mb-0">${biz.name}</h3>

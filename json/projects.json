@@ -26,9 +26,9 @@
     },
     {
       "id": 4,
-      "title": "شرکت‌های حامی مردم",
+      "title": "کسب و کارهای حامی مردم",
       "description": "برندها یا مجموعه‌هایی که با مردم در بحران‌ها همراهی کردند",
-      "status": "in_progress",
+      "status": "completed",
       "collaborators": [1],
       "pageLink": "businesses.html"
     },

@@ -186,87 +186,42 @@
                     });
                 });
 
-                // --- ویژه ها را جدا کن ---
+                // ساخت دسته ویژه و قرار دادن در ابتدای آرایه
                 const featuredSites = allSites.filter(site => site.featured);
                 if (featuredSites.length > 0) {
-                    const featuredBox = document.createElement('div');
-                    featuredBox.className = 'card mb-8 border-2 border-yellow-400';
-                    const featuredHeader = document.createElement('div');
-                    featuredHeader.className = 'card-header bg-yellow-400 text-gray-900';
-                    featuredHeader.textContent = 'سایت‌های ویژه';
-                    featuredBox.appendChild(featuredHeader);
-                    const featuredList = document.createElement('ul');
-                    featuredList.className = 'list-group list-group-flush';
-                    featuredSites.forEach(site => {
-                        const listItem = document.createElement('li');
-                        listItem.className = 'list-group-item flex items-center';
-                        // آیکون سایت
-                        const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
-                        listItem.innerHTML = `
-                            <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2" style="width:20px;height:20px;vertical-align:middle;border-radius:4px;"> 
-                            <a href="${site.url}" target="_blank">${site.name}</a> <span class="text-xs text-gray-500 ml-2">(${site.category})</span> - ${site.description}
-                        `;
-                        featuredList.appendChild(listItem);
+                    const featuredCategory = {
+                        name: 'ویژه',
+                        sites: featuredSites.map(site => ({ ...site, _originalCategory: site.category }))
+                    };
+                    // حذف سایت‌های ویژه از دسته‌بندی اصلی‌شان
+                    data.categories.forEach(cat => {
+                        cat.sites = cat.sites.filter(site => !site.featured);
                     });
-                    featuredBox.appendChild(featuredList);
-                    container.parentNode.insertBefore(featuredBox, container);
+                    // قرار دادن دسته ویژه در ابتدای آرایه
+                    data.categories.unshift(featuredCategory);
                 }
 
                 function renderSites(sitesByCategory) {
-                    // حذف کادر ویژه قبلی
-                    const oldFeatured = document.querySelector('.card.border-2.border-yellow-400');
-                    if (oldFeatured) oldFeatured.remove();
-                    // ویژه ها را جدا نمایش بده
-                    const featuredSites = [];
-                    sitesByCategory.forEach(cat => {
-                        cat.sites = cat.sites.filter(site => {
-                            if (site.featured) {
-                                featuredSites.push({...site, category: cat.name});
-                                return false;
-                            }
-                            return true;
-                        });
-                    });
-                    if (featuredSites.length > 0) {
-                        const featuredBox = document.createElement('div');
-                        featuredBox.className = 'card mb-8 border-2 border-yellow-400';
-                        const featuredHeader = document.createElement('div');
-                        featuredHeader.className = 'card-header bg-yellow-400 text-gray-900';
-                        featuredHeader.textContent = 'سایت‌های ویژه';
-                        featuredBox.appendChild(featuredHeader);
-                        const featuredList = document.createElement('ul');
-                        featuredList.className = 'list-group list-group-flush';
-                        featuredSites.forEach(site => {
-                            const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
-                            const listItem = document.createElement('li');
-                            listItem.className = 'list-group-item flex items-center';
-                            listItem.innerHTML = `
-                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2" style="width:20px;height:20px;vertical-align:middle;border-radius:4px;"> 
-                                <a href="${site.url}" target="_blank">${site.name}</a> <span class="text-xs text-gray-500 ml-2">(${site.category})</span> - ${site.description}
-                            `;
-                            featuredList.appendChild(listItem);
-                        });
-                        featuredBox.appendChild(featuredList);
-                        container.parentNode.insertBefore(featuredBox, container);
-                    }
                     container.innerHTML = '';
-                    sitesByCategory.forEach(category => {
+                    sitesByCategory.forEach((category, idx) => {
                         if (!category.sites.length) return;
                         const card = document.createElement('div');
-                        card.className = 'card';
+                        card.className = 'card' + (category.name === 'ویژه' ? ' border-2 border-yellow-400 shadow-lg bg-yellow-50' : '');
                         const cardHeader = document.createElement('div');
-                        cardHeader.className = 'card-header';
-                        cardHeader.textContent = category.name;
+                        cardHeader.className = 'card-header' + (category.name === 'ویژه' ? ' bg-yellow-400 text-gray-900' : '');
+                        cardHeader.innerHTML = category.name === 'ویژه' ? '<span style="font-size:1.4rem; font-weight:bold; display:flex; align-items:center; justify-content:center; gap:0.5rem;">✨ سایت‌های ویژه ✨</span>' : category.name;
                         card.appendChild(cardHeader);
                         const listGroup = document.createElement('ul');
                         listGroup.className = 'list-group list-group-flush';
                         category.sites.forEach(site => {
                             const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
                             const listItem = document.createElement('li');
-                            listItem.className = 'list-group-item flex items-center';
+                            listItem.className = 'list-group-item flex items-center' + (category.name === 'ویژه' ? ' bg-yellow-100 hover:bg-yellow-200 border-b border-yellow-200' : '');
                             listItem.innerHTML = `
-                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2" style="width:20px;height:20px;vertical-align:middle;border-radius:4px;"> 
-                                <a href="${site.url}" target="_blank">${site.name}</a> - ${site.description}
+                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2 shadow-sm" style="width:24px;height:24px;vertical-align:middle;border-radius:6px;background:#fff;border:1.5px solid #ffe066;box-shadow:0 2px 8px #ffe06633;"> 
+                                <a href="${site.url}" target="_blank" style="font-weight:bold;font-size:1.08rem;">${site.name}</a>
+                                ${category.name === 'ویژه' ? `<span class="text-xs text-yellow-700 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300" style="margin-right:0.7rem;">${site._originalCategory}</span>` : ''}
+                                <span class="text-gray-600 text-sm ml-2" style="margin-right:0.7rem;">${site.description}</span>
                             `;
                             listGroup.appendChild(listItem);
                         });

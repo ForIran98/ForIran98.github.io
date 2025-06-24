@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="Residences.html">اقامتگاه‌ها</a>
         <a href="SOS.html">شماره اضطراری</a>
       </nav>
+      <div id="profile-header-info" class="order-5 flex items-center gap-2 text-white font-bold text-sm"></div>
       <div class="w-8 h-8 sm:hidden order-4"></div>
     </div>
     <script>
@@ -33,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // نمایش منو به صورت flex روی دسکتاپ
         function handleResize() {
           if(window.innerWidth >= 640) {
-            nav.class
             nav.classList.add('flex');
           } else {
             nav.classList.add('hidden');
@@ -42,6 +42,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         window.addEventListener('resize', handleResize);
         handleResize();
+        // --- پروفایل کاربر ---
+        var profileDiv = document.getElementById('profile-header-info');
+        if(profileDiv) {
+          var firstName = localStorage.getItem('userFirstName');
+          var lastName = localStorage.getItem('userLastName');
+          if(firstName && lastName) {
+            profileDiv.innerHTML = \`<span>👤 \${firstName} \${lastName}</span> <a href='profile.html' class='underline text-blue-200 hover:text-white ml-2'>ویرایش</a>\`;
+          } else {
+            profileDiv.innerHTML = \`<a href='profile.html' class='bg-white text-blue-900 px-3 py-1 rounded-lg font-bold hover:bg-blue-100 transition'>ثبت نام</a>\`;
+          }
+        }
       });
     <\/script>
   `;

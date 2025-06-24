@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پروفایل کاربر</title>
+  <link href="src/tailwind.min.css" rel="stylesheet">
+  <link href="src/font-face.css" rel="stylesheet">
+  <link href="src/main-style.css" rel="stylesheet">
+</head>
+<body class="min-h-screen text-gray-800 flex flex-col">
+    <header id="main-header"></header>
+    <main class="container mx-auto px-6 py-20 flex-1 overflow-y-auto main-spacing">
+      <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+        <h1 class="text-2xl font-bold text-blue-900 mb-6 text-center">پروفایل کاربر</h1>
+        <form id="profileForm" class="space-y-4">
+          <div>
+            <label class="block mb-1 font-semibold" for="firstName">نام</label>
+            <input id="firstName" name="firstName" type="text" class="w-full border rounded-lg p-2" required>
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold" for="lastName">نام خانوادگی</label>
+            <input id="lastName" name="lastName" type="text" class="w-full border rounded-lg p-2" required>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition">ذخیره</button>
+        </form>
+        <div id="profileMsg" class="mt-4 text-center text-green-600 font-bold"></div>
+      </div>
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="src/common-header-footer.js"></script>
+    <script>
+      // اگر قبلا ذخیره شده بود، مقدار را نمایش بده
+      window.addEventListener('DOMContentLoaded', function() {
+        const firstName = localStorage.getItem('userFirstName') || '';
+        const lastName = localStorage.getItem('userLastName') || '';
+        document.getElementById('firstName').value = firstName;
+        document.getElementById('lastName').value = lastName;
+      });
+      document.getElementById('profileForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        if (firstName && lastName) {
+          localStorage.setItem('userFirstName', firstName);
+          localStorage.setItem('userLastName', lastName);
+          document.getElementById('profileMsg').textContent = 'اطلاعات با موفقیت ذخیره شد!';
+        }
+      });
+    </script>
+</body>
+</html>

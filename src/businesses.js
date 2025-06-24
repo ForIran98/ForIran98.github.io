@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <p class="text-gray-700 text-sm mt-1">${biz.description || ''}</p>
               <div class="bg-blue-50 border-r-4 border-blue-400 text-blue-900 p-2 mt-2 rounded text-xs font-semibold" style="direction: rtl;">
-                <span class="font-bold">دلیل حمایت:</span> ${biz.reason || ''}
+                <span class="font-bold">حمایت:</span> ${biz.reason || ''}
                 ${biz.sourceLink ? `<a href='${biz.sourceLink}' class='text-blue-700 underline ml-2' target='_blank'>منبع</a>` : ''}
               </div>
             </div>

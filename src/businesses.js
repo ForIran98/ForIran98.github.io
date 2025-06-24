@@ -18,8 +18,19 @@ document.addEventListener('DOMContentLoaded', function() {
         items.forEach(biz => {
           const li = document.createElement('li');
           li.className = 'flex flex-col md:flex-row items-center gap-4 p-4 hover:bg-blue-50 transition';
-          // اگر عکس نبود، از favicon سایت استفاده کن
-          const imgSrc = biz.image && biz.image.trim() !== '' ? biz.image : `https://www.google.com/s2/favicons?domain=${new URL(biz.link).hostname}`;
+          // اگر عکس نبود، از favicon سایت استفاده کن (فقط اگر لینک معتبر بود)
+          let imgSrc = biz.image && biz.image.trim() !== '' ? biz.image : '';
+          if (!imgSrc) {
+            let link = (biz.link || '').trim();
+            if (link && !/^https?:\/\//i.test(link)) link = 'https://' + link;
+            try {
+              if (link) {
+                const hostname = new URL(link).hostname;
+                imgSrc = `https://www.google.com/s2/favicons?domain=${hostname}`;
+              }
+            } catch {}
+          }
+          if (!imgSrc) imgSrc = 'file/icon.png'; // تصویر پیش‌فرض اگر هیچ لینکی نبود
           li.innerHTML = `
             <img src="${imgSrc}" alt="${biz.name}" class="w-14 h-14 rounded-full object-cover border border-blue-200 shadow-sm"/>
             <div class="flex-1 w-full">
@@ -29,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <p class="text-gray-700 text-sm mt-1">${biz.description || ''}</p>
               <div class="bg-blue-50 border-r-4 border-blue-400 text-blue-900 p-2 mt-2 rounded text-xs font-semibold" style="direction: rtl;">
-                <span class="font-bold">حمایت:</span> ${biz.reason || ''}
+                <span class="font-bold">دلیل حمایت:</span> ${biz.reason || ''}
                 ${biz.sourceLink ? `<a href='${biz.sourceLink}' class='text-blue-700 underline ml-2' target='_blank'>منبع</a>` : ''}
               </div>
             </div>

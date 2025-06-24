@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </button>
       <nav id="main-nav" class="flex-col gap-2 text-base w-full sm:w-auto sm:flex-row sm:gap-6 sm:static sm:bg-transparent sm:rounded-none sm:shadow-none sm:flex hidden items-center justify-end mt-2 sm:mt-0 bg-blue-900/95 rounded-lg shadow-lg p-4 transition-all duration-200 ease-in-out z-20 sm:justify-end order-3">
         <a href="projects.html" class="font-bold text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition">پروژه‌ها</a>
-        <!-- منوی پروژه‌ها به صورت داینامیک اینجا درج می‌شود -->
         <span id="dynamic-projects-menu"></span>
         <a href="about.html" class="font-bold text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition">درباره ما</a>
       </nav>
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         const projects = data.projects;
-        // تعریف نام کوتاه برای منو (اگر shortTitle نبود، از title استفاده کن)
         const completed = projects.filter(p => p.status === 'completed');
         let html = '';
         if (completed.length) {
@@ -48,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if(nav) {
           // حذف منوی قبلی اگر وجود دارد
-          const oldMenu = nav.querySelector('.projects-menu-list');
-          if(oldMenu) oldMenu.remove();
+          const oldMenu = document.getElementById('dynamic-projects-menu');
+          if(oldMenu) oldMenu.innerHTML = '';
           // درج منوی جدید
-          nav.insertAdjacentHTML('afterbegin', html);
+          if(oldMenu) oldMenu.innerHTML = html;
         }
       });
     function closeMenuOnOutsideClick(e) {

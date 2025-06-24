@@ -186,9 +186,72 @@
                     });
                 });
 
+                // --- ویژه ها را جدا کن ---
+                const featuredSites = allSites.filter(site => site.featured);
+                if (featuredSites.length > 0) {
+                    const featuredBox = document.createElement('div');
+                    featuredBox.className = 'card mb-8 border-2 border-yellow-400';
+                    const featuredHeader = document.createElement('div');
+                    featuredHeader.className = 'card-header bg-yellow-400 text-gray-900';
+                    featuredHeader.textContent = 'سایت‌های ویژه';
+                    featuredBox.appendChild(featuredHeader);
+                    const featuredList = document.createElement('ul');
+                    featuredList.className = 'list-group list-group-flush';
+                    featuredSites.forEach(site => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'list-group-item flex items-center';
+                        // آیکون سایت
+                        const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
+                        listItem.innerHTML = `
+                            <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2" style="width:20px;height:20px;vertical-align:middle;border-radius:4px;"> 
+                            <a href="${site.url}" target="_blank">${site.name}</a> <span class="text-xs text-gray-500 ml-2">(${site.category})</span> - ${site.description}
+                        `;
+                        featuredList.appendChild(listItem);
+                    });
+                    featuredBox.appendChild(featuredList);
+                    container.parentNode.insertBefore(featuredBox, container);
+                }
+
                 function renderSites(sitesByCategory) {
+                    // حذف کادر ویژه قبلی
+                    const oldFeatured = document.querySelector('.card.border-2.border-yellow-400');
+                    if (oldFeatured) oldFeatured.remove();
+                    // ویژه ها را جدا نمایش بده
+                    const featuredSites = [];
+                    sitesByCategory.forEach(cat => {
+                        cat.sites = cat.sites.filter(site => {
+                            if (site.featured) {
+                                featuredSites.push({...site, category: cat.name});
+                                return false;
+                            }
+                            return true;
+                        });
+                    });
+                    if (featuredSites.length > 0) {
+                        const featuredBox = document.createElement('div');
+                        featuredBox.className = 'card mb-8 border-2 border-yellow-400';
+                        const featuredHeader = document.createElement('div');
+                        featuredHeader.className = 'card-header bg-yellow-400 text-gray-900';
+                        featuredHeader.textContent = 'سایت‌های ویژه';
+                        featuredBox.appendChild(featuredHeader);
+                        const featuredList = document.createElement('ul');
+                        featuredList.className = 'list-group list-group-flush';
+                        featuredSites.forEach(site => {
+                            const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
+                            const listItem = document.createElement('li');
+                            listItem.className = 'list-group-item flex items-center';
+                            listItem.innerHTML = `
+                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2" style="width:20px;height:20px;vertical-align:middle;border-radius:4px;"> 
+                                <a href="${site.url}" target="_blank">${site.name}</a> <span class="text-xs text-gray-500 ml-2">(${site.category})</span> - ${site.description}
+                            `;
+                            featuredList.appendChild(listItem);
+                        });
+                        featuredBox.appendChild(featuredList);
+                        container.parentNode.insertBefore(featuredBox, container);
+                    }
                     container.innerHTML = '';
                     sitesByCategory.forEach(category => {
+                        if (!category.sites.length) return;
                         const card = document.createElement('div');
                         card.className = 'card';
                         const cardHeader = document.createElement('div');
@@ -198,9 +261,13 @@
                         const listGroup = document.createElement('ul');
                         listGroup.className = 'list-group list-group-flush';
                         category.sites.forEach(site => {
+                            const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
                             const listItem = document.createElement('li');
-                            listItem.className = 'list-group-item';
-                            listItem.innerHTML = `<a href="${site.url}" target="_blank">${site.name}</a> - ${site.description}`;
+                            listItem.className = 'list-group-item flex items-center';
+                            listItem.innerHTML = `
+                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2" style="width:20px;height:20px;vertical-align:middle;border-radius:4px;"> 
+                                <a href="${site.url}" target="_blank">${site.name}</a> - ${site.description}
+                            `;
                             listGroup.appendChild(listItem);
                         });
                         card.appendChild(listGroup);

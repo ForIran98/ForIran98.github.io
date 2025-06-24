@@ -3,7 +3,7 @@
     {
       "name": "موتورهای جستجو",
       "sites": [
-        {"name": "ذره‌بین", "url": "http://www.zarebin.ir", "description": "موتور جستجوی ایرانی"},
+        {"name": "ذره‌بین", "url": "http://www.zarebin.ir", "description": "موتور جستجوی ایرانی", "featured": true},
         {"name": "گردو", "url": "http://gerdoo.me", "description": "موتور جستجو و دایرکتوری پارسی"}
       ]
     },

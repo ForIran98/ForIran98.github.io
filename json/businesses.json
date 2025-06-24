@@ -1,24 +1,196 @@
 {
   "businesses": [
     {
-      "name": "آژانس ذن",
-      "image": "file/profile/ZEN-Branding-Agency.png",
-      "link": "https://zenbranding.agency/",
-      "description": "آژانس تبلیغاتی و برندینگ.",
+      "name": "همراه اول",
+      "image": "",
+      "link": "https://mci.ir/",
+      "description": "",
       "isFree": false,
       "isDiscounted": true,
-      "reason": "در بحران‌ها خدمات مشاوره رایگان یا تخفیف‌دار به کسب‌وکارهای کوچک ارائه داده است.",
-      "sourceLink": "https://example.com/zen-support"
+      "reason": "خطوط مشترکان دایمی قطع نمی شود",
+      "sourceLink": ""
     },
     {
-      "name": "هم امید",
-      "image": "file/profile/hamomid.jpg",
-      "link": "https://zenbranding.agency/hamomid/",
-      "description": "پلتفرم حمایت اجتماعی.",
+      "name": "شاتل",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "تمدید ۲ هفته اینترنت به صورت خودکار و رایگان",
+      "sourceLink": ""
+    },
+    {
+      "name": "بلوبانک",
+      "image": "",
+      "link": "",
+      "description": "",
       "isFree": false,
       "isDiscounted": true,
-      "reason": "در کمپین‌های مردمی و حمایت از آسیب‌دیدگان فعال بوده است.",
-      "sourceLink": "https://example.com/hamomid-support"
+      "reason": "بخشش جرمیه دیرکرد وام ها بازپداخت تا پایان تیرماه",
+      "sourceLink": ""
+    },
+{
+      "name": "ازکی",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "بخشش دیرکردهای اقساط  بیمه تا پایان تیرماه",
+      "sourceLink": ""
+    },
+{
+      "name": "نشان",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "برای همکاری با کسب و کارها اماده ایم",
+      "sourceLink": ""
+    },
+
+    {
+      "name": "پلتفرم حال",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "خدمات مشاوره روانشانی رایگان",
+      "sourceLink": ""
+    },
+    {
+      "name": "جاجیگا",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "اسکان اضطراری",
+      "sourceLink": ""
+    },
+
+    {
+      "name": "دیوار",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "اسکان اظطراری و اشتراک سفر",
+      "sourceLink": ""
+    },
+{
+      "name": "دانشجویار",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "تخفیف ۹۰ درصدی برای دوره‌های آموزشی",
+      "sourceLink": ""
+    },
+    {
+      "name": "لندین",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "یک هفته اشتراک رایگان",
+      "sourceLink": ""
+    },
+    {
+      "name": "جاباما",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "اسکان اظطراری",
+      "sourceLink": ""
+    },
+    {
+      "name": "اتاقک",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "اقامتگاه همدلی",
+      "sourceLink": ""
+    },
+    {
+      "name": "مخابرات",
+      "image": "",
+      "link": "",
+      "description": "",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "مکالمات تلفن ثابت تا پایان تیرماه رایگان شد",
+      "sourceLink": ""
+    },
+    {
+      "name": "پلتفورم روانشناسی حس",
+      "image": "",
+      "link": "hesclinic.com",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "خدمات روانشناسی رایگان 0922670622 - @hesclinic.therapy",
+      "sourceLink": ""
+    },
+    {
+      "name": "مکتبخونه",
+      "image": "",
+      "link": "https://maktabkhooneh.org/",
+      "description": "دوره‌های آموزشی رایگان",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "دوره های ویژه کودکان رایگان شد",
+      "sourceLink": ""
+    },
+    {
+      "name": "دژینو",
+      "image": "",
+      "link": "https://www.dejino.com/",
+      "description": "",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "تمدید خودکار سرویس ها تا زمانی که اوضاع به حالت عادی برگرده",
+      "sourceLink": ""
+    },
+    {
+      "name": "آی قصه",
+      "image": "",
+      "link": "",
+      "description": "دسترسی به کتاب‌های صوتی و متنی کودکان",
+      "isFree": true,
+      "isDiscounted": false,
+      "reason": "رایگان شدن محتوای به صورت کامل",
+      "sourceLink": ""
+    },
+    {
+      "name": "ویپاد",
+      "image": "",
+      "link": " ",
+      "description": "",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "بخشش جریمه برای ماه خرداد تا تیر - تنفس یک ماهه برای پرداخت اقساط - تاثیر نداشتن دیرکرد در اعتبار سنجی",
+      "sourceLink": ""
+    },
+    {
+      "name": "دیجی شهر",
+      "image": "",
+      "link": "https://digishahr.com/",
+      "description": "",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "بخشش دیرکرد اقساط",
+      "sourceLink": ""
     }
   ]
 }

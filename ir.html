@@ -257,24 +257,29 @@
                         category.sites.forEach(site => {
                             const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
                             const listItem = document.createElement('li');
-                            listItem.className = 'list-group-item flex items-center' + (isFeatured ? ' bg-yellow-50 hover:bg-yellow-100 border-b border-yellow-200 special-featured-item' : '') + (isFav ? ' bg-pink-50 hover:bg-pink-100 border-b border-pink-200 special-fav-item' : '');
-                            // ستاره علاقه‌مندی
+                            listItem.className = 'list-group-item flex items-center justify-between' + (isFeatured ? ' bg-yellow-50 hover:bg-yellow-100 border-b border-yellow-200 special-featured-item' : '') + (isFav ? ' bg-pink-50 hover:bg-pink-100 border-b border-pink-200 special-fav-item' : '');
+                            // ستاره علاقه‌مندی (سمت چپ)
                             const star = document.createElement('span');
                             star.innerHTML = isFavorite(site.url) ? '★' : '☆';
                             star.title = isFavorite(site.url) ? 'حذف از علاقه‌مندی‌ها' : 'افزودن به علاقه‌مندی‌ها';
-                            star.style = 'font-size:1.3rem;cursor:pointer;color:#f59e42;margin-left:0.7rem;user-select:none;transition:color 0.2s;';
+                            star.style = 'font-size:1.3rem;cursor:pointer;color:#f59e42;margin-right:0.7rem;user-select:none;transition:color 0.2s;';
                             star.onclick = function(e) {
                                 e.stopPropagation();
                                 toggleFavorite(site.url);
                                 renderSites(data.categories);
                             };
-                            listItem.appendChild(star);
-                            listItem.innerHTML += `
+                            // محتوای سایت (سمت راست)
+                            const contentDiv = document.createElement('div');
+                            contentDiv.className = 'flex items-center';
+                            contentDiv.innerHTML = `
                                 <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2 shadow-sm" style="width:26px;height:26px;vertical-align:middle;border-radius:7px;background:#fff;border:2px solid #ffd700;box-shadow:0 2px 8px #ffe06633;"> 
                                 <a href="${site.url}" target="_blank" style="font-weight:bold;font-size:1.08rem;">${site.name}</a>
-                                ${(isFeatured || isFav) ? `<span class="text-xs text-yellow-800 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300" style="margin-right:0.7rem;">${site._originalCategory}</span>` : ''}
+                                ${(isFeatured || isFav) ? `<span class=\"text-xs text-yellow-800 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300\" style=\"margin-right:0.7rem;\">${site._originalCategory}</span>` : ''}
                                 <span class="text-gray-600 text-sm ml-2" style="margin-right:0.7rem;">${site.description}</span>
                             `;
+                            // چیدمان: [محتوا][ستاره]
+                            listItem.appendChild(contentDiv);
+                            listItem.appendChild(star);
                             listGroup.appendChild(listItem);
                         });
                         card.appendChild(listGroup);

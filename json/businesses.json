@@ -4,13 +4,19 @@
       "name": "آژانس ذن",
       "image": "file/profile/ZEN-Branding-Agency.png",
       "link": "https://zenbranding.agency/",
-      "description": ""
+      "description": "آژانس تبلیغاتی و برندینگ.",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "در بحران‌ها خدمات مشاوره رایگان یا تخفیف‌دار به کسب‌وکارهای کوچک ارائه داده است."
     },
     {
       "name": "هم امید",
       "image": "file/profile/hamomid.jpg",
       "link": "https://zenbranding.agency/hamomid/",
-      "description": ""
+      "description": "پلتفرم حمایت اجتماعی.",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "در کمپین‌های مردمی و حمایت از آسیب‌دیدگان فعال بوده است."
     }
   ]
 }

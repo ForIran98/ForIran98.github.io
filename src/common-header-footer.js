@@ -30,31 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
     var menuToggle = document.getElementById('menu-toggle');
     var nav = document.getElementById('main-nav');
-    // --- اضافه کردن منوی داینامیک پروژه‌ها به منوی اصلی ---
+    // --- فقط لیست پروژه‌های تکمیل‌شده بدون عنوان به منوی اصلی اضافه کن ---
     fetch('json/projects.json')
       .then(response => response.json())
       .then(data => {
         const projects = data.projects;
-        const active = projects.filter(p => p.status === 'in_progress');
         const completed = projects.filter(p => p.status === 'completed');
         let html = '';
-        html += '<div class="border-t border-blue-200 my-2"></div>';
-        html += '<div class="font-bold text-blue-200 text-sm mb-1">پروژه‌ها</div>';
-        html += '<ul class="projects-menu-list text-sm mb-2">';
-        html += '<li><a href="projects.html"><b>همه پروژه‌ها</b></a></li>';
-        if (active.length) {
-          html += '<li class="menu-section-title">پروژه‌های فعال</li>';
-          active.forEach(p => {
-            html += `<li><a href="${p.pageLink}">${p.title}</a></li>`;
-          });
-        }
         if (completed.length) {
-          html += '<li class="menu-section-title">پروژه‌های تکمیل‌شده</li>';
+          html += '<ul class="projects-menu-list text-sm mb-2">';
           completed.forEach(p => {
             html += `<li><a href="${p.pageLink}">${p.title}</a></li>`;
           });
+          html += '</ul>';
         }
-        html += '</ul>';
         if(nav) {
           // حذف منوی قبلی اگر وجود دارد
           const oldMenu = nav.querySelector('.projects-menu-list');

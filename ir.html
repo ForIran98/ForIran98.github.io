@@ -193,31 +193,86 @@
                         name: 'ویژه',
                         sites: featuredSites.map(site => ({ ...site, _originalCategory: site.category }))
                     };
-                    // فقط اضافه کردن دسته ویژه در ابتدای آرایه، بدون حذف از دسته اصلی
                     data.categories.unshift(featuredCategory);
                 }
 
+                // ساخت دسته علاقه‌مندی‌ها از localStorage
+                function getFavorites() {
+                    try {
+                        return JSON.parse(localStorage.getItem('favSites') || '[]');
+                    } catch { return []; }
+                }
+                function setFavorites(favs) {
+                    localStorage.setItem('favSites', JSON.stringify(favs));
+                }
+                function isFavorite(url) {
+                    return getFavorites().includes(url);
+                }
+                function toggleFavorite(url) {
+                    let favs = getFavorites();
+                    if (favs.includes(url)) {
+                        favs = favs.filter(u => u !== url);
+                    } else {
+                        favs.push(url);
+                    }
+                    setFavorites(favs);
+                }
+                // اضافه کردن دسته علاقه‌مندی‌ها بعد از ویژه
+                function buildFavoritesCategory() {
+                    const favUrls = getFavorites();
+                    if (!favUrls.length) return null;
+                    const favSites = allSites.filter(site => favUrls.includes(site.url));
+                    if (!favSites.length) return null;
+                    return {
+                        name: 'علاقه‌مندی‌ها',
+                        sites: favSites.map(site => ({ ...site, _originalCategory: site.category }))
+                    };
+                }
+                // رندر با علاقه‌مندی‌ها
                 function renderSites(sitesByCategory) {
                     container.innerHTML = '';
-                    sitesByCategory.forEach((category, idx) => {
+                    // علاقه‌مندی‌ها را بعد از ویژه قرار بده
+                    let cats = [...sitesByCategory];
+                    const favCat = buildFavoritesCategory();
+                    if (favCat) {
+                        // اگر ویژه هست، بعدش علاقه‌مندی‌ها بیاد
+                        if (cats[0] && cats[0].name === 'ویژه') {
+                            cats = [cats[0], favCat, ...cats.slice(1)];
+                        } else {
+                            cats = [favCat, ...cats];
+                        }
+                    }
+                    cats.forEach((category, idx) => {
                         if (!category.sites.length) return;
                         const isFeatured = category.name === 'ویژه';
+                        const isFav = category.name === 'علاقه‌مندی‌ها';
                         const card = document.createElement('div');
-                        card.className = 'card' + (isFeatured ? ' border-2 border-yellow-500 shadow-xl bg-gradient-to-br from-yellow-100 to-yellow-50 special-featured-card' : '');
+                        card.className = 'card' + (isFeatured ? ' border-2 border-yellow-500 shadow-xl bg-gradient-to-br from-yellow-100 to-yellow-50 special-featured-card' : '') + (isFav ? ' border-2 border-pink-400 shadow-xl bg-gradient-to-br from-pink-50 to-pink-100 special-fav-card' : '');
                         const cardHeader = document.createElement('div');
-                        cardHeader.className = 'card-header' + (isFeatured ? ' bg-yellow-400 text-yellow-900 border-b-2 border-yellow-500' : '');
-                        cardHeader.innerHTML = isFeatured ? '<span style="font-size:1.5rem; font-weight:900; display:flex; align-items:center; justify-content:center; gap:0.7rem; letter-spacing:0.5px;">✨ سایت‌های ویژه ✨</span>' : category.name;
+                        cardHeader.className = 'card-header' + (isFeatured ? ' bg-yellow-400 text-yellow-900 border-b-2 border-yellow-500' : '') + (isFav ? ' bg-pink-200 text-pink-900 border-b-2 border-pink-400' : '');
+                        cardHeader.innerHTML = isFeatured ? '<span style="font-size:1.5rem; font-weight:900; display:flex; align-items:center; justify-content:center; gap:0.7rem; letter-spacing:0.5px;">✨ سایت‌های ویژه ✨</span>' : isFav ? '<span style="font-size:1.3rem; font-weight:900; display:flex; align-items:center; justify-content:center; gap:0.7rem;">❤️ علاقه‌مندی‌های من</span>' : category.name;
                         card.appendChild(cardHeader);
                         const listGroup = document.createElement('ul');
                         listGroup.className = 'list-group list-group-flush';
                         category.sites.forEach(site => {
                             const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
                             const listItem = document.createElement('li');
-                            listItem.className = 'list-group-item flex items-center' + (isFeatured ? ' bg-yellow-50 hover:bg-yellow-100 border-b border-yellow-200 special-featured-item' : '');
-                            listItem.innerHTML = `
+                            listItem.className = 'list-group-item flex items-center' + (isFeatured ? ' bg-yellow-50 hover:bg-yellow-100 border-b border-yellow-200 special-featured-item' : '') + (isFav ? ' bg-pink-50 hover:bg-pink-100 border-b border-pink-200 special-fav-item' : '');
+                            // ستاره علاقه‌مندی
+                            const star = document.createElement('span');
+                            star.innerHTML = isFavorite(site.url) ? '★' : '☆';
+                            star.title = isFavorite(site.url) ? 'حذف از علاقه‌مندی‌ها' : 'افزودن به علاقه‌مندی‌ها';
+                            star.style = 'font-size:1.3rem;cursor:pointer;color:#f59e42;margin-left:0.7rem;user-select:none;transition:color 0.2s;';
+                            star.onclick = function(e) {
+                                e.stopPropagation();
+                                toggleFavorite(site.url);
+                                renderSites(data.categories);
+                            };
+                            listItem.appendChild(star);
+                            listItem.innerHTML += `
                                 <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2 shadow-sm" style="width:26px;height:26px;vertical-align:middle;border-radius:7px;background:#fff;border:2px solid #ffd700;box-shadow:0 2px 8px #ffe06633;"> 
                                 <a href="${site.url}" target="_blank" style="font-weight:bold;font-size:1.08rem;">${site.name}</a>
-                                ${isFeatured ? `<span class="text-xs text-yellow-800 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300" style="margin-right:0.7rem;">${site._originalCategory}</span>` : ''}
+                                ${(isFeatured || isFav) ? `<span class="text-xs text-yellow-800 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300" style="margin-right:0.7rem;">${site._originalCategory}</span>` : ''}
                                 <span class="text-gray-600 text-sm ml-2" style="margin-right:0.7rem;">${site.description}</span>
                             `;
                             listGroup.appendChild(listItem);
@@ -257,7 +312,7 @@
             })
             .catch(error => console.error('Error loading JSON:', error));
 
-        // استایل ویژه برای دسته ویژه
+        // استایل ویژه برای دسته ویژه و علاقه‌مندی‌ها
         const style = document.createElement('style');
         style.innerHTML = `
         .special-featured-card {
@@ -279,6 +334,26 @@
         }
         .special-featured-item a {
           color: #bfa100 !important;
+        }
+        .special-fav-card {
+          border-color: #f472b6 !important;
+          background: linear-gradient(135deg, #fff0f6 0%, #ffe4e6 100%) !important;
+          box-shadow: 0 8px 32px 0 #f472b655 !important;
+        }
+        .special-fav-card .card-header {
+          background: linear-gradient(90deg, #f472b6 60%, #fff0f6 100%) !important;
+          color: #a21caf !important;
+          border-bottom: 2.5px solid #f472b6 !important;
+          font-weight: 900 !important;
+          letter-spacing: 0.5px;
+        }
+        .special-fav-item {
+          background: #fff0f6 !important;
+          border-bottom: 1.5px solid #f472b6 !important;
+          font-size: 1.08rem !important;
+        }
+        .special-fav-item a {
+          color: #be185d !important;
         }
         `;
         document.head.appendChild(style);

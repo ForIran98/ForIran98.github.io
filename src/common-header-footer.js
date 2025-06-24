@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
       <nav id="main-nav" class="flex-col gap-2 text-base w-full sm:w-auto sm:flex-row sm:gap-6 sm:static sm:bg-transparent sm:rounded-none sm:shadow-none sm:flex hidden items-center justify-end mt-2 sm:mt-0 bg-blue-900/95 rounded-lg shadow-lg p-4 transition-all duration-200 ease-in-out z-20 sm:justify-end order-3">
-        <a href="projects.html">پروژه‌ها</a>
-        <a href="ir.html">منابع ایرانی</a>
-        <a href="Residences.html">اقامتگاه‌ها</a>
-        <a href="SOS.html">شماره اضطراری</a>
+        <!-- منوی پروژه‌ها به صورت داینامیک اینجا درج می‌شود -->
       </nav>
       <div id="profile-header-info" class="order-5 flex items-center gap-2 text-white font-bold text-sm"></div>
       <div class="w-8 h-8 sm:hidden order-4"></div>
@@ -35,21 +32,23 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         const projects = data.projects;
+        // تعریف نام کوتاه برای منو (اگر shortTitle نبود، از title استفاده کن)
         const completed = projects.filter(p => p.status === 'completed');
         let html = '';
         if (completed.length) {
-          html += '<ul class="projects-menu-list text-sm mb-2">';
+          html += '<ul class="projects-menu-list flex flex-row gap-6 m-0 p-0 list-none">';
           completed.forEach(p => {
-            html += `<li><a href="${p.pageLink}">${p.title}</a></li>`;
+            const shortTitle = p.shortTitle || p.title;
+            html += `<li class="m-0 p-0"><a href="${p.pageLink}" class="text-white font-bold whitespace-nowrap">${shortTitle}</a></li>`;
           });
           html += '</ul>';
         }
         if(nav) {
           // حذف منوی قبلی اگر وجود دارد
           const oldMenu = nav.querySelector('.projects-menu-list');
-          if(oldMenu) oldMenu.parentElement.remove();
-          // درج منوی جدید قبل از پروفایل (یا انتهای nav)
-          nav.insertAdjacentHTML('beforeend', html);
+          if(oldMenu) oldMenu.remove();
+          // درج منوی جدید
+          nav.insertAdjacentHTML('afterbegin', html);
         }
       });
     function closeMenuOnOutsideClick(e) {

@@ -12,6 +12,7 @@
     {
       "id": 2,
       "title": "جابجایی بین‌شهری",
+      "shortTitle": "جابجایی",
       "description": "لیست راننده‌ها، مسیرهای امن، سیستم هماهنگی حمل‌ونقل",
       "status": "in_progress",
       "collaborators": [1,2,5],
@@ -38,6 +39,7 @@
     {
       "id": 5,
       "title": "خدمات رایگان",
+      "shortTitle": "خدمات رایگان",
       "description": "اینترنت رایگان، بسته‌های رایگان، مشاوره رایگان",
       "status": "not_started",
       "collaborators": [1],

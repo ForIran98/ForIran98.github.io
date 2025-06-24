@@ -13,20 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (items.length === 0) return;
         const section = document.createElement('section');
         section.innerHTML = `<h2 class="text-xl font-bold text-green-700 mb-4">${title}</h2>`;
+        const ul = document.createElement('ul');
+        ul.className = 'divide-y divide-blue-100 bg-white rounded-xl shadow mb-8';
         items.forEach(biz => {
-          const card = document.createElement('div');
-          card.className = 'business-card mb-4 p-4 rounded-xl shadow bg-white flex flex-col md:flex-row items-center gap-4 border border-blue-100 hover:shadow-2xl transition';
-          card.innerHTML = `
-            <img src="${biz.image}" alt="${biz.name}" class="w-20 h-20 rounded-full object-cover border-2 border-blue-200 shadow-sm"/>
-            <div class="business-info flex-1">
-              <h3 class="text-lg font-bold text-blue-800 mb-1">${biz.name}</h3>
-              <p class="text-gray-700 mb-2">${biz.description || ''}</p>
-              <div class="bg-blue-50 border-r-4 border-blue-400 text-blue-900 p-2 mb-2 rounded text-sm font-semibold" style="direction: rtl;">
-                <span class="font-bold">دلیل حمایت:</span> ${biz.reason || ''}
+          const li = document.createElement('li');
+          li.className = 'flex flex-col md:flex-row items-center gap-4 p-4 hover:bg-blue-50 transition';
+          li.innerHTML = `
+            <img src="${biz.image}" alt="${biz.name}" class="w-14 h-14 rounded-full object-cover border border-blue-200 shadow-sm"/>
+            <div class="flex-1 w-full">
+              <div class="flex flex-col md:flex-row md:items-center md:gap-4">
+                <h3 class="text-base font-bold text-blue-800 mb-1 md:mb-0">${biz.name}</h3>
+                <a href="${biz.link}" class="text-xs px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-800 transition ml-2" target="_blank">مشاهده سایت</a>
               </div>
-              <a href="${biz.link}" class="business-link inline-block mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-800 transition" target="_blank">مشاهده سایت</a>
-            </div>
-          `;
+              <p class="text-gray-700 text-sm mt-1">${biz.description || ''}</p>
+              <div class="bg-blue-50 border-r-4 border-blue
           section.appendChild(card);
         });
         list.appendChild(section);

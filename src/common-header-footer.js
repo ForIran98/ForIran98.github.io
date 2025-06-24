@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
       <nav id="main-nav" class="flex-col gap-2 text-base w-full sm:w-auto sm:flex-row sm:gap-6 sm:static sm:bg-transparent sm:rounded-none sm:shadow-none sm:flex hidden items-center justify-end mt-2 sm:mt-0 bg-blue-900/95 rounded-lg shadow-lg p-4 transition-all duration-200 ease-in-out z-20 sm:justify-end order-3">
+        <a href="projects.html" class="font-bold text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition">پروژه‌ها</a>
         <!-- منوی پروژه‌ها به صورت داینامیک اینجا درج می‌شود -->
+        <span id="dynamic-projects-menu"></span>
+        <a href="about.html" class="font-bold text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition">درباره ما</a>
       </nav>
       <div id="profile-header-info" class="order-5 flex items-center gap-2 text-white font-bold text-sm"></div>
       <div class="w-8 h-8 sm:hidden order-4"></div>

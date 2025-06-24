@@ -186,18 +186,14 @@
                     });
                 });
 
-                // ساخت دسته ویژه و قرار دادن در ابتدای آرایه
+                // ساخت دسته ویژه و قرار دادن در ابتدای آرایه (بدون حذف از دسته اصلی)
                 const featuredSites = allSites.filter(site => site.featured);
                 if (featuredSites.length > 0) {
                     const featuredCategory = {
                         name: 'ویژه',
                         sites: featuredSites.map(site => ({ ...site, _originalCategory: site.category }))
                     };
-                    // حذف سایت‌های ویژه از دسته‌بندی اصلی‌شان
-                    data.categories.forEach(cat => {
-                        cat.sites = cat.sites.filter(site => !site.featured);
-                    });
-                    // قرار دادن دسته ویژه در ابتدای آرایه
+                    // فقط اضافه کردن دسته ویژه در ابتدای آرایه، بدون حذف از دسته اصلی
                     data.categories.unshift(featuredCategory);
                 }
 
@@ -205,22 +201,23 @@
                     container.innerHTML = '';
                     sitesByCategory.forEach((category, idx) => {
                         if (!category.sites.length) return;
+                        const isFeatured = category.name === 'ویژه';
                         const card = document.createElement('div');
-                        card.className = 'card' + (category.name === 'ویژه' ? ' border-2 border-yellow-400 shadow-lg bg-yellow-50' : '');
+                        card.className = 'card' + (isFeatured ? ' border-2 border-yellow-500 shadow-xl bg-gradient-to-br from-yellow-100 to-yellow-50 special-featured-card' : '');
                         const cardHeader = document.createElement('div');
-                        cardHeader.className = 'card-header' + (category.name === 'ویژه' ? ' bg-yellow-400 text-gray-900' : '');
-                        cardHeader.innerHTML = category.name === 'ویژه' ? '<span style="font-size:1.4rem; font-weight:bold; display:flex; align-items:center; justify-content:center; gap:0.5rem;">✨ سایت‌های ویژه ✨</span>' : category.name;
+                        cardHeader.className = 'card-header' + (isFeatured ? ' bg-yellow-400 text-yellow-900 border-b-2 border-yellow-500' : '');
+                        cardHeader.innerHTML = isFeatured ? '<span style="font-size:1.5rem; font-weight:900; display:flex; align-items:center; justify-content:center; gap:0.7rem; letter-spacing:0.5px;">✨ سایت‌های ویژه ✨</span>' : category.name;
                         card.appendChild(cardHeader);
                         const listGroup = document.createElement('ul');
                         listGroup.className = 'list-group list-group-flush';
                         category.sites.forEach(site => {
                             const iconUrl = site.icon || `https://www.google.com/s2/favicons?domain=${site.url}`;
                             const listItem = document.createElement('li');
-                            listItem.className = 'list-group-item flex items-center' + (category.name === 'ویژه' ? ' bg-yellow-100 hover:bg-yellow-200 border-b border-yellow-200' : '');
+                            listItem.className = 'list-group-item flex items-center' + (isFeatured ? ' bg-yellow-50 hover:bg-yellow-100 border-b border-yellow-200 special-featured-item' : '');
                             listItem.innerHTML = `
-                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2 shadow-sm" style="width:24px;height:24px;vertical-align:middle;border-radius:6px;background:#fff;border:1.5px solid #ffe066;box-shadow:0 2px 8px #ffe06633;"> 
+                                <img src="${iconUrl}" alt="icon" class="inline-block mr-2 ml-2 shadow-sm" style="width:26px;height:26px;vertical-align:middle;border-radius:7px;background:#fff;border:2px solid #ffd700;box-shadow:0 2px 8px #ffe06633;"> 
                                 <a href="${site.url}" target="_blank" style="font-weight:bold;font-size:1.08rem;">${site.name}</a>
-                                ${category.name === 'ویژه' ? `<span class="text-xs text-yellow-700 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300" style="margin-right:0.7rem;">${site._originalCategory}</span>` : ''}
+                                ${isFeatured ? `<span class="text-xs text-yellow-800 ml-2 px-2 py-1 rounded bg-yellow-200 border border-yellow-300" style="margin-right:0.7rem;">${site._originalCategory}</span>` : ''}
                                 <span class="text-gray-600 text-sm ml-2" style="margin-right:0.7rem;">${site.description}</span>
                             `;
                             listGroup.appendChild(listItem);
@@ -259,6 +256,32 @@
                 renderSites(data.categories);
             })
             .catch(error => console.error('Error loading JSON:', error));
+
+        // استایل ویژه برای دسته ویژه
+        const style = document.createElement('style');
+        style.innerHTML = `
+        .special-featured-card {
+          border-color: #ffd700 !important;
+          background: linear-gradient(135deg, #fffbe6 0%, #fff9c4 100%) !important;
+          box-shadow: 0 8px 32px 0 #ffe06655 !important;
+        }
+        .special-featured-card .card-header {
+          background: linear-gradient(90deg, #ffd700 60%, #fffbe6 100%) !important;
+          color: #7c5700 !important;
+          border-bottom: 2.5px solid #ffd700 !important;
+          font-weight: 900 !important;
+          letter-spacing: 0.5px;
+        }
+        .special-featured-item {
+          background: #fffde7 !important;
+          border-bottom: 1.5px solid #ffe066 !important;
+          font-size: 1.08rem !important;
+        }
+        .special-featured-item a {
+          color: #bfa100 !important;
+        }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

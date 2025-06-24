@@ -4,193 +4,191 @@
       "name": "همراه اول",
       "image": "",
       "link": "https://mci.ir/",
-      "description": "",
+      "description": "اپراتور اول ایران، ارائه‌دهنده خدمات سیم‌کارت دائمی و اعتباری، اینترنت 2G تا 5G، رومینگ، پیامک، کیف پول دیجیتال و خدمات ارزش‌افزوده.",
       "isFree": false,
       "isDiscounted": true,
       "reason": "خطوط مشترکان دایمی قطع نمی شود",
-      "sourceLink": ""
+      "sourceLink": "https://mci.ir/"
     },
     {
       "name": "شاتل",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://www.shatel.ir/",
+      "description": "ISP خصوصی بزرگ ایران با خدمات ADSL2+, VDSL، فیبر نوری، وایرلس، تلفن ثابت، شاتل‌موبایل و سرویس‌های محتوا مانند نماوا.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "تمدید ۲ هفته اینترنت به صورت خودکار و رایگان",
-      "sourceLink": ""
+      "sourceLink": "https://www.shatel.ir/"
     },
     {
       "name": "بلوبانک",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://blubank.sb24.ir/",
+      "description": "نئوبانک دیجیتال گروه بانک سامان: افتتاح حساب، صدور کارت، انتقال وجه، دریافت وام و مدیریت مالی کاملاً آنلاین بدون شعبه.",
       "isFree": false,
       "isDiscounted": true,
       "reason": "بخشش جرمیه دیرکرد وام ها بازپداخت تا پایان تیرماه",
-      "sourceLink": ""
+      "sourceLink": "https://blubank.sb24.ir/"
     },
-{
+    {
+      "name": "ویپاد",
+      "image": "",
+      "link": "https://wepod.ir/",
+      "description": "ترابانک دیجیتال بانک پاسارگاد: افتتاح حساب، دریافت کارت، انتقال وجه، وام، بیمه و سرمایه‌گذاری به‌صورت آنلاین و بدون مراجعه حضوری :contentReference[oaicite:0]{index=0}.",
+      "isFree": false,
+      "isDiscounted": true,
+      "reason": "بخشش جریمه برای ماه خرداد تا تیر - تنفس یک ماهه برای پرداخت اقساط - تاثیر نداشتن دیرکرد در اعتبار سنجی",
+      "sourceLink": "https://wepod.ir/"
+    },
+    {
       "name": "ازکی",
       "image": "",
       "link": "",
-      "description": "",
+      "description": "پلتفرم خرید و مقایسه بیمه که خدمات آنلاین بیمه (زندگی، شخص ثالث و...) را ارائه می‌دهد.",
       "isFree": false,
       "isDiscounted": true,
-      "reason": "بخشش دیرکردهای اقساط  بیمه تا پایان تیرماه",
+      "reason": "بخشش دیرکردهای اقساط بیمه تا پایان تیرماه",
       "sourceLink": ""
     },
-{
+    {
       "name": "نشان",
       "image": "",
       "link": "",
-      "description": "",
+      "description": "نشان یک اپلیکیشن مسیریابی و پیشنهاد محلی است که برای همکاری با کسب‌وکارها آمادگی دارد.",
       "isFree": true,
       "isDiscounted": false,
-      "reason": "برای همکاری با کسب و کارها اماده ایم",
+      "reason": "برای همکاری با کسب و کارها آماده‌ایم",
       "sourceLink": ""
     },
-
     {
       "name": "پلتفرم حال",
       "image": "",
       "link": "",
-      "description": "",
+      "description": "پلتفرم مشاوره روانشناسی آنلاین که خدمات رایگان روانشناس ارائه می‌دهد.",
       "isFree": true,
       "isDiscounted": false,
-      "reason": "خدمات مشاوره روانشانی رایگان",
+      "reason": "خدمات مشاوره روانشناسی رایگان",
       "sourceLink": ""
     },
     {
       "name": "جاجیگا",
       "image": "",
       "link": "",
-      "description": "",
+      "description": "پلتفرم اسکان اضطراری آنلاین برای فراهم‌سازی اقامت در شرایط ویژه و بحران.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "اسکان اضطراری",
       "sourceLink": ""
     },
-
     {
       "name": "دیوار",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://divar.ir/",
+      "description": "پلتفرم خرید و فروش آنلاین کالا و خدمات با بخش‌هایی برای اسکان اضطراری و اشتراک سفر.",
       "isFree": true,
       "isDiscounted": false,
-      "reason": "اسکان اظطراری و اشتراک سفر",
-      "sourceLink": ""
+      "reason": "اسکان اضطراری و اشتراک سفر",
+      "sourceLink": "https://divar.ir/"
     },
-{
+    {
       "name": "دانشجویار",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://daneshjooyar.com/",
+      "description": "پلتفرم آموزش آنلاین دوره‌های تخصصی و مهارتی با اساتید مجرب.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "تخفیف ۹۰ درصدی برای دوره‌های آموزشی",
-      "sourceLink": ""
+      "sourceLink": "https://daneshjooyar.com/"
     },
     {
       "name": "لندین",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://landin.ir/",
+      "description": "سرویس ساخت صفحات فرود (Landing Page) و وب‌سایت برای کسب‌وکارها.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "یک هفته اشتراک رایگان",
-      "sourceLink": ""
+      "sourceLink": "https://landin.ir/"
     },
     {
       "name": "جاباما",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://www.jabama.com/",
+      "description": "سامانه رزرو اقامتگاه‌های آنلاین با خدمات اسکان اضطراری فراهم‌شده.",
       "isFree": true,
       "isDiscounted": false,
-      "reason": "اسکان اظطراری",
-      "sourceLink": ""
+      "reason": "اسکان اضطراری",
+      "sourceLink": "https://www.jabama.com/"
     },
     {
       "name": "اتاقک",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://otaghak.com/",
+      "description": "سرویس اجاره آنلاین اقامتگاه‌های کوچک و بوم‌گردی، با طرح «اقامتگاه همدلی» برای شرایط بحرانی.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "اقامتگاه همدلی",
-      "sourceLink": ""
+      "sourceLink": "https://otaghak.com/"
     },
     {
       "name": "مخابرات",
       "image": "",
-      "link": "",
-      "description": "",
+      "link": "https://www.tci.ir/",
+      "description": "اپراتور رسمی تلفن ثابت و خدمات اینترنت خانگی ایران.",
       "isFree": false,
       "isDiscounted": true,
       "reason": "مکالمات تلفن ثابت تا پایان تیرماه رایگان شد",
-      "sourceLink": ""
+      "sourceLink": "https://www.tci.ir/"
     },
     {
       "name": "پلتفورم روانشناسی حس",
       "image": "",
-      "link": "hesclinic.com",
-      "description": "",
+      "link": "https://hesclinic.com/",
+      "description": "کلینیک آنلاین روانشناسی \"حس\" با خدمات روانشناسی رایگان از طریق تماس و شبکه‌های اجتماعی.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "خدمات روانشناسی رایگان 0922670622 - @hesclinic.therapy",
-      "sourceLink": ""
+      "sourceLink": "https://hesclinic.com/"
     },
     {
       "name": "مکتبخونه",
       "image": "",
       "link": "https://maktabkhooneh.org/",
-      "description": "دوره‌های آموزشی رایگان",
+      "description": "پلتفرم آموزش آنلاین با دوره‌های ویژه کودکان و نوجوانان به‌صورت رایگان.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "دوره های ویژه کودکان رایگان شد",
-      "sourceLink": ""
+      "sourceLink": "https://maktabkhooneh.org/"
     },
     {
       "name": "دژینو",
       "image": "",
       "link": "https://www.dejino.com/",
-      "description": "",
+      "description": "سامانه مدیریت سرویس‌های اینترنتی با تمدید خودکار اشتراک تا بازگشت اوضاع عادی.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "تمدید خودکار سرویس ها تا زمانی که اوضاع به حالت عادی برگرده",
-      "sourceLink": ""
+      "sourceLink": "https://www.dejino.com/"
     },
     {
       "name": "آی قصه",
       "image": "",
       "link": "",
-      "description": "دسترسی به کتاب‌های صوتی و متنی کودکان",
+      "description": "پلتفرم تهیه و دسترسی به کتاب‌های صوتی و متنی مخصوص کودکان.",
       "isFree": true,
       "isDiscounted": false,
       "reason": "رایگان شدن محتوای به صورت کامل",
       "sourceLink": ""
     },
     {
-      "name": "ویپاد",
-      "image": "",
-      "link": " ",
-      "description": "",
-      "isFree": false,
-      "isDiscounted": true,
-      "reason": "بخشش جریمه برای ماه خرداد تا تیر - تنفس یک ماهه برای پرداخت اقساط - تاثیر نداشتن دیرکرد در اعتبار سنجی",
-      "sourceLink": ""
-    },
-    {
       "name": "دیجی شهر",
       "image": "",
       "link": "https://digishahr.com/",
-      "description": "",
+      "description": "فروشگاه آنلاین محلی ارائه‌دهنده محصولات متنوع با برنامه بخشش دیرکرد اقساط.",
       "isFree": false,
       "isDiscounted": true,
       "reason": "بخشش دیرکرد اقساط",
-      "sourceLink": ""
+      "sourceLink": "https://digishahr.com/"
     }
   ]
 }

@@ -8,6 +8,8 @@ fetch('json/projects.json')
     const active = projects.filter(p => p.status === 'in_progress');
     const completed = projects.filter(p => p.status === 'completed');
     let html = '<ul class="projects-menu-list">';
+    // اضافه کردن لینک "پروژه‌ها" در ابتدای منو
+    html += '<li><a href="projects.html"><b>پروژه‌ها</b></a></li>';
     if (active.length) {
       html += '<li class="menu-section-title">پروژه‌های فعال</li>';
       active.forEach(p => {
